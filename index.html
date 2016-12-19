@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>  
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/> 
+ 
+		<script id="sap-ui-bootstrap"   
+				type='text/javascript'
+				src="https://sapui5.hana.ondemand.com/1.32.10/resources/sap-ui-core.js"
+				data-sap-ui-theme='sap_bluecrystal'  
+				data-sap-ui-libs='sap.m,sap.viz,sap.m,sap.ui.commons,sap.ui.table,sap.ui.comp,sap.ui.unified,sap.ui.layout,sap.ui.ux3,sap.ui.core'
+				data-sap-ui-xx-bindingSyntax="complex"
+				data-sap-ui-resourceroots='{"cce.dfrequest3": "."}' 
+				data-sap-ui-language="en">
+		</script>
+		<title>Stargate</title>
+		
+    <script src="service/jspdf.js"></script>
+     <!--<script src="service/jspdf.debug.js"></script>-->
+    <script src="service/jspdf.min.js"></script><!--<script src="service/html2canvas.min.js"></script>-->
+     <script src="service/html2canvas.js"></script>
+    
+	    	<link rel="stylesheet" type="text/css" href="css/dfStyles.css">	
+		<script>
+		var busyDialog = new sap.m.BusyDialog({
+                     showCancelButton : false,
+             })
+				sap.ui.localResources("view");
+				var app = new sap.m.App("app",{
+					initialPage:"CreateDF"
+				});
+				var app2 = new sap.m.App("content_app",{
+				    initialPage:"CreateDF_Request"
+				})
+			    var page = sap.ui.view({
+			    	id:"CreateDF", 
+			    	viewName:"view.CreateDF", 
+			    	type:sap.ui.core.mvc.ViewType.XML
+		    	});
+		    	 
+		    	
+			    app.addPage(page);//.addPage(df_request_page);
+			 //   var oModel = new sap.ui.model.odata.ODataModel("services/dfnew.xsodata");
+			 //   page.setModel(oModel);
+			    app.placeAt("content");
+			    
+			    var df_request_page = sap.ui.view({
+			    	id:"CreateDF_Request", 
+			    	viewName:"view.CreateDF_Request", 
+			    	type:sap.ui.core.mvc.ViewType.XML
+		    	 });
+		    	 var df_evaluation_page = sap.ui.view({
+			    	id:"CreateDF_evaluation", 
+			    	viewName:"view.CreateDF_evaluation", 
+			    	type:sap.ui.core.mvc.ViewType.XML
+		    	 });
+		    	 var df_platform_page = sap.ui.view({
+			    	id:"CreateDF_platform", 
+			    	viewName:"view.CreateDF_platform", 
+			    	type:sap.ui.core.mvc.ViewType.XML
+		    	 });
+		    	 var df_sku_page = sap.ui.view({
+			    	id:"CreateDF_SKU", 
+			    	viewName:"view.CreateDF_SKU", 
+			    	type:sap.ui.core.mvc.ViewType.XML
+		    	 });
+		    	  var home_page = sap.ui.view({
+			    	id:"CreateDF_Home", 
+			    	viewName:"view.CreateDF_Home", 
+			    	type:sap.ui.core.mvc.ViewType.XML
+		    	 });
+		    	  var BOM_Material = sap.ui.view({
+			    	id:"CreateDF_BOM", 
+			    	viewName:"view.CreateDF_BOM", 
+			    	type:sap.ui.core.mvc.ViewType.XML
+		    	 });
+		    	  var admin_page = sap.ui.view({
+			    	id:"CreateDF_Admin", 
+			    	viewName:"view.CreateDF_Admin", 
+			    	type:sap.ui.core.mvc.ViewType.XML
+		    	 });
+		    	  var sku_meet = sap.ui.view({
+			    	id:"CreateDF_Meeting", 
+			    	viewName:"view.CreateDF_Meeting", 
+			    	type:sap.ui.core.mvc.ViewType.XML
+		    	 });
+		    	app2.addPage(df_request_page).addPage(df_evaluation_page).addPage(df_platform_page).addPage(df_sku_page).addPage(home_page).addPage(BOM_Material).addPage(admin_page).addPage(sku_meet);   
+	//	 var height = $(window).height();
+$(window).load(function() {
+  //var height = $('#mainbody').height();
+  var contentHeight = $(window).height()*.3;
+ $("#content").height(contentHeight);
+});
+		 //    $("#content2").css("top",height-(height*.78));
+		    
+		 </script>
+	<script>
+</script>
+  
+</head>
+	<body class="sapUiBody" id="bodyid" role="application">
+	<div id="main">
+		<div id="content">
+		    
+		</div>
+		<div id="content2" style="height:78%;position:absolute;width:100%;"></div>
+	</div>	
+	</body>
+</html>

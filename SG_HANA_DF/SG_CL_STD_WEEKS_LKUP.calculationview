@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="SG_CL_STD_WEEKS_LKUP" applyPrivilegeType="ANALYTIC_PRIVILEGE" dataCategory="CUBE" dimensionType="STANDARD" schemaVersion="2.3" defaultClient="$$client$$" visibility="reportingEnabled" outputViewType="Aggregation" calculationScenarioType="TREE_BASED" enforceSqlExecution="false">
+<descriptions defaultDescription="SG_CL_STD_WEEKS_LKUP"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="STD_WEEKS" type="DATA_BASE_TABLE">
+    <viewAttributes allViewAttributes="true"/>
+    <columnObject schemaName="NEO_2E3DAI8G3XW9DYMWAE88WGPXG" columnObjectName="STD_WEEKS"/>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="WEEK_SUPPLY"/>
+      <viewAttribute id="PROJECT_GROUP"/>
+      <viewAttribute id="PROJECT_TYPE"/>
+      <viewAttribute id="WEEK_ET"/>
+      <viewAttribute id="WEEK_FR"/>
+      <viewAttribute id="WEEK_GB"/>
+      <viewAttribute id="WEEK_KO"/>
+      <viewAttribute id="WEEK_MD"/>
+      <viewAttribute id="WEEK_NEBU"/>
+      <viewAttribute id="WEEK_SCHAWK"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="STD_WEEKS_SUPPLY" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <formula>double(&quot;WEEK_SUPPLY&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="STD_WEEKS_ET" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <formula>double(&quot;WEEK_ET&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="STD_WEEKS_SCHAWK" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <formula>double(&quot;WEEK_SCHAWK&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="STD_WEEK_KO" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <formula>double(&quot;WEEK_KO&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="STD_WEEKS_GB" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <formula>double(&quot;WEEK_GB&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="STD_WEEKS_FR" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <formula>double(&quot;WEEK_FR&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="STD_WEEKS_NEBU" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <formula>double(&quot;WEEK_NEBU&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="STD_WEEKS_MASTERDATE" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <formula>double(&quot;WEEK_MD&quot;)</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="PROJECT_TYPE_DRVD" datatype="NVARCHAR" length="500" expressionLanguage="COLUMN_ENGINE">
+        <formula>&quot;PROJECT_TYPE&quot;</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="#STD_WEEKS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEK_SUPPLY" source="WEEK_SUPPLY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_GROUP" source="PROJECT_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_TYPE" source="PROJECT_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEK_ET" source="WEEK_ET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEK_FR" source="WEEK_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEK_GB" source="WEEK_GB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEK_KO" source="WEEK_KO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEK_MD" source="WEEK_MD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEK_NEBU" source="WEEK_NEBU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEK_SCHAWK" source="WEEK_SCHAWK"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="PROJECT_GROUP" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROJECT_GROUP"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PROJECT_GROUP"/>
+    </attribute>
+    <attribute id="PROJECT_TYPE_DRVD" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROJECT_TYPE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PROJECT_TYPE_DRVD"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="STD_WEEKS_SUPPLY" order="2" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="STD_WEEKS_SUPPLY"/>
+      <measureMapping columnObjectName="Projection_1" columnName="STD_WEEKS_SUPPLY"/>
+    </measure>
+    <measure id="STD_WEEKS_ET" order="3" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="STD_WEEKS_ET"/>
+      <measureMapping columnObjectName="Projection_1" columnName="STD_WEEKS_ET"/>
+    </measure>
+    <measure id="STD_WEEKS_SCHAWK" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="STD_WEEKS_SCHAWK"/>
+      <measureMapping columnObjectName="Projection_1" columnName="STD_WEEKS_SCHAWK"/>
+    </measure>
+    <measure id="STD_WEEK_KO" order="5" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="STD_WEEK_KO"/>
+      <measureMapping columnObjectName="Projection_1" columnName="STD_WEEK_KO"/>
+    </measure>
+    <measure id="STD_WEEKS_GB" order="6" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="STD_WEEKS_GB"/>
+      <measureMapping columnObjectName="Projection_1" columnName="STD_WEEKS_GB"/>
+    </measure>
+    <measure id="STD_WEEKS_FR" order="7" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="STD_WEEKS_FR"/>
+      <measureMapping columnObjectName="Projection_1" columnName="STD_WEEKS_FR"/>
+    </measure>
+  
+    <measure id="STD_WEEKS_NEBU" order="8" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="STD_WEEKS_NEBU"/>
+      <measureMapping columnObjectName="Projection_1" columnName="STD_WEEKS_NEBU"/>
+    </measure>
+    <measure id="STD_WEEKS_MASTERDATE" order="9" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="STD_WEEKS_MASTERDATE"/>
+      <measureMapping columnObjectName="Projection_1" columnName="STD_WEEKS_MASTERDATE"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="77" y="210"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

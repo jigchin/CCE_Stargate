@@ -1,0 +1,27 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+	<ViewSettingsDialog confirm="handleConfirm1" close="handleConfirm1">
+		<sortItems>
+			<ViewSettingsItem selected="true" key="DF_ID" text="DF Reference Number" />
+			<ViewSettingsItem key="TITLE" text="Title" />	
+			<ViewSettingsItem key="NIM1" text="NIM" />	
+			<ViewSettingsItem key="STATUS" text="Status" />
+			<ViewSettingsItem key="PROJECT_TYPE" text="Type of Project" />
+			<ViewSettingsItem key="THEME_TYPE" text="Theme/ Standard / Price Mark" />
+			<ViewSettingsItem key="INITIATOR" text="DF Initiator Name" />
+			<ViewSettingsItem key="INITIATOR_DEPT" text="DF Initiator Department" />
+			<ViewSettingsItem key="APPROVER" text="DF Approver" />
+			<ViewSettingsItem key="SELLING_COUNTRY" text="Destination Market" />
+			<ViewSettingsItem key="PROJECT_GROUP" text="Project Group" />
+			<ViewSettingsItem key="MODIFIED" text="Modified" />
+			<ViewSettingsItem key="MODIFIED_BY" text="Modified By" />
+		</sortItems>
+		<filterItems>
+			<ViewSettingsFilterItem key="STATUS" text="STATUS" multiSelect="false">
+				<items>
+					<ViewSettingsItem key="STATUS_EQ_Submitted" text="Submitted" />
+					<ViewSettingsItem key="STATUS_EQ_Rejected" text="Rejected" />
+				</items>
+			</ViewSettingsFilterItem>
+		</filterItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

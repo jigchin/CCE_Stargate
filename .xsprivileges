@@ -1,0 +1,3 @@
+{ "privileges" :
+       [ { "name" : "Basic", "description" : "Basic usage privilege" },
+         { "name" : "FormOnly", "description" : "User can only view Forms"}]}

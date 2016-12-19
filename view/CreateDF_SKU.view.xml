@@ -1,0 +1,73 @@
+<core:View
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:sap.ui.layout.form="sap.ui.layout.form"
+	xmlns:sap.ui.layout="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.commons"
+	xmlns:m="sap.suite.ui.commons"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:table="sap.ui.table" 
+	controllerName="view.CreateDF_SKU">
+	<sap.ui.layout.form:SimpleForm columnsL="4" editable="true" id="sku_database" layout="ResponsiveGridLayout">
+		<sap.ui.layout.form:content>
+			<core:Title text="SKU Database Menu"/>
+			<sap.ui.layout:FixFlex id="idFixFlex_sku" minFlexSize="100">
+				<sap.ui.layout:fixContent>
+					<Panel id="PanelMain-sku1" expandable="true" expanded="true" headerText="CE SKU Database">
+						<VBox id="BM-sku1" class="boxPosition" width="1000px">
+							<Label id='title1_labelsku' design="Bold"/>
+							<Button  text="CE" id="ce_button" press="onSelectCE_SKU" width="20%"/>
+						</VBox>
+					</Panel>
+					<Panel id="PanelMain-skuw" expandable="true" expanded="true" headerText="Country-Based SKU Database">
+						<VBox id="BM-sku2" class="boxPosition" width="1000px">
+							<Label id='title2_labelsku' design="Bold"/>
+							<Button  text="BNL" id="bnl_button" press="onSelectCountry" width="20%"/>
+							<Label id='title3_labelsku' design="Bold"/>
+							<Button  text="FR" id="fr_button" press="onSelectCountry" width="20%"/>
+							<Label id='title4_labelsku' design="Bold"/>
+							<Button  text="GB" id="gb_button" press="onSelectCountry" width="20%"/>
+							<Label id='title5_labelsku' design="Bold"/>
+							<Button  text="NO" id="no_button" press="onSelectCountry" width="20%"/>
+							<Label id='title6_labelsku' design="Bold"/>
+							<Button  text="SE" id="se_button" press="onSelectCountry" width="20%"/>
+						</VBox>
+					</Panel>
+				</sap.ui.layout:fixContent>
+			</sap.ui.layout:FixFlex>
+		</sap.ui.layout.form:content>
+	</sap.ui.layout.form:SimpleForm>
+	<sap.ui.layout.form:SimpleForm columnsL="4" class="hideClass" editable="true" id="sku_data_table" layout="ResponsiveGridLayout">
+		<sap.ui.layout.form:content>
+			<core:Title text="SKU Database"/>
+			<sap.ui.layout:VerticalLayout>
+				<sap.ui.layout.form:SimpleForm columnsL="2" editable="false" id="sku_tab1" layout="ResponsiveLayout">
+					<sap.ui.layout.form:content>
+						<sap.ui.layout.form:SimpleForm columnsL="4" editable="false" id="sku_tab2" layout="ResponsiveLayout">
+							<sap.ui.layout.form:content></sap.ui.layout.form:content>
+						</sap.ui.layout.form:SimpleForm>
+					</sap.ui.layout.form:content>
+				</sap.ui.layout.form:SimpleForm>
+				<u:FileUploader
+				id="fileUploader_sku"
+				name="myFileUpload_sku"
+				uploadUrl="upload/"
+				width="400px"
+				fileType="csv"
+				typeMissmatch="handleTypeMissmatch"
+				tooltip="Upload your file to the local server"
+				uploadComplete="doFileLoadCompleteSKU"/>
+				<Button
+				text="Upload File"
+				press="doFileUploadSKU" id="upload_sku"/>
+				<c:Label text="Last Modified Date:" class="fontclass"/>
+				<Input id="last_upload_sku" editable="false"/>
+				<c:Label text="Last Modified User:" class="fontclass"/>
+				<Input id="last_upload_user_sku" editable="false"/>
+			</sap.ui.layout:VerticalLayout>
+		</sap.ui.layout.form:content>
+	</sap.ui.layout.form:SimpleForm>
+</core:View>

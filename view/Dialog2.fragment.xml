@@ -1,0 +1,180 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<TableSelectDialog
+	    contentWidth="1900px"
+		noDataText="No Products Found"
+		title="Select Record"
+		search="handleSearch"
+		confirm="handleClose2"
+		close="handleClose2"
+		items="{
+			path : '/volumes'
+		}">
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier text="{SAPCODE}" />
+				<Text text="{BAPCODE}" />
+				<Text text="{PRODDESC}" />
+				<Text text="{SIZE}" />
+				<Text text="{TYPE}" />
+				<Text text="{FLAVOUR}" />
+				<Text text="{PRODUCTGROUP}" />
+				<Text text="{GROUPDESC}" />
+				<Text text="{LIVESKU}" />
+				<Text text="{CPP}" />
+				<Text text="{EAN}" />
+				<Text text="{ITFCASE}" />
+				<Text text="{ITFPALLET}" />
+				<Text text="{WEEK}" />
+				<Text text="{YEAR}" />
+				<Text text="{ZPU}" />
+				<Text text="{ZCS}" />
+				<Text text="{PAL}" />
+				
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="4em" minScreenWidth="Desktop">
+				<header>
+					<Text text="SAPCODE" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true" >
+				<header>
+					<Text text="BAPCODE" />
+				</header>
+			</Column>
+			<Column width="10em"
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="PROD_DESC" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="CONT_SIZE" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="CONT_TYPE" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="FLAVOUR" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="PROD_GROUP" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="GROUPDESC" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="LIVE_SKU" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="CPP" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="EAN" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="ITF_CASE" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="ITF_PALLET" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="WEEK" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="YEAR" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="ZPU" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="ZCS" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="PAL" />
+				</header>
+			</Column>
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>

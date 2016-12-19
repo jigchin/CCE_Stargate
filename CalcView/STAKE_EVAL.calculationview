@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="STAKE_EVAL" applyPrivilegeType="ANALYTIC_PRIVILEGE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="2.3" defaultClient="$$client$$" visibility="internal" outputViewType="Aggregation" calculationScenarioType="TREE_BASED" enforceSqlExecution="false">
+<descriptions defaultDescription="STAKE_EVAL"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="DF_REQUEST" type="DATA_BASE_TABLE">
+    <viewAttributes allViewAttributes="true"/>
+    <columnObject schemaName="NEO_2E3DAI8G3XW9DYMWAE88WGPXG" columnObjectName="DF_REQUEST"/>
+  </DataSource>
+  <DataSource id="FEEDBACK_NIM" type="DATA_BASE_TABLE">
+    <viewAttributes allViewAttributes="true"/>
+    <columnObject schemaName="NEO_2E3DAI8G3XW9DYMWAE88WGPXG" columnObjectName="FEEDBACK_NIM"/>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="COLUMN_ENGINE">
+    <viewAttributes>
+      <viewAttribute id="INITIATOR"/>
+      <viewAttribute id="INITIATOR_DEPT"/>
+    
+      <viewAttribute id="MODIFIED_BY"/>
+      <viewAttribute id="SUBMIT_DATE"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="PROJECT_GROUP"/>
+      <viewAttribute id="SELLING_COUNTRY"/>
+      <viewAttribute id="MODIFIED"/>
+      <viewAttribute id="TITLE"/>
+      <viewAttribute id="NIM1"/>
+      <viewAttribute id="DF_ID"/>
+      <viewAttribute id="STAKE_TEAM"/>
+    
+      <viewAttribute id="STAKE_TEAM_C"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="#DF_REQUEST">
+      <mapping xsi:type="Calculation:AttributeMapping" target="INITIATOR" source="INITIATOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INITIATOR_DEPT" source="INITIATOR_DEPT"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MODIFIED_BY" source="MODIFIED_BY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBMIT_DATE" source="SUBMIT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATUS" source="STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_GROUP" source="PROJECT_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SELLING_COUNTRY" source="SELLING_COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MODIFIED" source="MODIFIED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NIM1" source="NIM1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DF_ID" source="DF_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAKE_TEAM" source="STAKE_TEAM"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAKE_TEAM_C" source="STAKE_TEAM_C"/>
+    </input>
+    <filter>match(&quot;STATUS&quot;,'Stakeholder Evaluation')</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+    <viewAttributes>
+      <viewAttribute id="EVALUATION_DATE"/>
+      <viewAttribute id="MAPC"/>
+      <viewAttribute id="MAPX"/>
+      <viewAttribute id="DF_ID"/>
+      <viewAttribute id="LEAD_COUNTRY"/>
+      <viewAttribute id="START_DATE"/>
+      <viewAttribute id="PROJECT_TYPE"/>
+      <viewAttribute id="COMPLETION_DATE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="#FEEDBACK_NIM">
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVALUATION_DATE" source="EVALUATION_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPC" source="MAPC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPX" source="MAPX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DF_ID" source="DF_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEAD_COUNTRY" source="LEAD_COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="START_DATE" source="START_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_TYPE" source="PROJECT_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMPLETION_DATE" source="COMPLETION_DATE"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="INITIATOR"/>
+      <viewAttribute id="INITIATOR_DEPT"/>
+      <viewAttribute id="MODIFIED_BY"/>
+      <viewAttribute id="SUBMIT_DATE"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="PROJECT_GROUP"/>
+      <viewAttribute id="SELLING_COUNTRY"/>
+      <viewAttribute id="MODIFIED"/>
+      <viewAttribute id="TITLE"/>
+      <viewAttribute id="NIM1"/>
+      <viewAttribute id="DF_ID"/>
+      <viewAttribute id="EVALUATION_DATE"/>
+      <viewAttribute id="MAPC"/>
+      <viewAttribute id="MAPX"/>
+      <viewAttribute id="LEAD_COUNTRY"/>
+      <viewAttribute id="START_DATE"/>
+      <viewAttribute id="PROJECT_TYPE"/>
+      <viewAttribute id="COMPLETION_DATE"/>
+    
+      <viewAttribute id="STAKE_TEAM_C"/>
+      <viewAttribute id="STAKE_TEAM"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="#Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="INITIATOR" source="INITIATOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INITIATOR_DEPT" source="INITIATOR_DEPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MODIFIED_BY" source="MODIFIED_BY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBMIT_DATE" source="SUBMIT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATUS" source="STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_GROUP" source="PROJECT_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SELLING_COUNTRY" source="SELLING_COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MODIFIED" source="MODIFIED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NIM1" source="NIM1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DF_ID" source="DF_ID"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAKE_TEAM_C" source="STAKE_TEAM_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAKE_TEAM" source="STAKE_TEAM"/>
+    </input>
+    <input node="#Projection_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVALUATION_DATE" source="EVALUATION_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPC" source="MAPC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPX" source="MAPX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LEAD_COUNTRY" source="LEAD_COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="START_DATE" source="START_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_TYPE" source="PROJECT_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMPLETION_DATE" source="COMPLETION_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DF_ID" source="DF_ID"/>
+    </input>
+    <joinAttribute name="DF_ID"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_2">
+  <attributes>
+    <attribute id="INITIATOR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INITIATOR"/>
+      <keyMapping columnObjectName="Join_2" columnName="INITIATOR"/>
+    </attribute>
+    <attribute id="INITIATOR_DEPT" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INITIATOR_DEPT"/>
+      <keyMapping columnObjectName="Join_2" columnName="INITIATOR_DEPT"/>
+    </attribute>
+    <attribute id="MODIFIED_BY" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MODIFIED_BY"/>
+      <keyMapping columnObjectName="Join_2" columnName="MODIFIED_BY"/>
+    </attribute>
+    <attribute id="SUBMIT_DATE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUBMIT_DATE"/>
+      <keyMapping columnObjectName="Join_2" columnName="SUBMIT_DATE"/>
+    </attribute>
+    <attribute id="STATUS" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STATUS"/>
+      <keyMapping columnObjectName="Join_2" columnName="STATUS"/>
+    </attribute>
+    <attribute id="PROJECT_GROUP" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROJECT_GROUP"/>
+      <keyMapping columnObjectName="Join_2" columnName="PROJECT_GROUP"/>
+    </attribute>
+    <attribute id="SELLING_COUNTRY" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SELLING_COUNTRY"/>
+      <keyMapping columnObjectName="Join_2" columnName="SELLING_COUNTRY"/>
+    </attribute>
+    <attribute id="MODIFIED" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MODIFIED"/>
+      <keyMapping columnObjectName="Join_2" columnName="MODIFIED"/>
+    </attribute>
+    <attribute id="TITLE" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TITLE"/>
+      <keyMapping columnObjectName="Join_2" columnName="TITLE"/>
+    </attribute>
+    <attribute id="NIM1" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NIM1"/>
+      <keyMapping columnObjectName="Join_2" columnName="NIM1"/>
+    </attribute>
+    <attribute id="DF_ID" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DF_ID"/>
+      <keyMapping columnObjectName="Join_2" columnName="DF_ID"/>
+    </attribute>
+    <attribute id="EVALUATION_DATE" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EVALUATION_DATE"/>
+      <keyMapping columnObjectName="Join_2" columnName="EVALUATION_DATE"/>
+    </attribute>
+    <attribute id="MAPC" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAPC"/>
+      <keyMapping columnObjectName="Join_2" columnName="MAPC"/>
+    </attribute>
+    <attribute id="MAPX" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAPX"/>
+      <keyMapping columnObjectName="Join_2" columnName="MAPX"/>
+    </attribute>
+    <attribute id="LEAD_COUNTRY" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LEAD_COUNTRY"/>
+      <keyMapping columnObjectName="Join_2" columnName="LEAD_COUNTRY"/>
+    </attribute>
+    <attribute id="START_DATE" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="START_DATE"/>
+      <keyMapping columnObjectName="Join_2" columnName="START_DATE"/>
+    </attribute>
+    <attribute id="PROJECT_TYPE" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROJECT_TYPE"/>
+      <keyMapping columnObjectName="Join_2" columnName="PROJECT_TYPE"/>
+    </attribute>
+    <attribute id="COMPLETION_DATE" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMPLETION_DATE"/>
+      <keyMapping columnObjectName="Join_2" columnName="COMPLETION_DATE"/>
+    </attribute>
+  
+    <attribute id="STAKE_TEAM_C" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STAKE_TEAM_C"/>
+      <keyMapping columnObjectName="Join_2" columnName="STAKE_TEAM_C"/>
+    </attribute>
+    <attribute id="STAKE_TEAM" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STAKE_TEAM"/>
+      <keyMapping columnObjectName="Join_2" columnName="STAKE_TEAM"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="5" y="322"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="268" y="315"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="181" y="223"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

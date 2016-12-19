@@ -1,0 +1,2361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="DF_REQUEST" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" hierarchiesSQLEnabled="false" translationRelevant="true" visibility="internal" calculationScenarioType="TREE_BASED" dataCategory="DIMENSION" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Aggregation">
+  <origin/>
+  <descriptions defaultDescription="DF_REQUEST"/>
+  <metadata changedAt="2016-11-07 16:54:23.457"/>
+  <localVariables/>
+  <variableMappings/>
+  <informationModelLayout relativeWidthScenario="27"/>
+  <dataSources>
+    <DataSource id="dfrequest3.DB::DF_DATABASE_FINAL_NEW" type="DATA_BASE_TABLE">
+      <viewAttributes allViewAttributes="true"/>
+      <columnObject schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW"/>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="dfrequest3.DB::DF_DATABASE_FINAL_NEW">
+    <descriptions/>
+    <attributes>
+      <attribute id="REF_NUMBER" key="true" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="REF_NUMBER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="REF_NUMBER"/>
+      </attribute>
+      <attribute id="DF_ID" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DF_ID"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DF_ID"/>
+      </attribute>
+      <attribute id="STATUS" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="STATUS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="STATUS"/>
+      </attribute>
+      <attribute id="INITIATOR" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="INITIATOR"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="INITIATOR"/>
+      </attribute>
+      <attribute id="NIM1" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="NIM1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="NIM1"/>
+      </attribute>
+      <attribute id="TITLE" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TITLE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TITLE"/>
+      </attribute>
+      <attribute id="PROJECT_GROUP" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PROJECT_GROUP"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PROJECT_GROUP"/>
+      </attribute>
+      <attribute id="THEME_TYPE" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="THEME_TYPE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="THEME_TYPE"/>
+      </attribute>
+      <attribute id="THEME_START_DATE" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="THEME_START_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="THEME_START_DATE"/>
+      </attribute>
+      <attribute id="THEME_END_DATE" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="THEME_END_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="THEME_END_DATE"/>
+      </attribute>
+      <attribute id="INITIATOR_DEPT" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="INITIATOR_DEPT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="INITIATOR_DEPT"/>
+      </attribute>
+      <attribute id="BRANDOWNER_NAME" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BRANDOWNER_NAME"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BRANDOWNER_NAME"/>
+      </attribute>
+      <attribute id="BRAND_OWNER_EMAIL" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BRAND_OWNER_EMAIL"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BRAND_OWNER_EMAIL"/>
+      </attribute>
+      <attribute id="SELLING_COUNTRY" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SELLING_COUNTRY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SELLING_COUNTRY"/>
+      </attribute>
+      <attribute id="FIRST_LAST_DISPATCH_DATE" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FIRST_LAST_DISPATCH_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FIRST_LAST_DISPATCH_DATE"/>
+      </attribute>
+      <attribute id="SAP_CODE" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SAP_CODE"/>
+      </attribute>
+      <attribute id="BAP_CODE" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BAP_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BAP_CODE"/>
+      </attribute>
+      <attribute id="COUNTRY" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="COUNTRY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="COUNTRY"/>
+      </attribute>
+      <attribute id="DESC" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DESC"/>
+      </attribute>
+      <attribute id="BRAND" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BRAND"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BRAND"/>
+      </attribute>
+      <attribute id="FLAVOUR" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FLAVOUR"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FLAVOUR"/>
+      </attribute>
+      <attribute id="CONTAINER" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CONTAINER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CONTAINER"/>
+      </attribute>
+      <attribute id="PACK" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PACK"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PACK"/>
+      </attribute>
+      <attribute id="PACKAGE" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PACKAGE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PACKAGE"/>
+      </attribute>
+      <attribute id="PALLET" order="25" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PALLET"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PALLET"/>
+      </attribute>
+      <attribute id="CPP" order="26" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CPP"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CPP"/>
+      </attribute>
+      <attribute id="EAN" order="27" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EAN"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EAN"/>
+      </attribute>
+      <attribute id="ZCU" order="28" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ZCU"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ZCU"/>
+      </attribute>
+      <attribute id="CS" order="29" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CS"/>
+      </attribute>
+      <attribute id="PAL" order="30" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PAL"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PAL"/>
+      </attribute>
+      <attribute id="SHELF" order="31" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SHELF"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SHELF"/>
+      </attribute>
+      <attribute id="SITES" order="32" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SITES"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SITES"/>
+      </attribute>
+      <attribute id="LINES" order="33" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LINES"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="LINES"/>
+      </attribute>
+      <attribute id="SAP_SKU_CODE" order="34" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP_SKU_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SAP_SKU_CODE"/>
+      </attribute>
+      <attribute id="PERIOD1" order="35" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PERIOD1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PERIOD1"/>
+      </attribute>
+      <attribute id="PERIOD2" order="36" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PERIOD2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PERIOD2"/>
+      </attribute>
+      <attribute id="PERIOD3" order="37" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PERIOD3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PERIOD3"/>
+      </attribute>
+      <attribute id="PERIOD4" order="38" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PERIOD4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PERIOD4"/>
+      </attribute>
+      <attribute id="PERIOD5" order="39" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PERIOD5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PERIOD5"/>
+      </attribute>
+      <attribute id="PERIOD6" order="40" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PERIOD6"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PERIOD6"/>
+      </attribute>
+      <attribute id="PERIOD7" order="41" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PERIOD7"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PERIOD7"/>
+      </attribute>
+      <attribute id="PERIOD8" order="42" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PERIOD8"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PERIOD8"/>
+      </attribute>
+      <attribute id="PERIOD9" order="43" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PERIOD9"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PERIOD9"/>
+      </attribute>
+      <attribute id="PERIOD10" order="44" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PERIOD10"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PERIOD10"/>
+      </attribute>
+      <attribute id="PERIOD11" order="45" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PERIOD11"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PERIOD11"/>
+      </attribute>
+      <attribute id="PERIOD12" order="46" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PERIOD12"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PERIOD12"/>
+      </attribute>
+      <attribute id="TOTAL" order="47" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TOTAL"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TOTAL"/>
+      </attribute>
+      <attribute id="INCREMENTAL_VOLUME1" order="48" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="INCREMENTAL_VOLUME1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="INCREMENTAL_VOLUME1"/>
+      </attribute>
+      <attribute id="MATERIAL_CHANGE" order="49" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MATERIAL_CHANGE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MATERIAL_CHANGE"/>
+      </attribute>
+      <attribute id="MATERIAL_CHANGE_OTHER" order="50" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MATERIAL_CHANGE_OTHER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MATERIAL_CHANGE_OTHER"/>
+      </attribute>
+      <attribute id="PROMOTIONAL_MECHANIC" order="51" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PROMOTIONAL_MECHANIC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PROMOTIONAL_MECHANIC"/>
+      </attribute>
+      <attribute id="ARTWORK_CHANGES" order="52" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ARTWORK_CHANGES"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ARTWORK_CHANGES"/>
+      </attribute>
+      <attribute id="ARTWORK_OTHER" order="53" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ARTWORK_OTHER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ARTWORK_OTHER"/>
+      </attribute>
+      <attribute id="SUPPLIER_NAME" order="54" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SUPPLIER_NAME"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SUPPLIER_NAME"/>
+      </attribute>
+      <attribute id="SUPPLIER_OTHER" order="55" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SUPPLIER_OTHER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SUPPLIER_OTHER"/>
+      </attribute>
+      <attribute id="PSEUDO_REF_NUM" order="56" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PSEUDO_REF_NUM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PSEUDO_REF_NUM"/>
+      </attribute>
+      <attribute id="DUMMY_REF_NUM" order="57" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DUMMY_REF_NUM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DUMMY_REF_NUM"/>
+      </attribute>
+      <attribute id="MIXING_GUIDELINES" order="58" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIXING_GUIDELINES"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIXING_GUIDELINES"/>
+      </attribute>
+      <attribute id="TECH_DATE" order="59" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TECH_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TECH_DATE"/>
+      </attribute>
+      <attribute id="NIM_CM" order="60" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="NIM_CM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="NIM_CM"/>
+      </attribute>
+      <attribute id="LEAD_COUNTRY" order="61" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LEAD_COUNTRY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="LEAD_COUNTRY"/>
+      </attribute>
+      <attribute id="ASSIGNMENT_DELAY" order="62" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ASSIGNMENT_DELAY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ASSIGNMENT_DELAY"/>
+      </attribute>
+      <attribute id="PROJECT_TYPE" order="63" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PROJECT_TYPE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PROJECT_TYPE"/>
+      </attribute>
+      <attribute id="MFG_SOURCE" order="64" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MFG_SOURCE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MFG_SOURCE"/>
+      </attribute>
+      <attribute id="PROD_SITES" order="65" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PROD_SITES"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PROD_SITES"/>
+      </attribute>
+      <attribute id="REPACKING" order="66" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="REPACKING"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="REPACKING"/>
+      </attribute>
+      <attribute id="FIRST_PROD" order="67" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FIRST_PROD"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FIRST_PROD"/>
+      </attribute>
+      <attribute id="FIRST_DESP" order="68" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FIRST_DESP"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FIRST_DESP"/>
+      </attribute>
+      <attribute id="NUM_SKU" order="69" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="NUM_SKU"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="NUM_SKU"/>
+      </attribute>
+      <attribute id="CONTINGENCY" order="70" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CONTINGENCY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CONTINGENCY"/>
+      </attribute>
+      <attribute id="NUM_ARTWORKS" order="71" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="NUM_ARTWORKS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="NUM_ARTWORKS"/>
+      </attribute>
+      <attribute id="ADDTN" order="72" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ADDTN"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ADDTN"/>
+      </attribute>
+      <attribute id="START_DATE" order="73" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="START_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="START_DATE"/>
+      </attribute>
+      <attribute id="COMPLETION_DATE" order="74" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="COMPLETION_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="COMPLETION_DATE"/>
+      </attribute>
+      <attribute id="GATE1" order="75" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GATE1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GATE1"/>
+      </attribute>
+      <attribute id="GATE2" order="76" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GATE2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GATE2"/>
+      </attribute>
+      <attribute id="EVALUATION_DATE" order="77" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EVALUATION_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EVALUATION_DATE"/>
+      </attribute>
+      <attribute id="MAPC" order="78" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MAPC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MAPC"/>
+      </attribute>
+      <attribute id="MAPX" order="79" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MAPX"/>
+      </attribute>
+      <attribute id="MASTER_DATE" order="80" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MASTER_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MASTER_DATE"/>
+      </attribute>
+      <attribute id="PSS_PRODUCT" order="81" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PSS_PRODUCT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PSS_PRODUCT"/>
+      </attribute>
+      <attribute id="CH_TECH" order="82" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CH_TECH"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CH_TECH"/>
+      </attribute>
+      <attribute id="CH_ASSEMBLY" order="83" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CH_ASSEMBLY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CH_ASSEMBLY"/>
+      </attribute>
+      <attribute id="CH_PICTURE" order="84" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CH_PICTURE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CH_PICTURE"/>
+      </attribute>
+      <attribute id="BASE_INPUT" order="85" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BASE_INPUT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BASE_INPUT"/>
+      </attribute>
+      <attribute id="BAM" order="86" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BAM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BAM"/>
+      </attribute>
+      <attribute id="FORECAST" order="87" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FORECAST"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FORECAST"/>
+      </attribute>
+      <attribute id="NEW_MAT" order="88" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="NEW_MAT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="NEW_MAT"/>
+      </attribute>
+      <attribute id="TRIAL_E" order="89" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TRIAL_E"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TRIAL_E"/>
+      </attribute>
+      <attribute id="TRIAL_L" order="90" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TRIAL_L"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TRIAL_L"/>
+      </attribute>
+      <attribute id="FORECAST_DATE" order="91" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FORECAST_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FORECAST_DATE"/>
+      </attribute>
+      <attribute id="PSS_REQ_INPT" order="92" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PSS_REQ_INPT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PSS_REQ_INPT"/>
+      </attribute>
+      <attribute id="PSS_AVIAL_INPT" order="93" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PSS_AVIAL_INPT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PSS_AVIAL_INPT"/>
+      </attribute>
+      <attribute id="FREIGHT_COST" order="94" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FREIGHT_COST"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FREIGHT_COST"/>
+      </attribute>
+      <attribute id="QUANRANTINE_INPT" order="95" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="QUANRANTINE_INPT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="QUANRANTINE_INPT"/>
+      </attribute>
+      <attribute id="ONGOING" order="96" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ONGOING"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ONGOING"/>
+      </attribute>
+      <attribute id="TLEVEL" order="97" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TLEVEL"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TLEVEL"/>
+      </attribute>
+      <attribute id="MANAGER" order="98" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MANAGER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MANAGER"/>
+      </attribute>
+      <attribute id="COMMODITIES" order="99" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="COMMODITIES"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="COMMODITIES"/>
+      </attribute>
+      <attribute id="SUPPLIER" order="100" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SUPPLIER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SUPPLIER"/>
+      </attribute>
+      <attribute id="RAW" order="101" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RAW"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="RAW"/>
+      </attribute>
+      <attribute id="ORDER1" order="102" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ORDER1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ORDER1"/>
+      </attribute>
+      <attribute id="ONGOING_IMPL_INPT" order="103" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ONGOING_IMPL_INPT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ONGOING_IMPL_INPT"/>
+      </attribute>
+      <attribute id="SHARE_IMPACT_INPT" order="104" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SHARE_IMPACT_INPT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SHARE_IMPACT_INPT"/>
+      </attribute>
+      <attribute id="MIN_ORDER_INPT" order="105" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN_ORDER_INPT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN_ORDER_INPT"/>
+      </attribute>
+      <attribute id="MATERIAL_LEAD_INPT" order="106" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MATERIAL_LEAD_INPT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MATERIAL_LEAD_INPT"/>
+      </attribute>
+      <attribute id="SUPPLIER_NEW_INPT" order="107" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SUPPLIER_NEW_INPT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SUPPLIER_NEW_INPT"/>
+      </attribute>
+      <attribute id="ARTWORK_REPO_INPT" order="108" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ARTWORK_REPO_INPT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ARTWORK_REPO_INPT"/>
+      </attribute>
+      <attribute id="FREQUENCY" order="109" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FREQUENCY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FREQUENCY"/>
+      </attribute>
+      <attribute id="FIXED" order="110" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FIXED"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FIXED"/>
+      </attribute>
+      <attribute id="RISK" order="111" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RISK"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="RISK"/>
+      </attribute>
+      <attribute id="EST_PROD_WEEK_INPT" order="112" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EST_PROD_WEEK_INPT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EST_PROD_WEEK_INPT"/>
+      </attribute>
+      <attribute id="S1" order="113" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="S1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="S1"/>
+      </attribute>
+      <attribute id="PSS_NUMBER1" order="114" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PSS_NUMBER1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PSS_NUMBER1"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER1" order="115" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER1"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER_DESC1" order="116" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER_DESC1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER_DESC1"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER1" order="117" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER1"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER_DESC1" order="118" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER_DESC1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER_DESC1"/>
+      </attribute>
+      <attribute id="BOM_CREATION1" order="119" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BOM_CREATION1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BOM_CREATION1"/>
+      </attribute>
+      <attribute id="S2" order="120" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="S2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="S2"/>
+      </attribute>
+      <attribute id="PSS_NUMBER2" order="121" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PSS_NUMBER2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PSS_NUMBER2"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER2" order="122" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER2"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER_DESC2" order="123" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER_DESC2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER_DESC2"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER2" order="124" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER2"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER_DESC2" order="125" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER_DESC2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER_DESC2"/>
+      </attribute>
+      <attribute id="BOM_CREATION2" order="126" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BOM_CREATION2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BOM_CREATION2"/>
+      </attribute>
+      <attribute id="S3" order="127" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="S3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="S3"/>
+      </attribute>
+      <attribute id="PSS_NUMBER3" order="128" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PSS_NUMBER3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PSS_NUMBER3"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER3" order="129" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER3"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER_DESC3" order="130" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER_DESC3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER_DESC3"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER3" order="131" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER3"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER_DESC3" order="132" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER_DESC3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER_DESC3"/>
+      </attribute>
+      <attribute id="BOM_CREATION3" order="133" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BOM_CREATION3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BOM_CREATION3"/>
+      </attribute>
+      <attribute id="S4" order="134" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="S4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="S4"/>
+      </attribute>
+      <attribute id="PSS_NUMBER4" order="135" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PSS_NUMBER4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PSS_NUMBER4"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER4" order="136" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER4"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER_DESC4" order="137" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER_DESC4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER_DESC4"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER4" order="138" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER4"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER_DESC4" order="139" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER_DESC4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER_DESC4"/>
+      </attribute>
+      <attribute id="BOM_CREATION4" order="140" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BOM_CREATION4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BOM_CREATION4"/>
+      </attribute>
+      <attribute id="S5" order="141" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="S5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="S5"/>
+      </attribute>
+      <attribute id="PSS_NUMBER5" order="142" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PSS_NUMBER5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PSS_NUMBER5"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER5" order="143" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER5"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER_DESC5" order="144" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER_DESC5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER_DESC5"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER5" order="145" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER5"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER_DESC5" order="146" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER_DESC5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER_DESC5"/>
+      </attribute>
+      <attribute id="BOM_CREATION5" order="147" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BOM_CREATION5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BOM_CREATION5"/>
+      </attribute>
+      <attribute id="S6" order="148" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="S6"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="S6"/>
+      </attribute>
+      <attribute id="PSS_NUMBER6" order="149" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PSS_NUMBER6"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PSS_NUMBER6"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER6" order="150" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER6"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER6"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER_DESC6" order="151" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER_DESC6"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER_DESC6"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER6" order="152" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER6"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER6"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER_DESC6" order="153" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER_DESC6"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER_DESC6"/>
+      </attribute>
+      <attribute id="BOM_CREATION6" order="154" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BOM_CREATION6"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BOM_CREATION6"/>
+      </attribute>
+      <attribute id="S7" order="155" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="S7"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="S7"/>
+      </attribute>
+      <attribute id="PSS_NUMBER7" order="156" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PSS_NUMBER7"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PSS_NUMBER7"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER7" order="157" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER7"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER7"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER_DESC7" order="158" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER_DESC7"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER_DESC7"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER7" order="159" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER7"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER7"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER_DESC7" order="160" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER_DESC7"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER_DESC7"/>
+      </attribute>
+      <attribute id="BOM_CREATION7" order="161" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BOM_CREATION7"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BOM_CREATION7"/>
+      </attribute>
+      <attribute id="S8" order="162" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="S8"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="S8"/>
+      </attribute>
+      <attribute id="PSS_NUMBER8" order="163" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PSS_NUMBER8"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PSS_NUMBER8"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER8" order="164" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER8"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER8"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER_DESC8" order="165" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER_DESC8"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER_DESC8"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER8" order="166" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER8"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER8"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER_DESC8" order="167" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER_DESC8"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER_DESC8"/>
+      </attribute>
+      <attribute id="BOM_CREATION8" order="168" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BOM_CREATION8"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BOM_CREATION8"/>
+      </attribute>
+      <attribute id="S9" order="169" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="S9"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="S9"/>
+      </attribute>
+      <attribute id="PSS_NUMBER9" order="170" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PSS_NUMBER9"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PSS_NUMBER9"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER9" order="171" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER9"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER9"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER_DESC9" order="172" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER_DESC9"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER_DESC9"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER9" order="173" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER9"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER9"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER_DESC9" order="174" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER_DESC9"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER_DESC9"/>
+      </attribute>
+      <attribute id="BOM_CREATION9" order="175" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BOM_CREATION9"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BOM_CREATION9"/>
+      </attribute>
+      <attribute id="S10" order="176" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="S10"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="S10"/>
+      </attribute>
+      <attribute id="PSS_NUMBER10" order="177" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PSS_NUMBER10"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PSS_NUMBER10"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER10" order="178" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER10"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER10"/>
+      </attribute>
+      <attribute id="FULL_CONTAINER_DESC10" order="179" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_CONTAINER_DESC10"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_CONTAINER_DESC10"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER10" order="180" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER10"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER10"/>
+      </attribute>
+      <attribute id="PRINTED_CLUSTER_DESC10" order="181" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTED_CLUSTER_DESC10"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTED_CLUSTER_DESC10"/>
+      </attribute>
+      <attribute id="BOM_CREATION10" order="182" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BOM_CREATION10"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BOM_CREATION10"/>
+      </attribute>
+      <attribute id="VALUE" order="183" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="VALUE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="VALUE"/>
+      </attribute>
+      <attribute id="PROJECT_CATEGORY" order="184" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PROJECT_CATEGORY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PROJECT_CATEGORY"/>
+      </attribute>
+      <attribute id="PROJECT_PHASE" order="185" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PROJECT_PHASE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PROJECT_PHASE"/>
+      </attribute>
+      <attribute id="COMMENTS" order="186" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="COMMENTS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="COMMENTS"/>
+      </attribute>
+      <attribute id="DF_RECEIVED" order="187" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DF_RECEIVED"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DF_RECEIVED"/>
+      </attribute>
+      <attribute id="DF_CIRCULATION_STARTED" order="188" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DF_CIRCULATION_STARTED"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DF_CIRCULATION_STARTED"/>
+      </attribute>
+      <attribute id="PLANNED_FINAL_PSS_COMPLETION" order="189" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PLANNED_FINAL_PSS_COMPLETION"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PLANNED_FINAL_PSS_COMPLETION"/>
+      </attribute>
+      <attribute id="FINAL_PSS_COMPLETION" order="190" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FINAL_PSS_COMPLETION"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FINAL_PSS_COMPLETION"/>
+      </attribute>
+      <attribute id="FEEDBACK_TO_STAKEHOLDER" order="191" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FEEDBACK_TO_STAKEHOLDER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FEEDBACK_TO_STAKEHOLDER"/>
+      </attribute>
+      <attribute id="GATE_3" order="192" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GATE_3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GATE_3"/>
+      </attribute>
+      <attribute id="ISSCOM_CREATED" order="193" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ISSCOM_CREATED"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ISSCOM_CREATED"/>
+      </attribute>
+      <attribute id="PAR_APPROVED_PLAN" order="194" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PAR_APPROVED_PLAN"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PAR_APPROVED_PLAN"/>
+      </attribute>
+      <attribute id="PAR_APPROVED_ACTUAL" order="195" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PAR_APPROVED_ACTUAL"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PAR_APPROVED_ACTUAL"/>
+      </attribute>
+      <attribute id="TCCC_PRICING" order="196" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TCCC_PRICING"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TCCC_PRICING"/>
+      </attribute>
+      <attribute id="SKU_CREATION_START" order="197" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SKU_CREATION_START"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SKU_CREATION_START"/>
+      </attribute>
+      <attribute id="SKU_CREATION_COMPLETE" order="198" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SKU_CREATION_COMPLETE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SKU_CREATION_COMPLETE"/>
+      </attribute>
+      <attribute id="MAPX_PERMISSION" order="199" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MAPX_PERMISSION"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MAPX_PERMISSION"/>
+      </attribute>
+      <attribute id="GATE_4" order="200" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GATE_4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GATE_4"/>
+      </attribute>
+      <attribute id="ACTUAL_FIRST_DESPATCH" order="201" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ACTUAL_FIRST_DESPATCH"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ACTUAL_FIRST_DESPATCH"/>
+      </attribute>
+      <attribute id="ACTUAL_COMPLETION_DESPATCH" order="202" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ACTUAL_COMPLETION_DESPATCH"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ACTUAL_COMPLETION_DESPATCH"/>
+      </attribute>
+      <attribute id="LEAD_MARKET" order="203" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LEAD_MARKET"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="LEAD_MARKET"/>
+      </attribute>
+      <attribute id="DESIGN_MESSAGE" order="204" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DESIGN_MESSAGE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DESIGN_MESSAGE"/>
+      </attribute>
+      <attribute id="CCE_ARTWORK_NUMBER" order="205" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CCE_ARTWORK_NUMBER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CCE_ARTWORK_NUMBER"/>
+      </attribute>
+      <attribute id="OPTIONAL_ADDITIONAL_CODE" order="206" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="OPTIONAL_ADDITIONAL_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="OPTIONAL_ADDITIONAL_CODE"/>
+      </attribute>
+      <attribute id="ARTWORK_BARCODE" order="207" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ARTWORK_BARCODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ARTWORK_BARCODE"/>
+      </attribute>
+      <attribute id="GRID_REF" order="208" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GRID_REF"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GRID_REF"/>
+      </attribute>
+      <attribute id="MATERAL_SUBSTRATE" order="209" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MATERAL_SUBSTRATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MATERAL_SUBSTRATE"/>
+      </attribute>
+      <attribute id="PRINT_PROCESS" order="210" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINT_PROCESS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINT_PROCESS"/>
+      </attribute>
+      <attribute id="LEAD_ARTWORK_DEVELOPMENT" order="211" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LEAD_ARTWORK_DEVELOPMENT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="LEAD_ARTWORK_DEVELOPMENT"/>
+      </attribute>
+      <attribute id="REQ_PCB_FTP_DATE" order="212" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="REQ_PCB_FTP_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="REQ_PCB_FTP_DATE"/>
+      </attribute>
+      <attribute id="PCB_TO_SCHAWK" order="213" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PCB_TO_SCHAWK"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PCB_TO_SCHAWK"/>
+      </attribute>
+      <attribute id="PCB_FTP_DATE" order="214" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PCB_FTP_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PCB_FTP_DATE"/>
+      </attribute>
+      <attribute id="ACTUAL_PCB_FTP_DATE" order="215" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ACTUAL_PCB_FTP_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ACTUAL_PCB_FTP_DATE"/>
+      </attribute>
+      <attribute id="SCHAWK_ARTWORK_STATUS" order="216" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SCHAWK_ARTWORK_STATUS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SCHAWK_ARTWORK_STATUS"/>
+      </attribute>
+      <attribute id="NUMBER_COLOR_LAYERS" order="217" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="NUMBER_COLOR_LAYERS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="NUMBER_COLOR_LAYERS"/>
+      </attribute>
+      <attribute id="ADDITONAL_PRINT_FEATURES" order="218" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ADDITONAL_PRINT_FEATURES"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ADDITONAL_PRINT_FEATURES"/>
+      </attribute>
+      <attribute id="FIRST_BOTTLING_PRODUCTION" order="219" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FIRST_BOTTLING_PRODUCTION"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FIRST_BOTTLING_PRODUCTION"/>
+      </attribute>
+      <attribute id="LAST_BOTTLING_PRODUCTION" order="220" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LAST_BOTTLING_PRODUCTION"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="LAST_BOTTLING_PRODUCTION"/>
+      </attribute>
+      <attribute id="TYPE_TRANSITION" order="221" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TYPE_TRANSITION"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TYPE_TRANSITION"/>
+      </attribute>
+      <attribute id="BOTTLE_SHAPE" order="222" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BOTTLE_SHAPE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BOTTLE_SHAPE"/>
+      </attribute>
+      <attribute id="MATERIAL_NAME" order="223" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MATERIAL_NAME"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MATERIAL_NAME"/>
+      </attribute>
+      <attribute id="PART_CANCELLED" order="224" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PART_CANCELLED"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PART_CANCELLED"/>
+      </attribute>
+      <attribute id="RAW_MATERIAL_PHASE_OUT" order="225" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RAW_MATERIAL_PHASE_OUT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="RAW_MATERIAL_PHASE_OUT"/>
+      </attribute>
+      <attribute id="CHLD_REF" order="226" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CHLD_REF"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CHLD_REF"/>
+      </attribute>
+      <attribute id="BRAND_COLOR" order="227" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BRAND_COLOR"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BRAND_COLOR"/>
+      </attribute>
+      <attribute id="BAP_SKU_CHANGE" order="228" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BAP_SKU_CHANGE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BAP_SKU_CHANGE"/>
+      </attribute>
+      <attribute id="TYPE_OF_CHANGE" order="229" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TYPE_OF_CHANGE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TYPE_OF_CHANGE"/>
+      </attribute>
+      <attribute id="CINCOM_OLD_PART_NUMBER" order="230" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CINCOM_OLD_PART_NUMBER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CINCOM_OLD_PART_NUMBER"/>
+      </attribute>
+      <attribute id="CINCOM_NEW_PART_NUMBER" order="231" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CINCOM_NEW_PART_NUMBER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CINCOM_NEW_PART_NUMBER"/>
+      </attribute>
+      <attribute id="OLD_SAP_RAW_MATERIAL_NUMBER" order="232" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="OLD_SAP_RAW_MATERIAL_NUMBER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="OLD_SAP_RAW_MATERIAL_NUMBER"/>
+      </attribute>
+      <attribute id="NEW_SAP_RAW_MATERIAL_NUMBER" order="233" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="NEW_SAP_RAW_MATERIAL_NUMBER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="NEW_SAP_RAW_MATERIAL_NUMBER"/>
+      </attribute>
+      <attribute id="NEW_SAP_RAW_MATERIAL_DESCRIPTION" order="234" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="NEW_SAP_RAW_MATERIAL_DESCRIPTION"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="NEW_SAP_RAW_MATERIAL_DESCRIPTION"/>
+      </attribute>
+      <attribute id="CINCOM_CONTRACTS" order="235" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CINCOM_CONTRACTS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CINCOM_CONTRACTS"/>
+      </attribute>
+      <attribute id="SAP_CONTRACTS_UPDATED_DATE" order="236" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP_CONTRACTS_UPDATED_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SAP_CONTRACTS_UPDATED_DATE"/>
+      </attribute>
+      <attribute id="MATERIAL_SUPPLY_COMMENTS" order="237" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MATERIAL_SUPPLY_COMMENTS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MATERIAL_SUPPLY_COMMENTS"/>
+      </attribute>
+      <attribute id="SAPSKU_CODE" order="238" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAPSKU_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SAPSKU_CODE"/>
+      </attribute>
+      <attribute id="BAP_BASIS_CODE" order="239" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BAP_BASIS_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BAP_BASIS_CODE"/>
+      </attribute>
+      <attribute id="FULL_PRODUCT_DESCRIPTION" order="240" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FULL_PRODUCT_DESCRIPTION"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FULL_PRODUCT_DESCRIPTION"/>
+      </attribute>
+      <attribute id="PRODUCTION_END_DATE" order="241" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCTION_END_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRODUCTION_END_DATE"/>
+      </attribute>
+      <attribute id="ITEM_FLAG_TRADERS_REPORT" order="242" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ITEM_FLAG_TRADERS_REPORT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ITEM_FLAG_TRADERS_REPORT"/>
+      </attribute>
+      <attribute id="CONTIGENCY_SITE_LINE" order="243" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CONTIGENCY_SITE_LINE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CONTIGENCY_SITE_LINE"/>
+      </attribute>
+      <attribute id="BASE_SAP_APO_CODE" order="244" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BASE_SAP_APO_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BASE_SAP_APO_CODE"/>
+      </attribute>
+      <attribute id="SWEETNER_DATA" order="245" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SWEETNER_DATA"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SWEETNER_DATA"/>
+      </attribute>
+      <attribute id="QUARANTINE_BAP_CODE" order="246" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="QUARANTINE_BAP_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="QUARANTINE_BAP_CODE"/>
+      </attribute>
+      <attribute id="BOM_CHANGES" order="247" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BOM_CHANGES"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BOM_CHANGES"/>
+      </attribute>
+      <attribute id="CLICHE_PLATE_COSTS" order="248" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CLICHE_PLATE_COSTS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CLICHE_PLATE_COSTS"/>
+      </attribute>
+      <attribute id="PO_NUMBER" order="249" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PO_NUMBER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PO_NUMBER"/>
+      </attribute>
+      <attribute id="MMD_CODE_EXTENDED_PLANNED_DATE" order="250" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MMD_CODE_EXTENDED_PLANNED_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MMD_CODE_EXTENDED_PLANNED_DATE"/>
+      </attribute>
+      <attribute id="MMD_CODE_EXTENDED_ACTUAL_DATE" order="251" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MMD_CODE_EXTENDED_ACTUAL_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MMD_CODE_EXTENDED_ACTUAL_DATE"/>
+      </attribute>
+      <attribute id="T_LANES_FORCAST_PLANNED_DATE" order="252" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="T_LANES_FORCAST_PLANNED_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="T_LANES_FORCAST_PLANNED_DATE"/>
+      </attribute>
+      <attribute id="T_LANES_FORCAST_COMPLETED_DATE" order="253" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="T_LANES_FORCAST_COMPLETED_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="T_LANES_FORCAST_COMPLETED_DATE"/>
+      </attribute>
+      <attribute id="PRODUCT_DATABASE_PLANNED_DATE" order="254" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_DATABASE_PLANNED_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRODUCT_DATABASE_PLANNED_DATE"/>
+      </attribute>
+      <attribute id="DB_UPDATED_DATE" order="255" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DB_UPDATED_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DB_UPDATED_DATE"/>
+      </attribute>
+      <attribute id="BNF_NEEDBY_DATE" order="256" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BNF_NEEDBY_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BNF_NEEDBY_DATE"/>
+      </attribute>
+      <attribute id="BNF_ACTUAL_DATE" order="257" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BNF_ACTUAL_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BNF_ACTUAL_DATE"/>
+      </attribute>
+      <attribute id="SAP_SKU_PLANNING_REQ_DATE" order="258" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP_SKU_PLANNING_REQ_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SAP_SKU_PLANNING_REQ_DATE"/>
+      </attribute>
+      <attribute id="SAP_SKU_PLANNING_PLANNED_DATE" order="259" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP_SKU_PLANNING_PLANNED_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SAP_SKU_PLANNING_PLANNED_DATE"/>
+      </attribute>
+      <attribute id="SAP_SKU_PLANNING_ACTUAL_DATE" order="260" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP_SKU_PLANNING_ACTUAL_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SAP_SKU_PLANNING_ACTUAL_DATE"/>
+      </attribute>
+      <attribute id="WRIN" order="261" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="WRIN"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="WRIN"/>
+      </attribute>
+      <attribute id="LEAD_TIME_KBI" order="262" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LEAD_TIME_KBI"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="LEAD_TIME_KBI"/>
+      </attribute>
+      <attribute id="DESCRIPTION_TRAILS" order="263" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DESCRIPTION_TRAILS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DESCRIPTION_TRAILS"/>
+      </attribute>
+      <attribute id="TRAIL_CATEGORY" order="264" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TRAIL_CATEGORY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TRAIL_CATEGORY"/>
+      </attribute>
+      <attribute id="NRFP" order="265" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="NRFP"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="NRFP"/>
+      </attribute>
+      <attribute id="TONICA_MEETING_DATE" order="266" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TONICA_MEETING_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TONICA_MEETING_DATE"/>
+      </attribute>
+      <attribute id="TONICA_MEETNG_WEEK" order="267" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TONICA_MEETNG_WEEK"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TONICA_MEETNG_WEEK"/>
+      </attribute>
+      <attribute id="TONCA_CALENDER_UPDATES" order="268" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TONCA_CALENDER_UPDATES"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TONCA_CALENDER_UPDATES"/>
+      </attribute>
+      <attribute id="LOGISTICS_VARIANT" order="269" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LOGISTICS_VARIANT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="LOGISTICS_VARIANT"/>
+      </attribute>
+      <attribute id="ZMMATAPO" order="270" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ZMMATAPO"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ZMMATAPO"/>
+      </attribute>
+      <attribute id="CONCENTRATE_BOM" order="271" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CONCENTRATE_BOM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CONCENTRATE_BOM"/>
+      </attribute>
+      <attribute id="ITEM_LINE_MODIFIED" order="272" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ITEM_LINE_MODIFIED"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ITEM_LINE_MODIFIED"/>
+      </attribute>
+      <attribute id="UNIQUE_CODE" order="273" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UNIQUE_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UNIQUE_CODE"/>
+      </attribute>
+      <attribute id="SAP_R3_CODE" order="274" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP_R3_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SAP_R3_CODE"/>
+      </attribute>
+      <attribute id="VARIANT_CODE" order="275" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="VARIANT_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="VARIANT_CODE"/>
+      </attribute>
+      <attribute id="VARIANT_DESCRIPTION" order="276" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="VARIANT_DESCRIPTION"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="VARIANT_DESCRIPTION"/>
+      </attribute>
+      <attribute id="PACKAGING_DATE_FORMAT" order="277" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PACKAGING_DATE_FORMAT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PACKAGING_DATE_FORMAT"/>
+      </attribute>
+      <attribute id="BBN_CODE" order="278" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BBN_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BBN_CODE"/>
+      </attribute>
+      <attribute id="ISSCOM_CODE" order="279" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ISSCOM_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ISSCOM_CODE"/>
+      </attribute>
+      <attribute id="KIT_SIZE" order="280" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="KIT_SIZE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="KIT_SIZE"/>
+      </attribute>
+      <attribute id="PRODUCT_DENSITY" order="281" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_DENSITY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRODUCT_DENSITY"/>
+      </attribute>
+      <attribute id="FIXED_QUANTITIES" order="282" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FIXED_QUANTITIES"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FIXED_QUANTITIES"/>
+      </attribute>
+      <attribute id="SNPPL02" order="283" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SNPPL02"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SNPPL02"/>
+      </attribute>
+      <attribute id="PLANNER" order="284" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PLANNER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PLANNER"/>
+      </attribute>
+      <attribute id="REPACK_DESCRIPTION" order="285" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="REPACK_DESCRIPTION"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="REPACK_DESCRIPTION"/>
+      </attribute>
+      <attribute id="FIRST_PRODUCTION_INPT_SKU" order="286" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FIRST_PRODUCTION_INPT_SKU"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FIRST_PRODUCTION_INPT_SKU"/>
+      </attribute>
+      <attribute id="LAST_PRODUCTION_INPT_SKU" order="287" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LAST_PRODUCTION_INPT_SKU"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="LAST_PRODUCTION_INPT_SKU"/>
+      </attribute>
+      <attribute id="QUANTITIES_SKU" order="288" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="QUANTITIES_SKU"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="QUANTITIES_SKU"/>
+      </attribute>
+      <attribute id="TONICA_MEETING" order="289" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TONICA_MEETING"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TONICA_MEETING"/>
+      </attribute>
+      <attribute id="TONICA_MEETING_UPDATE_DATE" order="290" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TONICA_MEETING_UPDATE_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TONICA_MEETING_UPDATE_DATE"/>
+      </attribute>
+      <attribute id="STATUS_COLOR" order="291" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="STATUS_COLOR"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="STATUS_COLOR"/>
+      </attribute>
+      <attribute id="PCB_INITIATOR_NAME" order="292" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PCB_INITIATOR_NAME"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PCB_INITIATOR_NAME"/>
+      </attribute>
+      <attribute id="REVISION_NUMBER" order="293" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="REVISION_NUMBER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="REVISION_NUMBER"/>
+      </attribute>
+      <attribute id="ART_REVIEWER" order="294" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ART_REVIEWER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ART_REVIEWER"/>
+      </attribute>
+      <attribute id="PRINTER_EMAIL" order="295" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINTER_EMAIL"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINTER_EMAIL"/>
+      </attribute>
+      <attribute id="BAM_INSTRUCTIONS" order="296" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BAM_INSTRUCTIONS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BAM_INSTRUCTIONS"/>
+      </attribute>
+      <attribute id="NIM_INSTRUCTIONS" order="297" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="NIM_INSTRUCTIONS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="NIM_INSTRUCTIONS"/>
+      </attribute>
+      <attribute id="BAM_REFERENCE" order="298" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BAM_REFERENCE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BAM_REFERENCE"/>
+      </attribute>
+      <attribute id="MAT_TYPE" order="299" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MAT_TYPE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MAT_TYPE"/>
+      </attribute>
+      <attribute id="PCB_PROMOTION_TYPE" order="300" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PCB_PROMOTION_TYPE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PCB_PROMOTION_TYPE"/>
+      </attribute>
+      <attribute id="PCB_NIM_COMMENTS" order="301" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PCB_NIM_COMMENTS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PCB_NIM_COMMENTS"/>
+      </attribute>
+      <attribute id="OTH_CODE" order="302" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="OTH_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="OTH_CODE"/>
+      </attribute>
+      <attribute id="SKU_PROD_DESC" order="303" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SKU_PROD_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SKU_PROD_DESC"/>
+      </attribute>
+      <attribute id="UNKNOWN_SKU" order="304" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UNKNOWN_SKU"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UNKNOWN_SKU"/>
+      </attribute>
+      <attribute id="STATUS_FIRST_PRODUCTION" order="305" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="STATUS_FIRST_PRODUCTION"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="STATUS_FIRST_PRODUCTION"/>
+      </attribute>
+      <attribute id="STATUS_LAST_PRODUCTION" order="306" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="STATUS_LAST_PRODUCTION"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="STATUS_LAST_PRODUCTION"/>
+      </attribute>
+      <attribute id="STATUS_FIRST_DESPATCH" order="307" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="STATUS_FIRST_DESPATCH"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="STATUS_FIRST_DESPATCH"/>
+      </attribute>
+      <attribute id="LAST_DESPATCH_WEEK" order="308" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LAST_DESPATCH_WEEK"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="LAST_DESPATCH_WEEK"/>
+      </attribute>
+      <attribute id="IND_RUN_OUT_RULES" order="309" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="IND_RUN_OUT_RULES"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="IND_RUN_OUT_RULES"/>
+      </attribute>
+      <attribute id="SKU_CODE_NEEDED" order="310" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SKU_CODE_NEEDED"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SKU_CODE_NEEDED"/>
+      </attribute>
+      <attribute id="SALE_OR_QUARANTINE" order="311" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SALE_OR_QUARANTINE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SALE_OR_QUARANTINE"/>
+      </attribute>
+      <attribute id="COPACKING" order="312" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="COPACKING"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="COPACKING"/>
+      </attribute>
+      <attribute id="PRODUCT_CONTAINER" order="313" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_CONTAINER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRODUCT_CONTAINER"/>
+      </attribute>
+      <attribute id="CPP_RAW" order="314" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CPP_RAW"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CPP_RAW"/>
+      </attribute>
+      <attribute id="CPP_CCE" order="315" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CPP_CCE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CPP_CCE"/>
+      </attribute>
+      <attribute id="CPP_UNIT" order="316" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CPP_UNIT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CPP_UNIT"/>
+      </attribute>
+      <attribute id="SAP_SITE_LINES" order="317" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP_SITE_LINES"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SAP_SITE_LINES"/>
+      </attribute>
+      <attribute id="STATUS_SAP" order="318" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="STATUS_SAP"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="STATUS_SAP"/>
+      </attribute>
+      <attribute id="PRODUCT_SPLIT" order="319" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRODUCT_SPLIT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRODUCT_SPLIT"/>
+      </attribute>
+      <attribute id="PRINT_SUPPLIER" order="320" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRINT_SUPPLIER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PRINT_SUPPLIER"/>
+      </attribute>
+      <attribute id="BOTTLING_FIRST" order="321" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BOTTLING_FIRST"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BOTTLING_FIRST"/>
+      </attribute>
+      <attribute id="BOTTLING_LAST" order="322" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BOTTLING_LAST"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BOTTLING_LAST"/>
+      </attribute>
+      <attribute id="ARTWORK_CHECK" order="323" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ARTWORK_CHECK"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ARTWORK_CHECK"/>
+      </attribute>
+      <attribute id="CCEP_ADD" order="324" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CCEP_ADD"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CCEP_ADD"/>
+      </attribute>
+      <attribute id="RAW_MAT_DESC" order="325" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RAW_MAT_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="RAW_MAT_DESC"/>
+      </attribute>
+      <attribute id="BASIS_PER_COUNTRY" order="326" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BASIS_PER_COUNTRY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BASIS_PER_COUNTRY"/>
+      </attribute>
+      <attribute id="VARIANT_CD" order="327" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="VARIANT_CD"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="VARIANT_CD"/>
+      </attribute>
+      <attribute id="VARIANT_DESCRPTN" order="328" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="VARIANT_DESCRPTN"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="VARIANT_DESCRPTN"/>
+      </attribute>
+      <attribute id="DUNKIRK_FULL_CONTAINER" order="329" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DUNKIRK_FULL_CONTAINER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DUNKIRK_FULL_CONTAINER"/>
+      </attribute>
+      <attribute id="DUNKIRK_FULL_CONTAINER_DESC" order="330" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DUNKIRK_FULL_CONTAINER_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DUNKIRK_FULL_CONTAINER_DESC"/>
+      </attribute>
+      <attribute id="DUNKIRK_PRINTED_FILM" order="331" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DUNKIRK_PRINTED_FILM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DUNKIRK_PRINTED_FILM"/>
+      </attribute>
+      <attribute id="DUNKIRK_PRINTED_FILM_DESC" order="332" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DUNKIRK_PRINTED_FILM_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DUNKIRK_PRINTED_FILM_DESC"/>
+      </attribute>
+      <attribute id="DUNKIRK_BOM_ECM" order="333" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DUNKIRK_BOM_ECM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DUNKIRK_BOM_ECM"/>
+      </attribute>
+      <attribute id="TOULOUSE_FULL_CONTAINER" order="334" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TOULOUSE_FULL_CONTAINER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TOULOUSE_FULL_CONTAINER"/>
+      </attribute>
+      <attribute id="TOULOUSE_FULL_CONTAINER_DESC" order="335" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TOULOUSE_FULL_CONTAINER_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TOULOUSE_FULL_CONTAINER_DESC"/>
+      </attribute>
+      <attribute id="TOULOUSE_PRINTED_FILM" order="336" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TOULOUSE_PRINTED_FILM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TOULOUSE_PRINTED_FILM"/>
+      </attribute>
+      <attribute id="TOULOUSE_PRINTED_FILM_DESC" order="337" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TOULOUSE_PRINTED_FILM_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TOULOUSE_PRINTED_FILM_DESC"/>
+      </attribute>
+      <attribute id="TOULOUSE_BOM_ECM" order="338" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TOULOUSE_BOM_ECM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TOULOUSE_BOM_ECM"/>
+      </attribute>
+      <attribute id="CLAMART_FULL_CONTAINER" order="339" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CLAMART_FULL_CONTAINER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CLAMART_FULL_CONTAINER"/>
+      </attribute>
+      <attribute id="CLAMART_FULL_CONTAINER_DESC" order="340" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CLAMART_FULL_CONTAINER_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CLAMART_FULL_CONTAINER_DESC"/>
+      </attribute>
+      <attribute id="CLAMART_PRINTED_FILM" order="341" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CLAMART_PRINTED_FILM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CLAMART_PRINTED_FILM"/>
+      </attribute>
+      <attribute id="CLAMART_PRINTED_FILM_DESC" order="342" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CLAMART_PRINTED_FILM_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CLAMART_PRINTED_FILM_DESC"/>
+      </attribute>
+      <attribute id="CLAMART_BOM_ECM" order="343" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CLAMART_BOM_ECM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CLAMART_BOM_ECM"/>
+      </attribute>
+      <attribute id="GRIGNY_FULL_CONTAINER" order="344" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GRIGNY_FULL_CONTAINER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GRIGNY_FULL_CONTAINER"/>
+      </attribute>
+      <attribute id="GRIGNY_FULL_CONTAINER_DESC" order="345" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GRIGNY_FULL_CONTAINER_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GRIGNY_FULL_CONTAINER_DESC"/>
+      </attribute>
+      <attribute id="GRIGNY_PRINTED_FILM" order="346" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GRIGNY_PRINTED_FILM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GRIGNY_PRINTED_FILM"/>
+      </attribute>
+      <attribute id="GRIGNY_PRINTED_FILM_DESC" order="347" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GRIGNY_PRINTED_FILM_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GRIGNY_PRINTED_FILM_DESC"/>
+      </attribute>
+      <attribute id="GRIGNY_BOM_ECM" order="348" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GRIGNY_BOM_ECM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GRIGNY_BOM_ECM"/>
+      </attribute>
+      <attribute id="MARSEILLE_FULL_CONTAINER" order="349" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MARSEILLE_FULL_CONTAINER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MARSEILLE_FULL_CONTAINER"/>
+      </attribute>
+      <attribute id="MARSEILLE_FULL_CONTAINER_DESC" order="350" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MARSEILLE_FULL_CONTAINER_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MARSEILLE_FULL_CONTAINER_DESC"/>
+      </attribute>
+      <attribute id="MARSEILLE_PRINTED_FILM" order="351" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MARSEILLE_PRINTED_FILM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MARSEILLE_PRINTED_FILM"/>
+      </attribute>
+      <attribute id="MARSEILLE_PRINTED_FILM_DESC" order="352" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MARSEILLE_PRINTED_FILM_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MARSEILLE_PRINTED_FILM_DESC"/>
+      </attribute>
+      <attribute id="MARSEILLE_BOM_ECM" order="353" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MARSEILLE_BOM_ECM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MARSEILLE_BOM_ECM"/>
+      </attribute>
+      <attribute id="ANTWERP_FULL_CONTAINER" order="354" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ANTWERP_FULL_CONTAINER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ANTWERP_FULL_CONTAINER"/>
+      </attribute>
+      <attribute id="ANTWERP_FULL_CONTAINER_DESC" order="355" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ANTWERP_FULL_CONTAINER_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ANTWERP_FULL_CONTAINER_DESC"/>
+      </attribute>
+      <attribute id="ANTWERP_PRINTED_FILM" order="356" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ANTWERP_PRINTED_FILM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ANTWERP_PRINTED_FILM"/>
+      </attribute>
+      <attribute id="ANTWERP_PRINTED_FILM_DESC" order="357" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ANTWERP_PRINTED_FILM_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ANTWERP_PRINTED_FILM_DESC"/>
+      </attribute>
+      <attribute id="ANTWERP_BOM_ECM" order="358" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ANTWERP_BOM_ECM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ANTWERP_BOM_ECM"/>
+      </attribute>
+      <attribute id="GHENT_FULL_CONTAINER" order="359" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GHENT_FULL_CONTAINER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GHENT_FULL_CONTAINER"/>
+      </attribute>
+      <attribute id="GHENT_FULL_CONTAINER_DESC" order="360" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GHENT_FULL_CONTAINER_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GHENT_FULL_CONTAINER_DESC"/>
+      </attribute>
+      <attribute id="GHENT_PRINTED_FILM" order="361" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GHENT_PRINTED_FILM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GHENT_PRINTED_FILM"/>
+      </attribute>
+      <attribute id="GHENT_PRINTED_FILM_DESC" order="362" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GHENT_PRINTED_FILM_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GHENT_PRINTED_FILM_DESC"/>
+      </attribute>
+      <attribute id="GHENT_BOM_ECM" order="363" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GHENT_BOM_ECM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GHENT_BOM_ECM"/>
+      </attribute>
+      <attribute id="CHAUDFONTAINE_FULL_CONTAINER" order="364" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CHAUDFONTAINE_FULL_CONTAINER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CHAUDFONTAINE_FULL_CONTAINER"/>
+      </attribute>
+      <attribute id="CHAUDFONTAINE_FULL_CONTAINER_DESC" order="365" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CHAUDFONTAINE_FULL_CONTAINER_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CHAUDFONTAINE_FULL_CONTAINER_DESC"/>
+      </attribute>
+      <attribute id="CHAUDFONTAINE_PRINTED_FILM" order="366" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CHAUDFONTAINE_PRINTED_FILM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CHAUDFONTAINE_PRINTED_FILM"/>
+      </attribute>
+      <attribute id="CHAUDFONTAINE_PRINTED_FILM_DESC" order="367" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CHAUDFONTAINE_PRINTED_FILM_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CHAUDFONTAINE_PRINTED_FILM_DESC"/>
+      </attribute>
+      <attribute id="CHAUDFONTAINE_BOM_ECM" order="368" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CHAUDFONTAINE_BOM_ECM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CHAUDFONTAINE_BOM_ECM"/>
+      </attribute>
+      <attribute id="DONGEN_FULL_CONTAINER" order="369" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DONGEN_FULL_CONTAINER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DONGEN_FULL_CONTAINER"/>
+      </attribute>
+      <attribute id="DONGEN_FULL_CONTAINER_DESC" order="370" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DONGEN_FULL_CONTAINER_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DONGEN_FULL_CONTAINER_DESC"/>
+      </attribute>
+      <attribute id="DONGEN_PRINTED_FILM" order="371" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DONGEN_PRINTED_FILM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DONGEN_PRINTED_FILM"/>
+      </attribute>
+      <attribute id="DONGEN_PRINTED_FILM_DESC" order="372" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DONGEN_PRINTED_FILM_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DONGEN_PRINTED_FILM_DESC"/>
+      </attribute>
+      <attribute id="DONGEN_BOM_ECM" order="373" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DONGEN_BOM_ECM"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DONGEN_BOM_ECM"/>
+      </attribute>
+      <attribute id="TRADE_REGISTRATION" order="374" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TRADE_REGISTRATION"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TRADE_REGISTRATION"/>
+      </attribute>
+      <attribute id="TRADE_WINDOW" order="375" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TRADE_WINDOW"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TRADE_WINDOW"/>
+      </attribute>
+      <attribute id="BARCODE_TYPE" order="376" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BARCODE_TYPE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BARCODE_TYPE"/>
+      </attribute>
+      <attribute id="BARCODE_TYPE_MULTI" order="377" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BARCODE_TYPE_MULTI"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BARCODE_TYPE_MULTI"/>
+      </attribute>
+      <attribute id="BARCODE_TYPE_DEPATCH" order="378" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BARCODE_TYPE_DEPATCH"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BARCODE_TYPE_DEPATCH"/>
+      </attribute>
+      <attribute id="TYPE_DRINK" order="379" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TYPE_DRINK"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TYPE_DRINK"/>
+      </attribute>
+      <attribute id="BRAND_OWNER" order="380" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="BRAND_OWNER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="BRAND_OWNER"/>
+      </attribute>
+      <attribute id="STATUS_NAME" order="381" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="STATUS_NAME"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="STATUS_NAME"/>
+      </attribute>
+      <attribute id="HIERARCHY" order="382" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="HIERARCHY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="HIERARCHY"/>
+      </attribute>
+      <attribute id="MIN1" order="383" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN1"/>
+      </attribute>
+      <attribute id="UTIL1" order="384" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL1"/>
+      </attribute>
+      <attribute id="MIN2" order="385" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN2"/>
+      </attribute>
+      <attribute id="UTIL2" order="386" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL2"/>
+      </attribute>
+      <attribute id="MIN3" order="387" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN3"/>
+      </attribute>
+      <attribute id="UTIL3" order="388" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL3"/>
+      </attribute>
+      <attribute id="MIN4" order="389" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN4"/>
+      </attribute>
+      <attribute id="UTIL4" order="390" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL4"/>
+      </attribute>
+      <attribute id="MIN5" order="391" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN5"/>
+      </attribute>
+      <attribute id="UTIL5" order="392" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL5"/>
+      </attribute>
+      <attribute id="MIN6" order="393" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN6"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN6"/>
+      </attribute>
+      <attribute id="UTIL6" order="394" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL6"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL6"/>
+      </attribute>
+      <attribute id="MIN7" order="395" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN7"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN7"/>
+      </attribute>
+      <attribute id="UTIL7" order="396" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL7"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL7"/>
+      </attribute>
+      <attribute id="MIN8" order="397" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN8"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN8"/>
+      </attribute>
+      <attribute id="UTIL8" order="398" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL8"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL8"/>
+      </attribute>
+      <attribute id="MIN9" order="399" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN9"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN9"/>
+      </attribute>
+      <attribute id="UTIL9" order="400" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL9"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL9"/>
+      </attribute>
+      <attribute id="MIN10" order="401" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN10"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN10"/>
+      </attribute>
+      <attribute id="UTIL10" order="402" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL10"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL10"/>
+      </attribute>
+      <attribute id="MIN11" order="403" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN11"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN11"/>
+      </attribute>
+      <attribute id="UTIL11" order="404" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL11"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL11"/>
+      </attribute>
+      <attribute id="MIN12" order="405" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN12"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN12"/>
+      </attribute>
+      <attribute id="UTIL12" order="406" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL12"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL12"/>
+      </attribute>
+      <attribute id="MIN13" order="407" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN13"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN13"/>
+      </attribute>
+      <attribute id="UTIL13" order="408" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL13"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL13"/>
+      </attribute>
+      <attribute id="MIN14" order="409" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN14"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN14"/>
+      </attribute>
+      <attribute id="UTIL14" order="410" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL14"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL14"/>
+      </attribute>
+      <attribute id="MIN15" order="411" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN15"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN15"/>
+      </attribute>
+      <attribute id="UTIL15" order="412" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL15"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL15"/>
+      </attribute>
+      <attribute id="MIN16" order="413" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN16"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN16"/>
+      </attribute>
+      <attribute id="UTIL16" order="414" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL16"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL16"/>
+      </attribute>
+      <attribute id="MIN17" order="415" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN17"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN17"/>
+      </attribute>
+      <attribute id="UTIL17" order="416" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL17"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL17"/>
+      </attribute>
+      <attribute id="MIN18" order="417" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MIN18"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MIN18"/>
+      </attribute>
+      <attribute id="UTIL18" order="418" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UTIL18"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UTIL18"/>
+      </attribute>
+      <attribute id="MS_RELEASE_3RD_PARTY" order="419" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_RELEASE_3RD_PARTY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_RELEASE_3RD_PARTY"/>
+      </attribute>
+      <attribute id="MS_3RD_PARTY" order="420" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_3RD_PARTY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_3RD_PARTY"/>
+      </attribute>
+      <attribute id="MS_MACK" order="421" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_MACK"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_MACK"/>
+      </attribute>
+      <attribute id="MS_ROBSRUD_2003" order="422" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_ROBSRUD_2003"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_ROBSRUD_2003"/>
+      </attribute>
+      <attribute id="MS_JORDBRO_2001" order="423" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_JORDBRO_2001"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_JORDBRO_2001"/>
+      </attribute>
+      <attribute id="MS_TOULOUSE_5103" order="424" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_TOULOUSE_5103"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_TOULOUSE_5103"/>
+      </attribute>
+      <attribute id="MS_MARSEILLE_5106" order="425" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_MARSEILLE_5106"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_MARSEILLE_5106"/>
+      </attribute>
+      <attribute id="MS_GRIGNY_SELF_MANUFACTURING_5116" order="426" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_GRIGNY_SELF_MANUFACTURING_5116"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_GRIGNY_SELF_MANUFACTURING_5116"/>
+      </attribute>
+      <attribute id="MS_GRIGNY_5105" order="427" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_GRIGNY_5105"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_GRIGNY_5105"/>
+      </attribute>
+      <attribute id="MS_DUNKRIK_5100" order="428" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_DUNKRIK_5100"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_DUNKRIK_5100"/>
+      </attribute>
+      <attribute id="MS_CLAMART_5104" order="429" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_CLAMART_5104"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_CLAMART_5104"/>
+      </attribute>
+      <attribute id="MS_DONGEN_5400" order="430" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_DONGEN_5400"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_DONGEN_5400"/>
+      </attribute>
+      <attribute id="MS_GHENT_5301" order="431" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_GHENT_5301"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_GHENT_5301"/>
+      </attribute>
+      <attribute id="MS_CHAUFONTAINE_5307" order="432" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_CHAUFONTAINE_5307"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_CHAUFONTAINE_5307"/>
+      </attribute>
+      <attribute id="MS_ANTWERP_5300" order="433" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_ANTWERP_5300"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_ANTWERP_5300"/>
+      </attribute>
+      <attribute id="THIRD_PARTY" order="434" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="THIRD_PARTY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="THIRD_PARTY"/>
+      </attribute>
+      <attribute id="RELEASE_3RD_PARTY" order="435" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RELEASE_3RD_PARTY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="RELEASE_3RD_PARTY"/>
+      </attribute>
+      <attribute id="ROBSRUD_2003" order="436" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ROBSRUD_2003"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ROBSRUD_2003"/>
+      </attribute>
+      <attribute id="JORDBRO_2001" order="437" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="JORDBRO_2001"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="JORDBRO_2001"/>
+      </attribute>
+      <attribute id="TOULOUSE_5103" order="438" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TOULOUSE_5103"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TOULOUSE_5103"/>
+      </attribute>
+      <attribute id="MARSEILLE_5106" order="439" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MARSEILLE_5106"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MARSEILLE_5106"/>
+      </attribute>
+      <attribute id="GRIGNY_SELF_MANUFACTURING_5116" order="440" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GRIGNY_SELF_MANUFACTURING_5116"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GRIGNY_SELF_MANUFACTURING_5116"/>
+      </attribute>
+      <attribute id="GRIGNY_5105" order="441" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GRIGNY_5105"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GRIGNY_5105"/>
+      </attribute>
+      <attribute id="DUNKRIK_5100" order="442" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DUNKRIK_5100"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DUNKRIK_5100"/>
+      </attribute>
+      <attribute id="CLAMART_5104" order="443" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CLAMART_5104"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CLAMART_5104"/>
+      </attribute>
+      <attribute id="DONGEN_5400" order="444" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DONGEN_5400"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DONGEN_5400"/>
+      </attribute>
+      <attribute id="GHENT_5301" order="445" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GHENT_5301"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GHENT_5301"/>
+      </attribute>
+      <attribute id="CHAUFONTAINE_5307" order="446" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CHAUFONTAINE_5307"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CHAUFONTAINE_5307"/>
+      </attribute>
+      <attribute id="ANTWERP_5300" order="447" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ANTWERP_5300"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ANTWERP_5300"/>
+      </attribute>
+      <attribute id="MAPX_DECISION_REQ" order="448" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MAPX_DECISION_REQ"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MAPX_DECISION_REQ"/>
+      </attribute>
+      <attribute id="SAP_SKU_SELLING" order="449" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAP_SKU_SELLING"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SAP_SKU_SELLING"/>
+      </attribute>
+      <attribute id="SIDCUP_5501_SD1" order="450" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SIDCUP_5501_SD1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SIDCUP_5501_SD1"/>
+      </attribute>
+      <attribute id="SIDCUP_5501_SD2" order="451" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SIDCUP_5501_SD2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SIDCUP_5501_SD2"/>
+      </attribute>
+      <attribute id="SIDCUP_5501_SD3" order="452" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SIDCUP_5501_SD3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SIDCUP_5501_SD3"/>
+      </attribute>
+      <attribute id="SIDCUP_5501_SD4" order="453" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SIDCUP_5501_SD4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SIDCUP_5501_SD4"/>
+      </attribute>
+      <attribute id="SIDCUP_5501_SD5" order="454" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SIDCUP_5501_SD5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SIDCUP_5501_SD5"/>
+      </attribute>
+      <attribute id="SIDCUP_5501_SD6" order="455" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SIDCUP_5501_SD6"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SIDCUP_5501_SD6"/>
+      </attribute>
+      <attribute id="SIDCUP_5501_SD7" order="456" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SIDCUP_5501_SD7"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SIDCUP_5501_SD7"/>
+      </attribute>
+      <attribute id="SIDCUP_5501_SD8" order="457" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SIDCUP_5501_SD8"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SIDCUP_5501_SD8"/>
+      </attribute>
+      <attribute id="EDMONTON_5506_ED1" order="458" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EDMONTON_5506_ED1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EDMONTON_5506_ED1"/>
+      </attribute>
+      <attribute id="EDMONTON_5506_ED2" order="459" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EDMONTON_5506_ED2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EDMONTON_5506_ED2"/>
+      </attribute>
+      <attribute id="EDMONTON_5506_ED3" order="460" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EDMONTON_5506_ED3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EDMONTON_5506_ED3"/>
+      </attribute>
+      <attribute id="EDMONTON_5506_ED4" order="461" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EDMONTON_5506_ED4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EDMONTON_5506_ED4"/>
+      </attribute>
+      <attribute id="EDMONTON_5506_ED5" order="462" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EDMONTON_5506_ED5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EDMONTON_5506_ED5"/>
+      </attribute>
+      <attribute id="EDMONTON_5506_ED6" order="463" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EDMONTON_5506_ED6"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EDMONTON_5506_ED6"/>
+      </attribute>
+      <attribute id="MILTON_KEYNES_5504_MK1" order="464" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MILTON_KEYNES_5504_MK1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MILTON_KEYNES_5504_MK1"/>
+      </attribute>
+      <attribute id="MILTON_KEYNES_5504_MK2" order="465" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MILTON_KEYNES_5504_MK2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MILTON_KEYNES_5504_MK2"/>
+      </attribute>
+      <attribute id="MILTON_KEYNES_5504_MK3" order="466" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MILTON_KEYNES_5504_MK3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MILTON_KEYNES_5504_MK3"/>
+      </attribute>
+      <attribute id="MILTON_KEYNES_5504_MK4" order="467" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MILTON_KEYNES_5504_MK4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MILTON_KEYNES_5504_MK4"/>
+      </attribute>
+      <attribute id="MILTON_KEYNES_5504_MK5" order="468" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MILTON_KEYNES_5504_MK5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MILTON_KEYNES_5504_MK5"/>
+      </attribute>
+      <attribute id="MILTON_KEYNES_5504_MK67" order="469" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MILTON_KEYNES_5504_MK67"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MILTON_KEYNES_5504_MK67"/>
+      </attribute>
+      <attribute id="MILTON_KEYNES_5504_MK89" order="470" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MILTON_KEYNES_5504_MK89"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MILTON_KEYNES_5504_MK89"/>
+      </attribute>
+      <attribute id="WAKEFIELD_5502_WK1" order="471" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="WAKEFIELD_5502_WK1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="WAKEFIELD_5502_WK1"/>
+      </attribute>
+      <attribute id="WAKEFIELD_5502_WK2" order="472" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="WAKEFIELD_5502_WK2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="WAKEFIELD_5502_WK2"/>
+      </attribute>
+      <attribute id="WAKEFIELD_5502_WK3" order="473" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="WAKEFIELD_5502_WK3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="WAKEFIELD_5502_WK3"/>
+      </attribute>
+      <attribute id="WAKEFIELD_5502_WK4" order="474" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="WAKEFIELD_5502_WK4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="WAKEFIELD_5502_WK4"/>
+      </attribute>
+      <attribute id="WAKEFIELD_5502_WK5" order="475" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="WAKEFIELD_5502_WK5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="WAKEFIELD_5502_WK5"/>
+      </attribute>
+      <attribute id="WAKEFIELD_5502_WK6" order="476" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="WAKEFIELD_5502_WK6"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="WAKEFIELD_5502_WK6"/>
+      </attribute>
+      <attribute id="WAKEFIELD_5502_WK7" order="477" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="WAKEFIELD_5502_WK7"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="WAKEFIELD_5502_WK7"/>
+      </attribute>
+      <attribute id="WAKEFIELD_5502_WK8" order="478" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="WAKEFIELD_5502_WK8"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="WAKEFIELD_5502_WK8"/>
+      </attribute>
+      <attribute id="WAKEFIELD_5502_WK9" order="479" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="WAKEFIELD_5502_WK9"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="WAKEFIELD_5502_WK9"/>
+      </attribute>
+      <attribute id="WAKEFIELD_5502_WK11" order="480" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="WAKEFIELD_5502_WK11"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="WAKEFIELD_5502_WK11"/>
+      </attribute>
+      <attribute id="WAKEFIELD_5502_WK17" order="481" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="WAKEFIELD_5502_WK17"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="WAKEFIELD_5502_WK17"/>
+      </attribute>
+      <attribute id="EAST_KILBRIDE_5503_EK1" order="482" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EAST_KILBRIDE_5503_EK1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EAST_KILBRIDE_5503_EK1"/>
+      </attribute>
+      <attribute id="EAST_KILBRIDE_5503_EK2" order="483" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EAST_KILBRIDE_5503_EK2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EAST_KILBRIDE_5503_EK2"/>
+      </attribute>
+      <attribute id="EAST_KILBRIDE_5503_EK3" order="484" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EAST_KILBRIDE_5503_EK3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EAST_KILBRIDE_5503_EK3"/>
+      </attribute>
+      <attribute id="EAST_KILBRIDE_5503_EK4" order="485" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EAST_KILBRIDE_5503_EK4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EAST_KILBRIDE_5503_EK4"/>
+      </attribute>
+      <attribute id="EAST_KILBRIDE_5503_EK5" order="486" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EAST_KILBRIDE_5503_EK5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EAST_KILBRIDE_5503_EK5"/>
+      </attribute>
+      <attribute id="EAST_KILBRIDE_5503_EK6" order="487" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EAST_KILBRIDE_5503_EK6"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EAST_KILBRIDE_5503_EK6"/>
+      </attribute>
+      <attribute id="EAST_KILBRIDE_5503_EK7" order="488" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EAST_KILBRIDE_5503_EK7"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EAST_KILBRIDE_5503_EK7"/>
+      </attribute>
+      <attribute id="EAST_KILBRIDE_5503_EK11" order="489" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EAST_KILBRIDE_5503_EK11"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EAST_KILBRIDE_5503_EK11"/>
+      </attribute>
+      <attribute id="MORPETH_5546_AW1" order="490" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MORPETH_5546_AW1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MORPETH_5546_AW1"/>
+      </attribute>
+      <attribute id="MORPETH_5546_AW2" order="491" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MORPETH_5546_AW2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MORPETH_5546_AW2"/>
+      </attribute>
+      <attribute id="MORPETH_5546_AW3" order="492" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MORPETH_5546_AW3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MORPETH_5546_AW3"/>
+      </attribute>
+      <attribute id="MORPETH_5546_AW4" order="493" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MORPETH_5546_AW4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MORPETH_5546_AW4"/>
+      </attribute>
+      <attribute id="THIRD_PARTY_NAME_PSS" order="494" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="THIRD_PARTY_NAME_PSS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="THIRD_PARTY_NAME_PSS"/>
+      </attribute>
+      <attribute id="PROJECT_DESCRIPTION" order="495" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PROJECT_DESCRIPTION"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PROJECT_DESCRIPTION"/>
+      </attribute>
+      <attribute id="MAPX_PREREAD_NAME" order="496" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MAPX_PREREAD_NAME"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MAPX_PREREAD_NAME"/>
+      </attribute>
+      <attribute id="SAME_AS_CURR" order="497" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SAME_AS_CURR"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SAME_AS_CURR"/>
+      </attribute>
+      <attribute id="FORECAST_REQ" order="498" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="FORECAST_REQ"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="FORECAST_REQ"/>
+      </attribute>
+      <attribute id="ANTWERP_MAPX" order="499" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ANTWERP_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ANTWERP_MAPX"/>
+      </attribute>
+      <attribute id="CHAUDFONTAINE_MAPX" order="500" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CHAUDFONTAINE_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CHAUDFONTAINE_MAPX"/>
+      </attribute>
+      <attribute id="GENT_MAPX" order="501" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GENT_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GENT_MAPX"/>
+      </attribute>
+      <attribute id="CLAMART_MAPX" order="502" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CLAMART_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CLAMART_MAPX"/>
+      </attribute>
+      <attribute id="DUNKIRK_MAPX" order="503" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DUNKIRK_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DUNKIRK_MAPX"/>
+      </attribute>
+      <attribute id="GRIGNY_MAPX" order="504" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GRIGNY_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GRIGNY_MAPX"/>
+      </attribute>
+      <attribute id="MARSEILLE_MAPX" order="505" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MARSEILLE_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MARSEILLE_MAPX"/>
+      </attribute>
+      <attribute id="TOLOUSE_MAPX" order="506" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TOLOUSE_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TOLOUSE_MAPX"/>
+      </attribute>
+      <attribute id="KILLBRIDE_MAPX" order="507" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="KILLBRIDE_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="KILLBRIDE_MAPX"/>
+      </attribute>
+      <attribute id="EDMONTON_MAPX" order="508" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EDMONTON_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EDMONTON_MAPX"/>
+      </attribute>
+      <attribute id="KEYNES_MAPX" order="509" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="KEYNES_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="KEYNES_MAPX"/>
+      </attribute>
+      <attribute id="MORPETH_MAPX" order="510" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MORPETH_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MORPETH_MAPX"/>
+      </attribute>
+      <attribute id="SIDCUP_MAPX" order="511" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SIDCUP_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SIDCUP_MAPX"/>
+      </attribute>
+      <attribute id="WAKEFIELD_MAPX" order="512" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="WAKEFIELD_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="WAKEFIELD_MAPX"/>
+      </attribute>
+      <attribute id="DONGEN_MAPX" order="513" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DONGEN_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DONGEN_MAPX"/>
+      </attribute>
+      <attribute id="LORENSKOG_MAPX" order="514" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LORENSKOG_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="LORENSKOG_MAPX"/>
+      </attribute>
+      <attribute id="MACK_MAPX" order="515" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MACK_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MACK_MAPX"/>
+      </attribute>
+      <attribute id="JORDBRO_MAPX" order="516" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="JORDBRO_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="JORDBRO_MAPX"/>
+      </attribute>
+      <attribute id="MINORDER_MAPX" order="517" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MINORDER_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MINORDER_MAPX"/>
+      </attribute>
+      <attribute id="UNIT_CONCENTRATE_MAPX" order="518" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UNIT_CONCENTRATE_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UNIT_CONCENTRATE_MAPX"/>
+      </attribute>
+      <attribute id="CASEVOL_MAPX" order="519" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CASEVOL_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CASEVOL_MAPX"/>
+      </attribute>
+      <attribute id="RISK_MAPX" order="520" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RISK_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="RISK_MAPX"/>
+      </attribute>
+      <attribute id="ANTWERP2_MAPX" order="521" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ANTWERP2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ANTWERP2_MAPX"/>
+      </attribute>
+      <attribute id="CHAUDFONTAINE2_MAPX" order="522" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CHAUDFONTAINE2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CHAUDFONTAINE2_MAPX"/>
+      </attribute>
+      <attribute id="GENT2_MAPX" order="523" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GENT2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GENT2_MAPX"/>
+      </attribute>
+      <attribute id="CLAMART2_MAPX" order="524" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CLAMART2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CLAMART2_MAPX"/>
+      </attribute>
+      <attribute id="DUNKIRK2_MAPX" order="525" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DUNKIRK2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DUNKIRK2_MAPX"/>
+      </attribute>
+      <attribute id="GRIGNY2_MAPX" order="526" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="GRIGNY2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="GRIGNY2_MAPX"/>
+      </attribute>
+      <attribute id="MARSEILLE2_MAPX" order="527" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MARSEILLE2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MARSEILLE2_MAPX"/>
+      </attribute>
+      <attribute id="TOLOUSE2_MAPX" order="528" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TOLOUSE2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TOLOUSE2_MAPX"/>
+      </attribute>
+      <attribute id="KILLBRIDE2_MAPX" order="529" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="KILLBRIDE2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="KILLBRIDE2_MAPX"/>
+      </attribute>
+      <attribute id="EDMONTON2_MAPX" order="530" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="EDMONTON2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="EDMONTON2_MAPX"/>
+      </attribute>
+      <attribute id="KEYNES2_MAPX" order="531" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="KEYNES2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="KEYNES2_MAPX"/>
+      </attribute>
+      <attribute id="MORPETH2_MAPX" order="532" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MORPETH2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MORPETH2_MAPX"/>
+      </attribute>
+      <attribute id="SIDCUP2_MAPX" order="533" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SIDCUP2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="SIDCUP2_MAPX"/>
+      </attribute>
+      <attribute id="WAKEFIELD2_MAPX" order="534" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="WAKEFIELD2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="WAKEFIELD2_MAPX"/>
+      </attribute>
+      <attribute id="DONGEN2_MAPX" order="535" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DONGEN2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DONGEN2_MAPX"/>
+      </attribute>
+      <attribute id="LORENSKOG2_MAPX" order="536" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LORENSKOG2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="LORENSKOG2_MAPX"/>
+      </attribute>
+      <attribute id="MACK2_MAPX" order="537" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MACK2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MACK2_MAPX"/>
+      </attribute>
+      <attribute id="JORDBRO2_MAPX" order="538" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="JORDBRO2_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="JORDBRO2_MAPX"/>
+      </attribute>
+      <attribute id="ADDTCOST_MAPX" order="539" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ADDTCOST_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="ADDTCOST_MAPX"/>
+      </attribute>
+      <attribute id="OTHERCONSIDERATION_MAPX" order="540" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="OTHERCONSIDERATION_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="OTHERCONSIDERATION_MAPX"/>
+      </attribute>
+      <attribute id="UNIQUE_PACK" order="541" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UNIQUE_PACK"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UNIQUE_PACK"/>
+      </attribute>
+      <attribute id="CUSTOMER_LOGISTICS" order="542" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER_LOGISTICS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CUSTOMER_LOGISTICS"/>
+      </attribute>
+      <attribute id="NEW_FULL_CODE" order="543" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="NEW_FULL_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="NEW_FULL_CODE"/>
+      </attribute>
+      <attribute id="NEW_FULL_CODE_DESC" order="544" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="NEW_FULL_CODE_DESC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="NEW_FULL_CODE_DESC"/>
+      </attribute>
+      <attribute id="PALLET_SPECIFIC" order="545" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PALLET_SPECIFIC"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PALLET_SPECIFIC"/>
+      </attribute>
+      <attribute id="CONSTRAINTS1" order="546" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CONSTRAINTS1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CONSTRAINTS1"/>
+      </attribute>
+      <attribute id="CONSTRAINTS2" order="547" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CONSTRAINTS2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CONSTRAINTS2"/>
+      </attribute>
+      <attribute id="CONSTRAINTS3" order="548" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CONSTRAINTS3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CONSTRAINTS3"/>
+      </attribute>
+      <attribute id="CONSTRAINTS4" order="549" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CONSTRAINTS4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CONSTRAINTS4"/>
+      </attribute>
+      <attribute id="CONSTRAINTS5" order="550" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CONSTRAINTS5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CONSTRAINTS5"/>
+      </attribute>
+      <attribute id="INPUT_SKU_PALLET" order="551" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="INPUT_SKU_PALLET"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="INPUT_SKU_PALLET"/>
+      </attribute>
+      <attribute id="MOD_DATE" order="552" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MOD_DATE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MOD_DATE"/>
+      </attribute>
+      <attribute id="MOD_USER" order="553" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MOD_USER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MOD_USER"/>
+      </attribute>
+      <attribute id="PROD_PLANT1" order="554" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PROD_PLANT1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PROD_PLANT1"/>
+      </attribute>
+      <attribute id="PROD_PLANT2" order="555" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PROD_PLANT2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PROD_PLANT2"/>
+      </attribute>
+      <attribute id="PROD_PLANT4" order="556" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PROD_PLANT4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PROD_PLANT4"/>
+      </attribute>
+      <attribute id="PROD_PLANT3" order="557" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PROD_PLANT3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PROD_PLANT3"/>
+      </attribute>
+      <attribute id="PROD_PLANT5" order="558" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PROD_PLANT5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PROD_PLANT5"/>
+      </attribute>
+      <attribute id="REPACKER" order="559" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="REPACKER"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="REPACKER"/>
+      </attribute>
+      <attribute id="RESIDUALCOST" order="560" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RESIDUALCOST"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="RESIDUALCOST"/>
+      </attribute>
+      <attribute id="STATUS_COMMENTS" order="561" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="STATUS_COMMENTS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="STATUS_COMMENTS"/>
+      </attribute>
+      <attribute id="STATUS_DF" order="562" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="STATUS_DF"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="STATUS_DF"/>
+      </attribute>
+      <attribute id="STATUS_PROJECT" order="563" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="STATUS_PROJECT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="STATUS_PROJECT"/>
+      </attribute>
+      <attribute id="STATUS_SAP_CODE" order="564" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="STATUS_SAP_CODE"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="STATUS_SAP_CODE"/>
+      </attribute>
+      <attribute id="TONICA_MEET_MINS" order="565" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TONICA_MEET_MINS"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TONICA_MEET_MINS"/>
+      </attribute>
+      <attribute id="TRIAL_REQ_NEEDED" order="566" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TRIAL_REQ_NEEDED"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TRIAL_REQ_NEEDED"/>
+      </attribute>
+      <attribute id="UNIT1" order="567" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UNIT1"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UNIT1"/>
+      </attribute>
+      <attribute id="UNIT2" order="568" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UNIT2"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UNIT2"/>
+      </attribute>
+      <attribute id="UNIT3" order="569" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UNIT3"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UNIT3"/>
+      </attribute>
+      <attribute id="UNIT4" order="570" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UNIT4"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UNIT4"/>
+      </attribute>
+      <attribute id="UNIT5" order="571" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="UNIT5"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="UNIT5"/>
+      </attribute>
+      <attribute id="COST" order="572" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="COST"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="COST"/>
+      </attribute>
+      <attribute id="MD_MACK" order="573" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MD_MACK"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MD_MACK"/>
+      </attribute>
+      <attribute id="DUNKRIK_MAPX" order="574" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DUNKRIK_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="DUNKRIK_MAPX"/>
+      </attribute>
+      <attribute id="TOULOUSE_MAPX" order="575" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TOULOUSE_MAPX"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="TOULOUSE_MAPX"/>
+      </attribute>
+      <attribute id="PROJTYPNEBU" order="576" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PROJTYPNEBU"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PROJTYPNEBU"/>
+      </attribute>
+      <attribute id="PROD_COUNTRY" order="577" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PROD_COUNTRY"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="PROD_COUNTRY"/>
+      </attribute>
+      <attribute id="CODE_MAT" order="578" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CODE_MAT"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="CODE_MAT"/>
+      </attribute>
+      <attribute id="RM_SUP" order="579" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="RM_SUP"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="RM_SUP"/>
+      </attribute>
+      <attribute id="MS_NOK" order="580" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MS_NOK"/>
+        <keyMapping schemaName="ZDFREQUEST" columnObjectName="dfrequest3.DB::DF_DATABASE_FINAL_NEW" columnName="MS_NOK"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures/>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="40" y="85"/>
+        <rectangleSize/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

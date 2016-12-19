@@ -1,0 +1,13 @@
+	<core:View xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" 
+	xmlns:c="sap.ui.commons"  xmlns:m="sap.suite.ui.commons" 
+		xmlns:viz="sap.viz.ui5.controls"    
+	xmlns:table="sap.ui.table" 
+	controllerName="view.CreateDF_Home">   
+<sap.ui.layout.form:SimpleForm  editable="false"  id="home_form1"  >
+					<sap.ui.layout.form:content>
+						<core:Title text="Welcome to CCEP New Initiatives"/>
+						<Text id="text1" text="Welcome to the Home Page of CCEP New Initiatives! Please use the menu button for further options." wrapping="None"/>
+						</sap.ui.layout.form:content>
+						</sap.ui.layout.form:SimpleForm>
+		</core:View>

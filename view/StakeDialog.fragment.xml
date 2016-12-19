@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		noDataText="No Products Found"
+		contentWidth = "550px"
+		title="Please select which Stakeholder team you would like to prompt an action to"
+		confirm="handleCloseStakeTable"
+		close="handleCloseStakeTable"
+		multiSelect="true"
+		items="{
+			path: '/stake_h_team'
+		}" >
+		<StandardListItem
+			title="{COLUMN_NAME}"
+			type="Active" />
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="NIM_DF" applyPrivilegeType="ANALYTIC_PRIVILEGE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="2.3" defaultClient="$$client$$" visibility="internal" outputViewType="Aggregation" calculationScenarioType="TREE_BASED" enforceSqlExecution="false">
+<descriptions defaultDescription="NIM_DF"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="DF_REQUEST" type="DATA_BASE_TABLE">
+    <viewAttributes allViewAttributes="true"/>
+    <columnObject schemaName="NEO_2E3DAI8G3XW9DYMWAE88WGPXG" columnObjectName="DF_REQUEST"/>
+  </DataSource>
+  <DataSource id="USER_DETAIL" type="DATA_BASE_TABLE">
+    <viewAttributes allViewAttributes="true"/>
+    <columnObject schemaName="NEO_2E3DAI8G3XW9DYMWAE88WGPXG" columnObjectName="USER_DETAIL"/>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" filterExpressionLanguage="COLUMN_ENGINE">
+    <viewAttributes>
+      <viewAttribute id="INITIATOR"/>
+      <viewAttribute id="INITIATOR_DEPT"/>
+      <viewAttribute id="MODIFIED_BY"/>
+      <viewAttribute id="APPROVER"/>
+      <viewAttribute id="SUBMIT_DATE"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="FIRST_LAST_DISPATCH_DATE"/>
+      <viewAttribute id="PROJECT_GROUP"/>
+      <viewAttribute id="MODIFIED"/>
+      <viewAttribute id="REJECT_REASON"/>
+      <viewAttribute id="TITLE"/>
+      <viewAttribute id="NIM1"/>
+      <viewAttribute id="PROJECT_TYPE"/>
+      <viewAttribute id="DF_ID"/>
+      <viewAttribute id="THEME_TYPE"/>
+    
+      <viewAttribute id="SELLING_COUNTRY"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="#DF_REQUEST">
+      <mapping xsi:type="Calculation:AttributeMapping" target="INITIATOR" source="INITIATOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INITIATOR_DEPT" source="INITIATOR_DEPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MODIFIED_BY" source="MODIFIED_BY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="APPROVER" source="APPROVER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBMIT_DATE" source="SUBMIT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATUS" source="STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FIRST_LAST_DISPATCH_DATE" source="FIRST_LAST_DISPATCH_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_GROUP" source="PROJECT_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MODIFIED" source="MODIFIED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REJECT_REASON" source="REJECT_REASON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NIM1" source="NIM1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_TYPE" source="PROJECT_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DF_ID" source="DF_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="THEME_TYPE" source="THEME_TYPE"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="SELLING_COUNTRY" source="SELLING_COUNTRY"/>
+    </input>
+  
+    <filter>(match(&quot;STATUS&quot;,'Submitted')) OR (match(&quot;STATUS&quot;,'Rejected')) OR (match(&quot;STATUS&quot;,'Pipeline'))</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="USER_COUNTRY_BASED"/>
+      <viewAttribute id="USER_NAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="#USER_DETAIL">
+      <mapping xsi:type="Calculation:AttributeMapping" target="USER_COUNTRY_BASED" source="USER_COUNTRY_BASED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="USER_NAME" source="USER_NAME"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="INITIATOR"/>
+      <viewAttribute id="INITIATOR_DEPT"/>
+      <viewAttribute id="MODIFIED_BY"/>
+      <viewAttribute id="APPROVER"/>
+      <viewAttribute id="SUBMIT_DATE"/>
+      <viewAttribute id="STATUS"/>
+      <viewAttribute id="FIRST_LAST_DISPATCH_DATE"/>
+      <viewAttribute id="PROJECT_GROUP"/>
+      <viewAttribute id="MODIFIED"/>
+      <viewAttribute id="REJECT_REASON"/>
+      <viewAttribute id="TITLE"/>
+      <viewAttribute id="NIM1"/>
+      <viewAttribute id="PROJECT_TYPE"/>
+      <viewAttribute id="DF_ID"/>
+      <viewAttribute id="THEME_TYPE"/>
+      <viewAttribute id="SELLING_COUNTRY"/>
+      <viewAttribute id="USER_COUNTRY_BASED"/>
+      <viewAttribute id="USER_NAME"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="#Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="INITIATOR" source="INITIATOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INITIATOR_DEPT" source="INITIATOR_DEPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MODIFIED_BY" source="MODIFIED_BY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="APPROVER" source="APPROVER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUBMIT_DATE" source="SUBMIT_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATUS" source="STATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FIRST_LAST_DISPATCH_DATE" source="FIRST_LAST_DISPATCH_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_GROUP" source="PROJECT_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MODIFIED" source="MODIFIED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REJECT_REASON" source="REJECT_REASON"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NIM1" source="NIM1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_TYPE" source="PROJECT_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DF_ID" source="DF_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="THEME_TYPE" source="THEME_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SELLING_COUNTRY" source="SELLING_COUNTRY"/>
+    </input>
+    <input node="#Projection_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="USER_COUNTRY_BASED" source="USER_COUNTRY_BASED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="USER_NAME" source="USER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INITIATOR" source="USER_NAME"/>
+    </input>
+    <joinAttribute name="INITIATOR"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="INITIATOR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INITIATOR"/>
+      <keyMapping columnObjectName="Join_1" columnName="INITIATOR"/>
+    </attribute>
+    <attribute id="INITIATOR_DEPT" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INITIATOR_DEPT"/>
+      <keyMapping columnObjectName="Join_1" columnName="INITIATOR_DEPT"/>
+    </attribute>
+    <attribute id="MODIFIED_BY" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MODIFIED_BY"/>
+      <keyMapping columnObjectName="Join_1" columnName="MODIFIED_BY"/>
+    </attribute>
+    <attribute id="APPROVER" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="APPROVER"/>
+      <keyMapping columnObjectName="Join_1" columnName="APPROVER"/>
+    </attribute>
+    <attribute id="SUBMIT_DATE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUBMIT_DATE"/>
+      <keyMapping columnObjectName="Join_1" columnName="SUBMIT_DATE"/>
+    </attribute>
+    <attribute id="STATUS" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STATUS"/>
+      <keyMapping columnObjectName="Join_1" columnName="STATUS"/>
+    </attribute>
+    <attribute id="FIRST_LAST_DISPATCH_DATE" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FIRST_LAST_DISPATCH_DATE"/>
+      <keyMapping columnObjectName="Join_1" columnName="FIRST_LAST_DISPATCH_DATE"/>
+    </attribute>
+    <attribute id="PROJECT_GROUP" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROJECT_GROUP"/>
+      <keyMapping columnObjectName="Join_1" columnName="PROJECT_GROUP"/>
+    </attribute>
+    <attribute id="MODIFIED" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MODIFIED"/>
+      <keyMapping columnObjectName="Join_1" columnName="MODIFIED"/>
+    </attribute>
+    <attribute id="REJECT_REASON" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REJECT_REASON"/>
+      <keyMapping columnObjectName="Join_1" columnName="REJECT_REASON"/>
+    </attribute>
+    <attribute id="TITLE" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TITLE"/>
+      <keyMapping columnObjectName="Join_1" columnName="TITLE"/>
+    </attribute>
+    <attribute id="NIM1" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NIM1"/>
+      <keyMapping columnObjectName="Join_1" columnName="NIM1"/>
+    </attribute>
+    <attribute id="PROJECT_TYPE" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROJECT_TYPE"/>
+      <keyMapping columnObjectName="Join_1" columnName="PROJECT_TYPE"/>
+    </attribute>
+    <attribute id="DF_ID" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DF_ID"/>
+      <keyMapping columnObjectName="Join_1" columnName="DF_ID"/>
+    </attribute>
+    <attribute id="THEME_TYPE" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="THEME_TYPE"/>
+      <keyMapping columnObjectName="Join_1" columnName="THEME_TYPE"/>
+    </attribute>
+    <attribute id="SELLING_COUNTRY" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SELLING_COUNTRY"/>
+      <keyMapping columnObjectName="Join_1" columnName="SELLING_COUNTRY"/>
+    </attribute>
+    <attribute id="USER_COUNTRY_BASED" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="USER_COUNTRY_BASED"/>
+      <keyMapping columnObjectName="Join_1" columnName="USER_COUNTRY_BASED"/>
+    </attribute>
+    <attribute id="USER_NAME" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="USER_NAME"/>
+      <keyMapping columnObjectName="Join_1" columnName="USER_NAME"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="12" y="286"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="244" y="286"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="204" y="236"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

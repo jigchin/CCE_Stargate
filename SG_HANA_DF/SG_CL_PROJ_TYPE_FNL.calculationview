@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="SG_CL_PROJ_TYPE_FNL" applyPrivilegeType="ANALYTIC_PRIVILEGE" dataCategory="CUBE" dimensionType="STANDARD" schemaVersion="2.3" defaultClient="$$client$$" visibility="reportingEnabled" outputViewType="Aggregation" calculationScenarioType="TREE_BASED" enforceSqlExecution="false">
+<descriptions defaultDescription="SG_CL_PROJ_TYPE_NEW"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="SG_CL_PROJ_TYPE_DB_FINAL" type="CALCULATION_VIEW">
+    <viewAttributes allViewAttributes="true"/>
+    <resourceUri>/dfrequest3.SG_HANA_DF/calculationviews/SG_CL_PROJ_TYPE_DB_FINAL</resourceUri>
+  </DataSource>
+  <DataSource id="SG_CL_STD_WEEKS_LKUP" type="CALCULATION_VIEW">
+    <viewAttributes allViewAttributes="true"/>
+    <resourceUri>/dfrequest3.SG_HANA_DF/calculationviews/SG_CL_STD_WEEKS_LKUP</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="ACTUAL_COMPLETION_DESPATCH"/>
+      <viewAttribute id="ACTUAL_FIRST_DESPATCH"/>
+      <viewAttribute id="ACTUAL_PCB_FTP_DATE"/>
+      <viewAttribute id="ASSIGNMENT_DELAY"/>
+      <viewAttribute id="BRAND"/>
+      <viewAttribute id="BRANDOWNER_NAME"/>
+      <viewAttribute id="BRAND_OWNER"/>
+      <viewAttribute id="COMMENTS"/>
+      <viewAttribute id="COUNT_ASSIGNMENT_DELAY" aggregationType="sum"/>
+      <viewAttribute id="COUNT_OF_STATUSES" aggregationType="sum"/>
+      <viewAttribute id="COUNT_PROJECT_GROUPS" aggregationType="sum"/>
+      <viewAttribute id="COUNT_PROJECT_PHASES" aggregationType="sum"/>
+      <viewAttribute id="COUNT_PROJECT_TYPES" aggregationType="sum"/>
+      <viewAttribute id="DF_CIRCULATION_STARTED"/>
+      <viewAttribute id="DF_ID"/>
+      <viewAttribute id="DF_RECEIVED"/>
+      <viewAttribute id="DUMMY" aggregationType="sum"/>
+      <viewAttribute id="EST_PROD_WEEK_INPT"/>
+      <viewAttribute id="ET_SPEED"/>
+      <viewAttribute id="FAST_TRACK"/>
+      <viewAttribute id="FEEDBACK_TO_STAKEHOLDER"/>
+      <viewAttribute id="FINAL_PSS_COMPLETION"/>
+      <viewAttribute id="FIRST_LAST_DISPATCH_DATE"/>
+      <viewAttribute id="GATE1"/>
+      <viewAttribute id="GATE2"/>
+      <viewAttribute id="GATE_3"/>
+      <viewAttribute id="GATE_4"/>
+      <viewAttribute id="HIERARCHY"/>
+      <viewAttribute id="HUB"/>
+      <viewAttribute id="INCREMENTAL_VOLUME1"/>
+      <viewAttribute id="INITIATOR"/>
+      <viewAttribute id="INITIATOR_DEPT"/>
+      <viewAttribute id="ISSCOM_CREATED"/>
+      <viewAttribute id="MAPC"/>
+      <viewAttribute id="MAPX"/>
+      <viewAttribute id="MAPX_PERMISSION"/>
+      <viewAttribute id="MASTER_DATA_SPEED" aggregationType="sum"/>
+      <viewAttribute id="MFG_SOURCE"/>
+      <viewAttribute id="NIM1"/>
+      <viewAttribute id="NIM_CM"/>
+      <viewAttribute id="NUM_ARTWORKS"/>
+      <viewAttribute id="NUM_SKU"/>
+      <viewAttribute id="ONGOING"/>
+      <viewAttribute id="PAR_APPROVED_ACTUAL"/>
+      <viewAttribute id="PAR_APPROVED_PLAN"/>
+      <viewAttribute id="PCB_TO_SCHAWK"/>
+      <viewAttribute id="PLANNED_FINAL_PSS_COMPLETION"/>
+      <viewAttribute id="PROJECT_GROUP"/>
+      <viewAttribute id="PROJECT_PHASE"/>
+      <viewAttribute id="PROJECT_TYPE"/>
+      <viewAttribute id="QUANRANTINE_INPT"/>
+      <viewAttribute id="SCHAWK_SPEED" aggregationType="sum"/>
+      <viewAttribute id="SELLING_COUNTRY"/>
+      <viewAttribute id="SKU_CREATION_COMPLETE"/>
+      <viewAttribute id="SKU_CREATION_START"/>
+      <viewAttribute id="START_DATE"/>
+      <viewAttribute id="STATUS_NAME"/>
+      <viewAttribute id="SUPPLY_SPEED" aggregationType="sum"/>
+      <viewAttribute id="TCCC_PRICING"/>
+      <viewAttribute id="TCCC_SPEED" aggregationType="sum"/>
+      <viewAttribute id="TITLE"/>
+      <viewAttribute id="VARIANCE_FROM_AGREED" aggregationType="sum"/>
+      <viewAttribute id="WEEKNUM"/>
+      <viewAttribute id="WEEKS_FOR_PROJECT" aggregationType="sum"/>
+      <viewAttribute id="YEAR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="#SG_CL_PROJ_TYPE_DB_FINAL">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTUAL_COMPLETION_DESPATCH" source="ACTUAL_COMPLETION_DESPATCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTUAL_FIRST_DESPATCH" source="ACTUAL_FIRST_DESPATCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTUAL_PCB_FTP_DATE" source="ACTUAL_PCB_FTP_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ASSIGNMENT_DELAY" source="ASSIGNMENT_DELAY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRAND" source="BRAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRANDOWNER_NAME" source="BRANDOWNER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRAND_OWNER" source="BRAND_OWNER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTS" source="COMMENTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNT_ASSIGNMENT_DELAY" source="COUNT_ASSIGNMENT_DELAY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNT_OF_STATUSES" source="COUNT_OF_STATUSES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNT_PROJECT_GROUPS" source="COUNT_PROJECT_GROUPS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNT_PROJECT_PHASES" source="COUNT_PROJECT_PHASES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNT_PROJECT_TYPES" source="COUNT_PROJECT_TYPES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DF_CIRCULATION_STARTED" source="DF_CIRCULATION_STARTED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DF_ID" source="DF_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DF_RECEIVED" source="DF_RECEIVED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DUMMY" source="DUMMY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EST_PROD_WEEK_INPT" source="EST_PROD_WEEK_INPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ET_SPEED" source="ET_SPEED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FAST_TRACK" source="FAST_TRACK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FEEDBACK_TO_STAKEHOLDER" source="FEEDBACK_TO_STAKEHOLDER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FINAL_PSS_COMPLETION" source="FINAL_PSS_COMPLETION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FIRST_LAST_DISPATCH_DATE" source="FIRST_LAST_DISPATCH_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GATE1" source="GATE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GATE2" source="GATE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GATE_3" source="GATE_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GATE_4" source="GATE_4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HIERARCHY" source="HIERARCHY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HUB" source="HUB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCREMENTAL_VOLUME1" source="INCREMENTAL_VOLUME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INITIATOR" source="INITIATOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INITIATOR_DEPT" source="INITIATOR_DEPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISSCOM_CREATED" source="ISSCOM_CREATED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPC" source="MAPC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPX" source="MAPX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPX_PERMISSION" source="MAPX_PERMISSION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MASTER_DATA_SPEED" source="MASTER_DATA_SPEED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFG_SOURCE" source="MFG_SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NIM1" source="NIM1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NIM_CM" source="NIM_CM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUM_ARTWORKS" source="NUM_ARTWORKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUM_SKU" source="NUM_SKU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ONGOING" source="ONGOING"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR_APPROVED_ACTUAL" source="PAR_APPROVED_ACTUAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR_APPROVED_PLAN" source="PAR_APPROVED_PLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PCB_TO_SCHAWK" source="PCB_TO_SCHAWK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANNED_FINAL_PSS_COMPLETION" source="PLANNED_FINAL_PSS_COMPLETION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_GROUP" source="PROJECT_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_PHASE" source="PROJECT_PHASE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_TYPE" source="PROJECT_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUANRANTINE_INPT" source="QUANRANTINE_INPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHAWK_SPEED" source="SCHAWK_SPEED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SELLING_COUNTRY" source="SELLING_COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKU_CREATION_COMPLETE" source="SKU_CREATION_COMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKU_CREATION_START" source="SKU_CREATION_START"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="START_DATE" source="START_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATUS_NAME" source="STATUS_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPPLY_SPEED" source="SUPPLY_SPEED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TCCC_PRICING" source="TCCC_PRICING"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TCCC_SPEED" source="TCCC_SPEED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VARIANCE_FROM_AGREED" source="VARIANCE_FROM_AGREED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEKNUM" source="WEEKNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEKS_FOR_PROJECT" source="WEEKS_FOR_PROJECT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" joinType="leftOuter" cardinality="C1_1">
+    <viewAttributes>
+      <viewAttribute id="ACTUAL_COMPLETION_DESPATCH"/>
+      <viewAttribute id="ACTUAL_FIRST_DESPATCH"/>
+      <viewAttribute id="ACTUAL_PCB_FTP_DATE"/>
+      <viewAttribute id="ASSIGNMENT_DELAY"/>
+      <viewAttribute id="BRAND"/>
+      <viewAttribute id="BRANDOWNER_NAME"/>
+      <viewAttribute id="BRAND_OWNER"/>
+      <viewAttribute id="COMMENTS"/>
+      <viewAttribute id="COUNT_ASSIGNMENT_DELAY"/>
+      <viewAttribute id="COUNT_OF_STATUSES"/>
+      <viewAttribute id="COUNT_PROJECT_GROUPS"/>
+      <viewAttribute id="COUNT_PROJECT_PHASES"/>
+      <viewAttribute id="COUNT_PROJECT_TYPES"/>
+      <viewAttribute id="DF_CIRCULATION_STARTED"/>
+      <viewAttribute id="DF_ID"/>
+      <viewAttribute id="DF_RECEIVED"/>
+      <viewAttribute id="DUMMY"/>
+      <viewAttribute id="EST_PROD_WEEK_INPT"/>
+      <viewAttribute id="ET_SPEED"/>
+      <viewAttribute id="FAST_TRACK"/>
+      <viewAttribute id="FEEDBACK_TO_STAKEHOLDER"/>
+      <viewAttribute id="FINAL_PSS_COMPLETION"/>
+      <viewAttribute id="FIRST_LAST_DISPATCH_DATE"/>
+      <viewAttribute id="GATE1"/>
+      <viewAttribute id="GATE2"/>
+      <viewAttribute id="GATE_3"/>
+      <viewAttribute id="GATE_4"/>
+      <viewAttribute id="HIERARCHY"/>
+      <viewAttribute id="HUB"/>
+      <viewAttribute id="INCREMENTAL_VOLUME1"/>
+      <viewAttribute id="INITIATOR"/>
+      <viewAttribute id="INITIATOR_DEPT"/>
+      <viewAttribute id="ISSCOM_CREATED"/>
+      <viewAttribute id="MAPC"/>
+      <viewAttribute id="MAPX"/>
+      <viewAttribute id="MAPX_PERMISSION"/>
+      <viewAttribute id="MASTER_DATA_SPEED"/>
+      <viewAttribute id="MFG_SOURCE"/>
+      <viewAttribute id="NIM1"/>
+      <viewAttribute id="NIM_CM"/>
+      <viewAttribute id="NUM_ARTWORKS"/>
+      <viewAttribute id="NUM_SKU"/>
+      <viewAttribute id="ONGOING"/>
+      <viewAttribute id="PAR_APPROVED_ACTUAL"/>
+      <viewAttribute id="PAR_APPROVED_PLAN"/>
+      <viewAttribute id="PCB_TO_SCHAWK"/>
+      <viewAttribute id="PLANNED_FINAL_PSS_COMPLETION"/>
+      <viewAttribute id="PROJECT_GROUP"/>
+      <viewAttribute id="PROJECT_PHASE"/>
+      <viewAttribute id="PROJECT_TYPE"/>
+      <viewAttribute id="QUANRANTINE_INPT"/>
+      <viewAttribute id="SCHAWK_SPEED"/>
+      <viewAttribute id="SELLING_COUNTRY"/>
+      <viewAttribute id="SKU_CREATION_COMPLETE"/>
+      <viewAttribute id="SKU_CREATION_START"/>
+      <viewAttribute id="START_DATE"/>
+      <viewAttribute id="STATUS_NAME"/>
+      <viewAttribute id="SUPPLY_SPEED"/>
+      <viewAttribute id="TCCC_PRICING"/>
+      <viewAttribute id="TCCC_SPEED"/>
+      <viewAttribute id="TITLE"/>
+      <viewAttribute id="VARIANCE_FROM_AGREED"/>
+      <viewAttribute id="WEEKNUM"/>
+      <viewAttribute id="WEEKS_FOR_PROJECT"/>
+      <viewAttribute id="YEAR"/>
+      <viewAttribute id="STD_WEEKS_GB"/>
+      <viewAttribute id="STD_WEEKS_MASTERDATE"/>
+    
+      <viewAttribute id="PROJECT_GROUP_1"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MASTER_DATA_ON_TIME" datatype="VARCHAR" length="3" expressionLanguage="COLUMN_ENGINE">
+        <formula>IF(&quot;MASTER_DATA_SPEED&quot;&lt;&quot;STD_WEEKS_MASTERDATE&quot;,'Yes','No')</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="WEEKS_VARIANCE" datatype="INTEGER" expressionLanguage="COLUMN_ENGINE">
+        <formula>&quot;WEEKS_FOR_PROJECT&quot;-&quot;STD_WEEKS_GB&quot;</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="FASTRACT_VS_STD" datatype="VARCHAR" length="1" expressionLanguage="COLUMN_ENGINE">
+        <formula>if(&quot;WEEKS_VARIANCE&quot;&gt;1,'Y','N')</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="#Projection_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTUAL_COMPLETION_DESPATCH" source="ACTUAL_COMPLETION_DESPATCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTUAL_FIRST_DESPATCH" source="ACTUAL_FIRST_DESPATCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTUAL_PCB_FTP_DATE" source="ACTUAL_PCB_FTP_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ASSIGNMENT_DELAY" source="ASSIGNMENT_DELAY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRAND" source="BRAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRANDOWNER_NAME" source="BRANDOWNER_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRAND_OWNER" source="BRAND_OWNER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMMENTS" source="COMMENTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNT_ASSIGNMENT_DELAY" source="COUNT_ASSIGNMENT_DELAY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNT_OF_STATUSES" source="COUNT_OF_STATUSES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNT_PROJECT_GROUPS" source="COUNT_PROJECT_GROUPS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNT_PROJECT_PHASES" source="COUNT_PROJECT_PHASES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNT_PROJECT_TYPES" source="COUNT_PROJECT_TYPES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DF_CIRCULATION_STARTED" source="DF_CIRCULATION_STARTED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DF_ID" source="DF_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DF_RECEIVED" source="DF_RECEIVED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DUMMY" source="DUMMY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EST_PROD_WEEK_INPT" source="EST_PROD_WEEK_INPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ET_SPEED" source="ET_SPEED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FAST_TRACK" source="FAST_TRACK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FEEDBACK_TO_STAKEHOLDER" source="FEEDBACK_TO_STAKEHOLDER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FINAL_PSS_COMPLETION" source="FINAL_PSS_COMPLETION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FIRST_LAST_DISPATCH_DATE" source="FIRST_LAST_DISPATCH_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GATE1" source="GATE1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GATE2" source="GATE2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GATE_3" source="GATE_3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GATE_4" source="GATE_4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HIERARCHY" source="HIERARCHY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="HUB" source="HUB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCREMENTAL_VOLUME1" source="INCREMENTAL_VOLUME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INITIATOR" source="INITIATOR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INITIATOR_DEPT" source="INITIATOR_DEPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISSCOM_CREATED" source="ISSCOM_CREATED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPC" source="MAPC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPX" source="MAPX"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAPX_PERMISSION" source="MAPX_PERMISSION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MASTER_DATA_SPEED" source="MASTER_DATA_SPEED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MFG_SOURCE" source="MFG_SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NIM1" source="NIM1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NIM_CM" source="NIM_CM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUM_ARTWORKS" source="NUM_ARTWORKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NUM_SKU" source="NUM_SKU"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ONGOING" source="ONGOING"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR_APPROVED_ACTUAL" source="PAR_APPROVED_ACTUAL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAR_APPROVED_PLAN" source="PAR_APPROVED_PLAN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PCB_TO_SCHAWK" source="PCB_TO_SCHAWK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANNED_FINAL_PSS_COMPLETION" source="PLANNED_FINAL_PSS_COMPLETION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_GROUP" source="PROJECT_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_PHASE" source="PROJECT_PHASE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_TYPE" source="PROJECT_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUANRANTINE_INPT" source="QUANRANTINE_INPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SCHAWK_SPEED" source="SCHAWK_SPEED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SELLING_COUNTRY" source="SELLING_COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKU_CREATION_COMPLETE" source="SKU_CREATION_COMPLETE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SKU_CREATION_START" source="SKU_CREATION_START"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="START_DATE" source="START_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STATUS_NAME" source="STATUS_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPPLY_SPEED" source="SUPPLY_SPEED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TCCC_PRICING" source="TCCC_PRICING"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TCCC_SPEED" source="TCCC_SPEED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VARIANCE_FROM_AGREED" source="VARIANCE_FROM_AGREED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEKNUM" source="WEEKNUM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEEKS_FOR_PROJECT" source="WEEKS_FOR_PROJECT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
+    </input>
+    <input node="#Projection_5">
+      <mapping xsi:type="Calculation:AttributeMapping" target="STD_WEEKS_GB" source="STD_WEEKS_GB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STD_WEEKS_MASTERDATE" source="STD_WEEKS_MASTERDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_GROUP_1" source="PROJECT_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_TYPE" source="PROJECT_TYPE_DRVD"/>
+    </input>
+    <joinAttribute name="PROJECT_TYPE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5">
+    <viewAttributes>
+      <viewAttribute id="STD_WEEKS_GB" aggregationType="sum"/>
+      <viewAttribute id="STD_WEEKS_MASTERDATE" aggregationType="sum"/>
+    
+      <viewAttribute id="PROJECT_GROUP"/>
+      <viewAttribute id="PROJECT_TYPE_DRVD"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="#SG_CL_STD_WEEKS_LKUP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_GROUP" source="PROJECT_GROUP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STD_WEEKS_GB" source="STD_WEEKS_GB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STD_WEEKS_MASTERDATE" source="STD_WEEKS_MASTERDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROJECT_TYPE_DRVD" source="PROJECT_TYPE_DRVD"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="ACTUAL_COMPLETION_DESPATCH" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ACTUAL_COMPLETION_DESPATCH"/>
+      <keyMapping columnObjectName="Join_1" columnName="ACTUAL_COMPLETION_DESPATCH"/>
+    </attribute>
+    <attribute id="ACTUAL_FIRST_DESPATCH" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ACTUAL_FIRST_DESPATCH"/>
+      <keyMapping columnObjectName="Join_1" columnName="ACTUAL_FIRST_DESPATCH"/>
+    </attribute>
+    <attribute id="ACTUAL_PCB_FTP_DATE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ACTUAL_PCB_FTP_DATE"/>
+      <keyMapping columnObjectName="Join_1" columnName="ACTUAL_PCB_FTP_DATE"/>
+    </attribute>
+    <attribute id="ASSIGNMENT_DELAY" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ASSIGNMENT_DELAY"/>
+      <keyMapping columnObjectName="Join_1" columnName="ASSIGNMENT_DELAY"/>
+    </attribute>
+    <attribute id="BRAND" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRAND"/>
+      <keyMapping columnObjectName="Join_1" columnName="BRAND"/>
+    </attribute>
+    <attribute id="BRANDOWNER_NAME" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRANDOWNER_NAME"/>
+      <keyMapping columnObjectName="Join_1" columnName="BRANDOWNER_NAME"/>
+    </attribute>
+    <attribute id="BRAND_OWNER" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRAND_OWNER"/>
+      <keyMapping columnObjectName="Join_1" columnName="BRAND_OWNER"/>
+    </attribute>
+    <attribute id="COMMENTS" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMMENTS"/>
+      <keyMapping columnObjectName="Join_1" columnName="COMMENTS"/>
+    </attribute>
+    <attribute id="DF_CIRCULATION_STARTED" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DF_CIRCULATION_STARTED"/>
+      <keyMapping columnObjectName="Join_1" columnName="DF_CIRCULATION_STARTED"/>
+    </attribute>
+    <attribute id="DF_ID" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DF_ID"/>
+      <keyMapping columnObjectName="Join_1" columnName="DF_ID"/>
+    </attribute>
+    <attribute id="DF_RECEIVED" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DF_RECEIVED"/>
+      <keyMapping columnObjectName="Join_1" columnName="DF_RECEIVED"/>
+    </attribute>
+    <attribute id="EST_PROD_WEEK_INPT" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EST_PROD_WEEK_INPT"/>
+      <keyMapping columnObjectName="Join_1" columnName="EST_PROD_WEEK_INPT"/>
+    </attribute>
+    <attribute id="ET_SPEED" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ET_SPEED"/>
+      <keyMapping columnObjectName="Join_1" columnName="ET_SPEED"/>
+    </attribute>
+    <attribute id="FAST_TRACK" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FAST_TRACK"/>
+      <keyMapping columnObjectName="Join_1" columnName="FAST_TRACK"/>
+    </attribute>
+    <attribute id="FEEDBACK_TO_STAKEHOLDER" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FEEDBACK_TO_STAKEHOLDER"/>
+      <keyMapping columnObjectName="Join_1" columnName="FEEDBACK_TO_STAKEHOLDER"/>
+    </attribute>
+    <attribute id="FINAL_PSS_COMPLETION" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FINAL_PSS_COMPLETION"/>
+      <keyMapping columnObjectName="Join_1" columnName="FINAL_PSS_COMPLETION"/>
+    </attribute>
+    <attribute id="FIRST_LAST_DISPATCH_DATE" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FIRST_LAST_DISPATCH_DATE"/>
+      <keyMapping columnObjectName="Join_1" columnName="FIRST_LAST_DISPATCH_DATE"/>
+    </attribute>
+    <attribute id="GATE1" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GATE1"/>
+      <keyMapping columnObjectName="Join_1" columnName="GATE1"/>
+    </attribute>
+    <attribute id="GATE2" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GATE2"/>
+      <keyMapping columnObjectName="Join_1" columnName="GATE2"/>
+    </attribute>
+    <attribute id="GATE_3" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GATE_3"/>
+      <keyMapping columnObjectName="Join_1" columnName="GATE_3"/>
+    </attribute>
+    <attribute id="GATE_4" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GATE_4"/>
+      <keyMapping columnObjectName="Join_1" columnName="GATE_4"/>
+    </attribute>
+    <attribute id="HIERARCHY" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HIERARCHY"/>
+      <keyMapping columnObjectName="Join_1" columnName="HIERARCHY"/>
+    </attribute>
+    <attribute id="HUB" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HUB"/>
+      <keyMapping columnObjectName="Join_1" columnName="HUB"/>
+    </attribute>
+    <attribute id="INCREMENTAL_VOLUME1" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCREMENTAL_VOLUME1"/>
+      <keyMapping columnObjectName="Join_1" columnName="INCREMENTAL_VOLUME1"/>
+    </attribute>
+    <attribute id="INITIATOR" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INITIATOR"/>
+      <keyMapping columnObjectName="Join_1" columnName="INITIATOR"/>
+    </attribute>
+    <attribute id="INITIATOR_DEPT" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INITIATOR_DEPT"/>
+      <keyMapping columnObjectName="Join_1" columnName="INITIATOR_DEPT"/>
+    </attribute>
+    <attribute id="ISSCOM_CREATED" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ISSCOM_CREATED"/>
+      <keyMapping columnObjectName="Join_1" columnName="ISSCOM_CREATED"/>
+    </attribute>
+    <attribute id="MAPC" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAPC"/>
+      <keyMapping columnObjectName="Join_1" columnName="MAPC"/>
+    </attribute>
+    <attribute id="MAPX" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAPX"/>
+      <keyMapping columnObjectName="Join_1" columnName="MAPX"/>
+    </attribute>
+    <attribute id="MAPX_PERMISSION" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAPX_PERMISSION"/>
+      <keyMapping columnObjectName="Join_1" columnName="MAPX_PERMISSION"/>
+    </attribute>
+    <attribute id="MFG_SOURCE" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MFG_SOURCE"/>
+      <keyMapping columnObjectName="Join_1" columnName="MFG_SOURCE"/>
+    </attribute>
+    <attribute id="NIM1" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NIM1"/>
+      <keyMapping columnObjectName="Join_1" columnName="NIM1"/>
+    </attribute>
+    <attribute id="NIM_CM" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NIM_CM"/>
+      <keyMapping columnObjectName="Join_1" columnName="NIM_CM"/>
+    </attribute>
+    <attribute id="NUM_ARTWORKS" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NUM_ARTWORKS"/>
+      <keyMapping columnObjectName="Join_1" columnName="NUM_ARTWORKS"/>
+    </attribute>
+    <attribute id="NUM_SKU" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NUM_SKU"/>
+      <keyMapping columnObjectName="Join_1" columnName="NUM_SKU"/>
+    </attribute>
+    <attribute id="ONGOING" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ONGOING"/>
+      <keyMapping columnObjectName="Join_1" columnName="ONGOING"/>
+    </attribute>
+    <attribute id="PAR_APPROVED_ACTUAL" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAR_APPROVED_ACTUAL"/>
+      <keyMapping columnObjectName="Join_1" columnName="PAR_APPROVED_ACTUAL"/>
+    </attribute>
+    <attribute id="PAR_APPROVED_PLAN" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAR_APPROVED_PLAN"/>
+      <keyMapping columnObjectName="Join_1" columnName="PAR_APPROVED_PLAN"/>
+    </attribute>
+    <attribute id="PCB_TO_SCHAWK" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PCB_TO_SCHAWK"/>
+      <keyMapping columnObjectName="Join_1" columnName="PCB_TO_SCHAWK"/>
+    </attribute>
+    <attribute id="PLANNED_FINAL_PSS_COMPLETION" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PLANNED_FINAL_PSS_COMPLETION"/>
+      <keyMapping columnObjectName="Join_1" columnName="PLANNED_FINAL_PSS_COMPLETION"/>
+    </attribute>
+    <attribute id="PROJECT_GROUP" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROJECT_GROUP"/>
+      <keyMapping columnObjectName="Join_1" columnName="PROJECT_GROUP"/>
+    </attribute>
+    <attribute id="PROJECT_PHASE" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROJECT_PHASE"/>
+      <keyMapping columnObjectName="Join_1" columnName="PROJECT_PHASE"/>
+    </attribute>
+    <attribute id="PROJECT_TYPE" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROJECT_TYPE"/>
+      <keyMapping columnObjectName="Join_1" columnName="PROJECT_TYPE"/>
+    </attribute>
+    <attribute id="QUANRANTINE_INPT" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="QUANRANTINE_INPT"/>
+      <keyMapping columnObjectName="Join_1" columnName="QUANRANTINE_INPT"/>
+    </attribute>
+    <attribute id="SELLING_COUNTRY" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SELLING_COUNTRY"/>
+      <keyMapping columnObjectName="Join_1" columnName="SELLING_COUNTRY"/>
+    </attribute>
+    <attribute id="SKU_CREATION_COMPLETE" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SKU_CREATION_COMPLETE"/>
+      <keyMapping columnObjectName="Join_1" columnName="SKU_CREATION_COMPLETE"/>
+    </attribute>
+    <attribute id="SKU_CREATION_START" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SKU_CREATION_START"/>
+      <keyMapping columnObjectName="Join_1" columnName="SKU_CREATION_START"/>
+    </attribute>
+    <attribute id="START_DATE" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="START_DATE"/>
+      <keyMapping columnObjectName="Join_1" columnName="START_DATE"/>
+    </attribute>
+    <attribute id="STATUS_NAME" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STATUS_NAME"/>
+      <keyMapping columnObjectName="Join_1" columnName="STATUS_NAME"/>
+    </attribute>
+    <attribute id="TCCC_PRICING" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TCCC_PRICING"/>
+      <keyMapping columnObjectName="Join_1" columnName="TCCC_PRICING"/>
+    </attribute>
+    <attribute id="TITLE" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TITLE"/>
+      <keyMapping columnObjectName="Join_1" columnName="TITLE"/>
+    </attribute>
+    <attribute id="WEEKNUM" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WEEKNUM"/>
+      <keyMapping columnObjectName="Join_1" columnName="WEEKNUM"/>
+    </attribute>
+    <attribute id="YEAR" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="YEAR"/>
+      <keyMapping columnObjectName="Join_1" columnName="YEAR"/>
+    </attribute>
+    <attribute id="PROJECT_GROUP_1" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROJECT_GROUP_1"/>
+      <keyMapping columnObjectName="Join_1" columnName="PROJECT_GROUP_1"/>
+    </attribute>
+  
+    <attribute id="MASTER_DATA_ON_TIME" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MASTER_DATA_ON_TIME"/>
+      <keyMapping columnObjectName="Join_1" columnName="MASTER_DATA_ON_TIME"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="COUNT_ASSIGNMENT_DELAY" order="9" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="COUNT_ASSIGNMENT_DELAY"/>
+      <measureMapping columnObjectName="Join_1" columnName="COUNT_ASSIGNMENT_DELAY"/>
+    </measure>
+    <measure id="COUNT_OF_STATUSES" order="10" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="COUNT_OF_STATUSES"/>
+      <measureMapping columnObjectName="Join_1" columnName="COUNT_OF_STATUSES"/>
+    </measure>
+    <measure id="COUNT_PROJECT_GROUPS" order="11" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="COUNT_PROJECT_GROUPS"/>
+      <measureMapping columnObjectName="Join_1" columnName="COUNT_PROJECT_GROUPS"/>
+    </measure>
+    <measure id="COUNT_PROJECT_PHASES" order="12" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="COUNT_PROJECT_PHASES"/>
+      <measureMapping columnObjectName="Join_1" columnName="COUNT_PROJECT_PHASES"/>
+    </measure>
+    <measure id="COUNT_PROJECT_TYPES" order="13" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="COUNT_PROJECT_TYPES"/>
+      <measureMapping columnObjectName="Join_1" columnName="COUNT_PROJECT_TYPES"/>
+    </measure>
+    <measure id="DUMMY" order="17" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="DUMMY"/>
+      <measureMapping columnObjectName="Join_1" columnName="DUMMY"/>
+    </measure>
+    <measure id="MASTER_DATA_SPEED" order="37" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="MASTER_DATA_SPEED"/>
+      <measureMapping columnObjectName="Join_1" columnName="MASTER_DATA_SPEED"/>
+    </measure>
+    <measure id="SCHAWK_SPEED" order="52" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SCHAWK_SPEED"/>
+      <measureMapping columnObjectName="Join_1" columnName="SCHAWK_SPEED"/>
+    </measure>
+    <measure id="SUPPLY_SPEED" order="58" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SUPPLY_SPEED"/>
+      <measureMapping columnObjectName="Join_1" columnName="SUPPLY_SPEED"/>
+    </measure>
+    <measure id="TCCC_SPEED" order="60" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="TCCC_SPEED"/>
+      <measureMapping columnObjectName="Join_1" columnName="TCCC_SPEED"/>
+    </measure>
+    <measure id="VARIANCE_FROM_AGREED" order="62" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="VARIANCE_FROM_AGREED"/>
+      <measureMapping columnObjectName="Join_1" columnName="VARIANCE_FROM_AGREED"/>
+    </measure>
+    <measure id="WEEKS_FOR_PROJECT" order="64" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WEEKS_FOR_PROJECT"/>
+      <measureMapping columnObjectName="Join_1" columnName="WEEKS_FOR_PROJECT"/>
+    </measure>
+    <measure id="STD_WEEKS_GB" order="66" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="STD_WEEKS_GB"/>
+      <measureMapping columnObjectName="Join_1" columnName="STD_WEEKS_GB"/>
+    </measure>
+    <measure id="STD_WEEKS_MASTERDATE" order="67" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="STD_WEEKS_MASTERDATE"/>
+      <measureMapping columnObjectName="Join_1" columnName="STD_WEEKS_MASTERDATE"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="STD_WEEKS" hidden="false" order="68" aggregationType="sum" measureType="simple" datatype="INTEGER">
+      <descriptions defaultDescription="Std Weeks"/>
+      <formula>&quot;STD_WEEKS_GB&quot;</formula>
+    </measure>
+    <measure id="WEEKS_VARIANCE" hidden="false" order="69" aggregationType="sum" measureType="simple" datatype="INTEGER">
+      <descriptions defaultDescription="Weeks Variance"/>
+      <formula>&quot;WEEKS_FOR_PROJECT&quot;-&quot;STD_WEEKS_GB&quot;</formula>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="12" y="262"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="198"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="282" y="353"/>
+      <rectangleSize height="30" width="140"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

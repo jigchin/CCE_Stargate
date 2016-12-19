@@ -1,0 +1,45 @@
+	
+
+<core:View
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:sap.ui.layout.form="sap.ui.layout.form"
+	xmlns:sap.ui.layout="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.commons"
+	xmlns:m="sap.suite.ui.commons"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:table="sap.ui.table" 
+	controllerName="view.CreateDF_BOM">
+	<sap.ui.layout.form:SimpleForm columnsL="4"  editable="true" id="bom_material" layout="ResponsiveGridLayout">
+		<sap.ui.layout.form:content>
+			<core:Title text="BOM Materials"/>
+			<sap.ui.layout:VerticalLayout>
+				<sap.ui.layout.form:SimpleForm columnsL="2" editable="false" id="bom_mat2" layout="ResponsiveLayout">
+					<sap.ui.layout.form:content>
+						<sap.ui.layout.form:SimpleForm columnsL="4" editable="false" id="bom_mat1" layout="ResponsiveLayout">
+							<sap.ui.layout.form:content></sap.ui.layout.form:content>
+						</sap.ui.layout.form:SimpleForm>
+					</sap.ui.layout.form:content>
+				</sap.ui.layout.form:SimpleForm>
+				<u:FileUploader
+				id="fileUploader_bom"
+				name="myFileUpload_bom"
+				uploadUrl="upload/"
+				width="400px"
+				fileType="csv"
+				typeMissmatch="handleTypeMissmatch"
+				tooltip="Upload your file to the local server"
+				uploadComplete="doFileLoadCompleteBOM"/>
+				<Button
+				text="Upload File"
+				press="doFileUploadBOM" id="upload_bom"/>
+				<c:Label text="Last Modified Date:" class="fontclass"/>
+				<Input id="last_upload" editable="false"/>
+				<c:Label text="Last Modified User:" class="fontclass"/>
+				<Input id="last_upload_user" editable="false"/>
+			</sap.ui.layout:VerticalLayout>
+		</sap.ui.layout.form:content>
+	</sap.ui.layout.form:SimpleForm>
+</core:View>

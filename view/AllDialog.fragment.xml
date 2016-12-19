@@ -1,0 +1,18 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		noDataText="No Products Found" 
+		title="Select Colums to Display"
+		search="handleSearchTableAll"
+		confirm="handleCloseTableAll"
+		close="handleCloseTableAll"
+		multiSelect="true"
+		items="{
+			path: '/alldf'
+		}" >
+		<StandardListItem
+			title="{COLUMN_NAME}"
+			type="Active" />
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,217 @@
+<core:View
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:sap.ui.layout.form="sap.ui.layout.form"
+	xmlns:sap.ui.layout="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.commons"
+	xmlns:m="sap.suite.ui.commons"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:table="sap.ui.table" 
+	controllerName="view.CreateDF_Meeting">
+	<sap.ui.layout.form:SimpleForm columnsL="4" editable="true" id="sku_meeting_main" layout="ResponsiveGridLayout">
+		<sap.ui.layout.form:content>
+			<core:Title text="SKU Meeting Menu"/>
+			<sap.ui.layout:FixFlex id="idFixFlex_sku_meet" minFlexSize="100">
+				<sap.ui.layout:fixContent>
+					<Panel id="PanelMain-sku1" expandable="true" expanded="true" headerText="">
+						<VBox id="BM-sku1" class="boxPosition" width="1000px">
+							<Label id='title1_labelsku' design="Bold"/>
+							<Button  text="BNL" id="bnl_button" press="onPressBNL" width="20%"/>
+							<Label id='title2_labelsku' design="Bold"/>
+							<Button  text="FR" id="fr_button" press="onPressFR" width="20%"/>
+							<Label id='title3_labelsku' design="Bold"/>
+							<Button  text="GB" id="gb_button" press="onPressGB" width="20%"/>
+						</VBox>
+					</Panel>
+						</sap.ui.layout:fixContent>
+			</sap.ui.layout:FixFlex>
+		</sap.ui.layout.form:content>
+	</sap.ui.layout.form:SimpleForm>
+	<VBox class="sapUiSmallMargin hideClass" id="bnl_detail" >
+	<sap.ui.layout.form:SimpleForm labelSpanL="4"
+			labelSpanM="12"
+			adjustLabelSpan="false"
+			emptySpanL="0"
+			emptySpanM="0"
+			columnsL="2"
+			columnsM="2" editable="true" layout="ResponsiveGridLayout" title="SKU Meeting">
+		<core:Title/>
+		<c:Label text="Data View" class="fontclass"/>
+		<Select id="data_view" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1" >
+			<core:Item key="" text="" />
+			<core:Item key="BNL-SKU" text="BNL-SKU" />
+		</Select>
+		<c:Label text="Project Type" class="fontclass"/>
+		<Select id="proj_type" change="onSelectProject" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1" >
+			<core:Item key="" text="" />
+			<core:Item key="Delist" text="Delist" />
+		</Select>
+		<!--<Button text="Fetch Data" width="30%" press="onPressFetch"/>-->
+		
+		<core:Title/>
+		<c:Label text="Category" class="fontclass"/>
+		<MultiComboBox id="materials_dropdown" selectionFinish="MaterialSelectionFinish" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>
+		<c:Label text="Sub-Category" class="fontclass"/>
+		<MultiComboBox id="snppl_dropdown" selectionFinish="snpplSelectionFinish" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>
+		
+	</sap.ui.layout.form:SimpleForm>
+	</VBox>
+	<VBox class="sapUiSmallMargin hideClass" id="bn_det2">
+	    <sap.ui.layout.form:SimpleForm labelSpanL="5" labelSpanM="2" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1" 
+				editable="false" id="new" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<Toolbar id="TB1">
+								
+								<ToolbarSpacer />
+								<Button icon="sap-icon://navigation-left-arrow" id="back" press="onPressBack"/>
+								<Button icon="sap-icon://navigation-right-arrow" id="next" press="onPressNext"/>
+								
+							</Toolbar>
+							</sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+	</VBox>
+	<VBox class="sapUiSmallMargin hideClass" id="bn_det3">
+		<sap.ui.layout.form:SimpleForm id="SimpleFormChange480_12120"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="DF Project"
+			labelSpanL="4"
+			labelSpanM="12"
+			adjustLabelSpan="false"
+			emptySpanL="0"
+			emptySpanM="0"
+			columnsL="2"
+			columnsM="2">
+			<sap.ui.layout.form:content>
+				<core:Title/>
+				<c:Label text="DF Request Number" class="fontclass"/>
+				<Select id="df_req" change="onSelectDF"/>
+				<c:Label text="Title of Project" class="fontclass"/>
+				<Input editable="false" id="title"/>
+				<c:Label text="Project Type" class="fontclass"/>
+				<Input editable="false" id="type"/>
+				<core:Title/>
+				<c:Label text="Destination Market" class="fontclass"/>
+				<Input editable="false" id="market"/>
+				<c:Label text="NIM" class="fontclass"/>
+				<Input  editable="false" id="nim"/>
+				<c:Label text="MAPX Decision Required" class="fontclass"/>
+				<Input  editable="false" id="mapx"/>
+			</sap.ui.layout.form:content>
+		</sap.ui.layout.form:SimpleForm>
+	</VBox>
+	<sap.ui.layout.form:SimpleForm columnsL="4" id="first_table" layout="ResponsiveLayout" class="hideClass">
+		<sap.ui.layout.form:content></sap.ui.layout.form:content>
+	</sap.ui.layout.form:SimpleForm>
+	<sap.ui.layout.form:SimpleForm columnsL="4" id="next_table" layout="ResponsiveLayout" class="hideClass">
+		<sap.ui.layout.form:content></sap.ui.layout.form:content>
+	</sap.ui.layout.form:SimpleForm>
+	
+	
+	<VBox class="sapUiSmallMargin hideClass" id="fr_detail" >
+	<sap.ui.layout.form:SimpleForm labelSpanL="4"
+			labelSpanM="12"
+			adjustLabelSpan="false"
+			emptySpanL="0"
+			emptySpanM="0"
+			columnsL="2"
+			columnsM="2" editable="true" layout="ResponsiveGridLayout" title="SKU Meeting">
+		<core:Title/>
+		<c:Label text="FR Category" class="fontclass"/>
+		<Select id="fr_cat" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1" >
+			<core:Item key="" text="" />
+			<core:Item key="All except PET (CAN, BIB, NRG, GB productions, …)" text="All except PET (CAN, BIB, NRG, GB productions, …)" />
+			<core:Item key="Co-Fill" text="Co-Fill" />
+			<core:Item key="Multipack" text="Multipack" />
+			<core:Item key="PET" text="PET" />
+			<core:Item key="Repacking" text="Repacking" />
+		</Select>
+		<c:Label text="Project Group" class="fontclass"/>
+		<Select id="proj_grp_fr" change="onSelectProjectGrpFR" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1" />
+		
+	</sap.ui.layout.form:SimpleForm>
+	</VBox>
+	<VBox class="sapUiSmallMargin hideClass" id="fr_det2">
+	    <sap.ui.layout.form:SimpleForm labelSpanL="5" labelSpanM="2" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1" 
+				editable="false" id="new_fr" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<Toolbar id="TB1_fr">
+								
+								<ToolbarSpacer />
+								<Button icon="sap-icon://navigation-left-arrow" id="back_fr" press="onPressBackFR"/>
+								<Button icon="sap-icon://navigation-right-arrow" id="next_fr" press="onPressNextFR"/>
+								
+							</Toolbar>
+							</sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+	</VBox>
+	<VBox class="sapUiSmallMargin hideClass" id="fr_det3">
+		<sap.ui.layout.form:SimpleForm id="SimpleFormChange480_12120_fr"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="DF Project"
+			labelSpanL="4"
+			labelSpanM="12"
+			adjustLabelSpan="false"
+			emptySpanL="0"
+			emptySpanM="0"
+			columnsL="2"
+			columnsM="2">
+			<sap.ui.layout.form:content>
+				<core:Title/>
+				<c:Label text="DF Request Number" class="fontclass"/>
+				<Select id="df_req_fr" change="onSelectDFFR"/>
+			</sap.ui.layout.form:content>
+		</sap.ui.layout.form:SimpleForm>
+	</VBox>
+	<sap.ui.layout.form:SimpleForm columnsL="4" id="first_table_fr" layout="ResponsiveLayout" class="hideClass">
+		<sap.ui.layout.form:content></sap.ui.layout.form:content>
+	</sap.ui.layout.form:SimpleForm>
+	<sap.ui.layout.form:SimpleForm columnsL="4" id="next_table_fr" layout="ResponsiveLayout" class="hideClass">
+		<sap.ui.layout.form:content></sap.ui.layout.form:content>
+	</sap.ui.layout.form:SimpleForm>
+	<VBox class="sapUiSmallMargin hideClass" id="gb_det2">
+	    <sap.ui.layout.form:SimpleForm labelSpanL="5" labelSpanM="2" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1" 
+				editable="false" id="new_gb" layout="ResponsiveGridLayout" title="SKU Meeting">
+						<sap.ui.layout.form:content>
+							<Toolbar id="TB1_gb">
+								
+								<ToolbarSpacer />
+								<Button icon="sap-icon://navigation-left-arrow" id="back_gb" press="onPressBackGB"/>
+								<Button icon="sap-icon://navigation-right-arrow" id="next_gb" press="onPressNextGB"/>
+								
+							</Toolbar>
+							</sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+	</VBox>
+	<VBox class="sapUiSmallMargin hideClass" id="gb_det3">
+		<sap.ui.layout.form:SimpleForm id="SimpleFormChange480_12120_gb"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="DF Project"
+			labelSpanL="5" labelSpanM="12" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1">
+			<sap.ui.layout.form:content>
+				<core:Title/>
+				<c:Label text="DF Request Number" class="fontclass"/>
+				<Select id="df_req_gb" change="onSelectDFGB"/>
+				<c:Label/>
+				<sap.ui.layout.form:SimpleForm labelSpanL="5" labelSpanM="12" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1" id="req_table_gb" 
+				layout="ResponsiveGridLayout">
+	        	<sap.ui.layout.form:content></sap.ui.layout.form:content>
+            	</sap.ui.layout.form:SimpleForm>
+			</sap.ui.layout.form:content>
+		</sap.ui.layout.form:SimpleForm>
+	</VBox>
+	<sap.ui.layout.form:SimpleForm columnsL="4" id="first_table_gb" layout="ResponsiveLayout" class="hideClass">
+		<sap.ui.layout.form:content></sap.ui.layout.form:content>
+	</sap.ui.layout.form:SimpleForm>
+	<sap.ui.layout.form:SimpleForm columnsL="4" id="sec_table_gb" layout="ResponsiveLayout" class="hideClass">
+		<sap.ui.layout.form:content></sap.ui.layout.form:content>
+	</sap.ui.layout.form:SimpleForm>
+	<sap.ui.layout.form:SimpleForm columnsL="4" id="third_table_gb" layout="ResponsiveLayout" class="hideClass">
+		<sap.ui.layout.form:content></sap.ui.layout.form:content>
+	</sap.ui.layout.form:SimpleForm>
+</core:View>

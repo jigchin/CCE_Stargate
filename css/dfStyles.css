@@ -1,0 +1,314 @@
+.sapMITBFilter .sapMITBText{
+   overflow: inherit; 
+}
+.detail{
+    height: 150% !important;
+}
+.fontSize{
+font-size: 80% !important;    
+}
+.paddingTable{
+    padding-botton: 4px !important;
+    padding-right: 4px !important;
+    padding-left: 4px !important;
+    padding-top: 4px !important;
+}
+.red1 {  
+     background-color: #FF3300 !important;  
+        }  
+.yellow11 {  
+     background-color: #FFFF66 !important; 
+      color: #000000 !important;
+        }  
+        .white1 {  
+     background-color: #FFFFFF !important;  
+        }  
+ .yellow {  
+            background-color: #FFFF66 !important;  
+        }
+.orange{
+    background-color: #FFA500 !important;
+}
+.pink{
+    background-color: #FF00FF !important;
+}
+.blue{
+    background-color: #000080 !important;
+    color: white !important;
+}
+.pinkblue{
+    background: linear-gradient(to right, #FF00FF , #000080) !important;
+    color: white !important;
+}
+.pinkgrey{
+    background: linear-gradient(to right, #FF00FF , #C0C0C0) !important;
+    color: white !important;
+}
+.pinkgreen{
+    background: linear-gradient(to right, #FF00FF , #228B22) !important;
+    color: white !important;
+}
+.greenblue{
+    background: linear-gradient(to right, #228B22, #000080) !important;
+    color: white !important;
+}
+.green{
+    background-color: #228B22 !important;
+}
+.red{
+    background-color: #FF0000 !important;
+}
+.grey{
+    background-color: #C0C0C0 !important;
+}
+.grey1{
+    background-color: #C0C0C0 !important;
+}
+        .yellow1{
+            color: yellow !important;
+        }
+.paginatorStyle {
+      margin-left: 47%;
+    }
+.scrollclass{
+   
+    overflow-y: hidden !important;  
+    width: 100% !important; 
+    
+}
+.sapUiMltPadRight {
+  padding: 0 4px 0 0 !important;  
+} 
+.redcolor {
+  background-color: red!important;  
+} 
+.yellowcolor {
+ background-color: yellow!important;  
+} 
+.heightClass {
+  height: 100% !important;  
+} 
+.hideClass{
+   display: none  !important;
+}
+.showClass{
+    display: block !important;
+}
+.sapUiRespGridMedia-Std-LargeDesktop.sapUiRespGridHSpace0>.sapUiRespGridSpanXL3{
+    width: 100%;
+}
+.sapUiRespGridMedia-Std-LargeDesktop.sapUiRespGridHSpace1>.sapUiRespGridSpanXL3{
+    width: 100%;
+}
+.alignLabel{
+    margin-top: 1rem;
+    text-align:justify;
+}
+.fontclass{
+    font-size: 93% !important;
+    font-weight: bold; !important;
+    font-family: "Times New Roman", Times, serif !important;
+    text-align: right !important;
+}
+.fontclass_red{
+    font-size: 93% !important;
+    font-weight: bold; !important;
+    font-family: "Times New Roman", Times, serif !important;
+    text-align: right !important;
+    color: red !important;
+}
+.button{
+    background-color: red !important;
+}
+.fontclass2{
+    font-size: 80% !important;
+    font-weight: bold; !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+.fontclass1{
+    /*font-size: 93% !important;*/
+    font-weight: bold; !important;
+    font-family: "Times New Roman", Times, serif !important;
+}
+
+.wordBreak{
+    word-break: break-word !important;
+     height:58px;
+}
+
+.sapUiRLContainerCont{
+    margin-left: -16rem;
+}
+   .yellow {  
+            background-color: #FFFF66 !important;  
+        }  
+     .green {     
+            background-color: #1CD619 !important;  
+        }
+     .Heading {     
+            font-size: 115% !important; 
+            color:black !important;
+          /*  text-decoration: underline !important;
+            
+        }
+        .Heading1 {     
+            font-size: 130% !important; 
+            color:black !important;
+            /*text-decoration: underline !important;*/
+            
+        }
+    .H1{
+        
+         font-weight: bold; !important;
+         font-size: 150% !important; 
+            color:black !important;
+            height:30px; !important
+    }
+      .HeadingBar {  
+            background-color: #FFFFFF !important;
+           
+            height:50px !important;
+        }  
+        .text {     
+            text-align: center !important;
+        } 
+.homebutton {
+    padding:12px  !important; 
+}
+    .Iconbutton {
+    padding:12px  !important; 
+}
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+     margin-left: 19em !important;
+}
+.feedinpt {
+   margin-left: 8em !important;
+    
+    
+}
+.whitespace{
+    white-space:normal !important;
+    word-break: break-word;
+    margin-botton: 10px !important;
+     width:100% !important;
+    /* padding:2px; */
+}
+
+.sapMITBText {
+    
+    text-wrap:normal !important;
+    word-wrap:break-word !important;
+    word-break:break-all !important;
+}
+.visibilityClass{
+   visibility:hidden !important;
+  
+}
+.tablevisible{
+    visibility:collapse; !important
+}
+.tablevisible1{
+    visibility:visible; !important
+}
+.whitespace{
+    white-space:normal !important;
+    word-break: break-word;
+    margin-botton: 10px !important;
+     width:100% !important;
+    /* padding:2px; */
+}
+.novisibleClass {
+  visible: false !important;
+ 
+}
+.visibleClass {
+  visible: true !important;
+ 
+}
+.input-symbol-euro {
+  position: relative !important;
+}
+.input-symbol-euro input {
+  padding-right: 18px !important;
+}
+.input-symbol-euro:after {
+  position: absolute !important;
+  content: "€" !important;
+  top: 25% !important;
+  right: 5px !important;
+}
+.editableClass {
+  editable: false !important;
+ 
+}
+.inputFontSize {
+  font-size: .75rem !important;
+}
+.centerClass {
+  text-align: right !important;
+}
+.leftClass {
+  text-align: left !important;
+}
+.shiftLabels {
+    margin-left: 8%;
+}
+.unshiftLabels{
+    margin-left: 0%;
+}
+.adjustEvalLabels {
+    margin-left: 12em;
+}
+.shiftTable {
+    margin-left: 15em !important; 
+    margin-right: 50em !important;
+}
+.adjustFeedbackLabels {
+    margin-left: 15em !important;
+    
+}
+.adjustFeedbackPrevLabels {
+    margin-left: 0em !important;
+    
+}
+.adjustApprovalLabels {
+    margin-left: 60em;
+}
+.adjustSHFeedbackLabels {
+    margin-left: 12em;
+}
+.uploadLabel { 
+     margin-left: 25em;
+}
+
+.adjustEvalLabels1 {
+    margin-left: 5em;
+}
+.adjustHeight{
+    zoom: 50% !important;
+}
+.adjustHeight1{
+    zoom: 100% !important;
+}
+/*.sapUiFormTitle {  
+     border-bottom: 2px solid #FF0000 !important;
+     color: #FF0000 !important;
+     font-style: italic !important;
+}  
+#__label2{
+    color: #0000FF !important;
+    font-weight: bold;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+#__label1{
+    color: #0000FF !important;
+    font-weight: bold;
+}
+#__label0{
+    color: #0000FF !important;
+    font-weight: bold;
+}
+*/

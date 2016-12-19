@@ -1,0 +1,610 @@
+<core:View
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:sap.ui.layout.form="sap.ui.layout.form"
+	xmlns:sap.ui.layout="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.commons"
+	xmlns:m="sap.suite.ui.commons"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:table="sap.ui.table" 
+	controllerName="view.CreateDF_Admin">
+	<SplitContainer id="adminSplit" initialDetail="admindetail" initialMaster="adminmaster" width="200%">
+		<detailPages>
+			<Page id="admindetail" class="sapUiStdPage">
+				<content>
+					<sap.ui.layout.form:SimpleForm  editable="false"  id="mainpage_admin">
+						<sap.ui.layout.form:content>
+							<Text text="Admin" />
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm  editable="false" class="hideClass" id="adminmain">
+						<sap.ui.layout.form:content>
+							<Text text="User Profile Admin Page" />
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" id="materialsupp" class="hideClass" editable="true" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Admin Form - Add/Delete field values for Material Supply"/>
+							<Label text="Commodities" id="commodities" class="fontclass"/>
+							<Input id="add_commodities"/>
+							<Button press="addCommodities" text="Add" width=""/>
+							<Button press="removeCommodities" text="Delete" width=""/>
+							<Label text="Material Supply Status Codes" id="code" class="fontclass"/>
+							<Input id="add_codes"/>
+							<Button press="addCodes" text="Add" width=""/>
+							<Button press="removeCodes" text="Delete" width=""/>
+							<Label text="Material Supply User Name" id="code_user" class="fontclass"/>
+							<Input id="add_codes_user"/>
+							<Button press="addCodesUser" text="Add" width=""/>
+							<Button press="removeCodesUser" text="Delete" width=""/>
+							<Label id="label_supp" text="Supplier" class="fontclass"/>
+							<Input id="add_supp"/>
+							<Button press="addSupplierMS" text="Add" width=""/>
+							<Button press="removeSupplierMS" text="Delete" width=""/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="10" columnsM="10" labelSpanL="3"
+					class="hideClass"  id="AdminPage" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="User Profile Details"/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="10" columnsM="10" labelSpanL="3"
+					class="hideClass"  id="countrySKUURL" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Country-Based SKU Database"/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="10" columnsM="10" labelSpanL="3"
+					class="hideClass"  id="commodityTable" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Commodities"/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="10" columnsM="10" labelSpanL="3"
+					class="hideClass"  id="DeptLocTable" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Department and Location"/>
+							<sap.ui.layout:VerticalLayout>
+								<sap.ui.layout.form:SimpleForm editable="false" id="DeptLocTable1" layout="ResponsiveGridLayout">
+									<sap.ui.layout.form:content></sap.ui.layout.form:content>
+								</sap.ui.layout.form:SimpleForm>
+								<u:FileUploader class="uploadLabel"
+				id="fileUploader_deptloc"
+				name="myFileUpload_deptloc"
+				uploadUrl="upload/"
+				width="400px"
+				fileType="csv"
+				typeMissmatch="handleTypeMissmatch"
+				tooltip="Upload your file to the local server"
+				uploadComplete="doFileLoadCompleteDeptLoc"/>
+								<Button  class="uploadLabel"
+				text="Upload File"
+				press="doFileUploadDeptLoc"/>
+							</sap.ui.layout:VerticalLayout>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="10" columnsM="10" labelSpanL="3"
+					class="hideClass"  id="CatScatTable" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Category/Sub-Category"/>
+							</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="10" columnsM="10" labelSpanL="3"
+					class="hideClass"  id="XBorderTable" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="X-Border Combinations"/>
+							<sap.ui.layout:VerticalLayout>
+								<sap.ui.layout.form:SimpleForm editable="false" id="XBorderTable1" layout="ResponsiveGridLayout">
+									<sap.ui.layout.form:content></sap.ui.layout.form:content>
+								</sap.ui.layout.form:SimpleForm>
+								<u:FileUploader class="uploadLabel"
+				id="fileUploader_x"
+				name="myFileUpload_x"
+				uploadUrl="upload/"
+				width="400px"
+				fileType="csv"
+				typeMissmatch="handleTypeMissmatch"
+				tooltip="Upload your file to the local server"
+				uploadComplete="doFileLoadCompleteX"/>
+								<Button  class="uploadLabel"
+				text="Upload File"
+				press="doFileUploadX"/>
+							</sap.ui.layout:VerticalLayout>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="10" columnsM="10" labelSpanL="3"
+					class="hideClass"  id="LocTable" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Locations"/>
+							<sap.ui.layout:VerticalLayout>
+								<sap.ui.layout.form:SimpleForm editable="false" id="LocTable1" layout="ResponsiveGridLayout">
+									<sap.ui.layout.form:content></sap.ui.layout.form:content>
+								</sap.ui.layout.form:SimpleForm>
+								<u:FileUploader class="uploadLabel"
+				id="fileUploader_loc"
+				name="myFileUpload_loc"
+				uploadUrl="upload/"
+				width="400px"
+				fileType="csv"
+				typeMissmatch="handleTypeMissmatch"
+				tooltip="Upload your file to the local server"
+				uploadComplete="doFileLoadCompleteLoc"/>
+								<Button  class="uploadLabel"
+				text="Upload File"
+				press="doFileUploadLoc"/>
+							</sap.ui.layout:VerticalLayout>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="10" columnsM="10" labelSpanL="3"
+					class="hideClass"  id="LocDestTable" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Locations-Destination Market"/>
+							<sap.ui.layout:VerticalLayout>
+								<sap.ui.layout.form:SimpleForm editable="false" id="LocDestTable1" layout="ResponsiveGridLayout">
+									<sap.ui.layout.form:content></sap.ui.layout.form:content>
+								</sap.ui.layout.form:SimpleForm>
+								<u:FileUploader class="uploadLabel"
+				id="fileUploader_locdest"
+				name="myFileUpload_locdest"
+				uploadUrl="upload/"
+				width="400px"
+				fileType="csv"
+				typeMissmatch="handleTypeMissmatch"
+				tooltip="Upload your file to the local server"
+				uploadComplete="doFileLoadCompleteLocDest"/>
+								<Button  class="uploadLabel"
+				text="Upload File"
+				press="doFileUploadLocDest"/>
+							</sap.ui.layout:VerticalLayout>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="10" columnsM="10" labelSpanL="3"
+					class="hideClass"  id="repTable" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Repack Involvement"/>
+							<sap.ui.layout:VerticalLayout>
+								<sap.ui.layout.form:SimpleForm editable="false" id="repTable1" layout="ResponsiveGridLayout">
+									<sap.ui.layout.form:content></sap.ui.layout.form:content>
+								</sap.ui.layout.form:SimpleForm>
+								<u:FileUploader class="uploadLabel"
+				id="fileUploader_rep"
+				name="myFileUpload_rep"
+				uploadUrl="upload/"
+				width="400px"
+				fileType="csv"
+				typeMissmatch="handleTypeMissmatch"
+				tooltip="Upload your file to the local server"
+				uploadComplete="doFileLoadCompleteRep"/>
+								<Button class="uploadLabel"
+				text="Upload File"
+				press="doFileUploadRep"/>
+							</sap.ui.layout:VerticalLayout>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="10" columnsM="10" labelSpanL="3"
+					class="hideClass"  id="stakeCTable" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Stakeholder Country"/>
+							<sap.ui.layout:VerticalLayout>
+								<sap.ui.layout.form:SimpleForm editable="false" id="stakeCTable1" layout="ResponsiveGridLayout">
+									<sap.ui.layout.form:content></sap.ui.layout.form:content>
+								</sap.ui.layout.form:SimpleForm>
+								<u:FileUploader class="uploadLabel"
+				id="fileUploader_country"
+				name="myFileUpload_country"
+				uploadUrl="upload/"
+				width="400px"
+				fileType="csv"
+				typeMissmatch="handleTypeMissmatch"
+				tooltip="Upload your file to the local server"
+				uploadComplete="doFileLoadCompleteCountry"/>
+								<Button class="uploadLabel"
+				text="Upload File"
+				press="doFileUploadCountry"/>
+							</sap.ui.layout:VerticalLayout>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="10" columnsM="10" labelSpanL="3"
+					class="hideClass"  id="stakeSTable" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Stakeholder Site"/>
+							<sap.ui.layout:VerticalLayout>
+								<sap.ui.layout.form:SimpleForm editable="false" id="stakeSTable1" layout="ResponsiveGridLayout">
+									<sap.ui.layout.form:content></sap.ui.layout.form:content>
+								</sap.ui.layout.form:SimpleForm>
+								<u:FileUploader class="uploadLabel"
+				id="fileUploader_site"
+				name="myFileUpload_site"
+				uploadUrl="upload/"
+				width="400px"
+				fileType="csv"
+				typeMissmatch="handleTypeMissmatch"
+				tooltip="Upload your file to the local server"
+				uploadComplete="doFileLoadCompleteSite"/>
+								<Button class="uploadLabel"
+				text="Upload File"
+				press="doFileUploadSite"/>
+							</sap.ui.layout:VerticalLayout>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="10" columnsM="10" labelSpanL="3"
+					class="hideClass"  id="GrpDeptTable" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Project Group and Department"/>
+							<sap.ui.layout:VerticalLayout>
+								<sap.ui.layout.form:SimpleForm editable="false" id="GrpDeptTable1" layout="ResponsiveGridLayout">
+									<sap.ui.layout.form:content></sap.ui.layout.form:content>
+								</sap.ui.layout.form:SimpleForm>
+								<u:FileUploader class="uploadLabel"
+				id="fileUploader_grp"
+				name="myFileUpload_grp"
+				uploadUrl="upload/"
+				width="400px"
+				fileType="csv"
+				typeMissmatch="handleTypeMissmatch"
+				tooltip="Upload your file to the local server"
+				uploadComplete="doFileLoadCompleteGrp"/>
+								<Button  class="uploadLabel"
+				text="Upload File"
+				press="doFileUploadGrp"/>
+							</sap.ui.layout:VerticalLayout>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" id="admin_form" class="hideClass" editable="true" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Admin Form - Add/Delete field values for DF Request form"/>
+							<Label text="Assignment Delay" class="fontclass"/>
+							<Input id="add_assign"/>
+							<Button press="addAssignment" text="Add" width=""/>
+							<Button press="removeAssignment" text="Delete" width=""/>
+							<Label text="Brand" class="fontclass"/>
+							<Input id="add_brand"/>
+							<Button press="addBrand" text="Add" width=""/>
+							<Button press="removeBrand" text="Delete" width=""/>
+							<!--<Label text="Change Palletisation" id="palletisation" class="fontclass"/><Input id="add_palletisation"/><Button press="addPalletisation" text="Add" width=""/><Button press="removePalletisation" text="Delete" width=""/>-->
+							<Label text="Channel" class="fontclass"/>
+							<Input id="add_channel"/>
+							<Button press="addChannel" text="Add" width=""/>
+							<Button press="removeChannel" text="Delete" width=""/>
+							<Label text="Container Size" class="fontclass"/>
+							<Input id="add_container"/>
+							<Button press="addSize" text="Add" width=""/>
+							<Button press="removeSize" text="Delete" width=""/>
+							<Label  text="Contingency Site" class="fontclass"/>
+							<Input id="add_site"/>
+							<Button press="addSite" text="Add" width=""/>
+							<Button press="removeSite" text="Delete" width=""/>
+							<Label text="Design Message" class="fontclass"/>
+							<Input id="add_design"/>
+							<Button press="addDesign" text="Add" width=""/>
+							<Button press="removeDesign" text="Delete" width=""/>
+							<Label id="label_country" text="Destination Market" class="fontclass"/>
+							<Input id="add_country"/>
+							<Button press="addCountry" text="Add" width=""/>
+							<Button press="removeCountry" text="Delete" width=""/>
+							<Label id="label_dept" text="DF Initiator Department" class="fontclass"/>
+							<Input id="add_dept"/>
+							<Button press="addDept" text="Add" width=""/>
+							<Button press="removeDept" text="Delete" width=""/>
+							<Label text="Flavours" class="fontclass"/>
+							<Input id="add_flavour"/>
+							<Button press="addFlavour" text="Add" width=""/>
+							<Button press="removeFlavour" text="Delete" width=""/>
+							<Label text="In the event of raw material write off (RMWO), which department will cover the costs" id="label_rmwo" class="fontclass"/>
+							<Input id="add_rmwoDF"/>
+							<Button press="addRMWODF" text="Add" width=""/>
+							<Button press="removeRMWODF" text="Delete" width=""/>
+							<Label text="Indication of Run-Out Rules" id="indication_rules" class="fontclass"/>
+							<Input id="add_rules"/>
+							<Button press="addRules" text="Add" width=""/>
+							<Button press="removeRules" text="Delete" width=""/>
+							<Label text="Lead Market" class="fontclass"/>
+							<Input id="add_lead"/>
+							<Button press="addLead" text="Add" width=""/>
+							<Button press="removeLead" text="Delete" width=""/>
+							<Label id="label_lead" text="Lead of Artwork Development" class="fontclass"/>
+							<Input id="add_artwork"/>
+							<Button press="addArtwork" text="Add" width=""/>
+							<Button press="removeArtwork" text="Delete" width=""/>
+							<Label text="Material Description" class="fontclass"/>
+							<Input id="add_mat"/>
+							<Button press="addMatDesc" text="Add" width=""/>
+							<Button press="removeMatDesc" text="Delete" width=""/>
+							<Label text="Material Modifications" class="fontclass"/>
+							<Input id="add_Matchange"/>
+							<Button press="addMatChange" text="Add" width=""/>
+							<Button press="removeMatChange" text="Delete" width=""/>
+							<Label text="Material Substrate" class="fontclass"/>
+							<Input id="add_substrate"/>
+							<Button press="addSubstrate" text="Add" width=""/>
+							<Button press="removeSubstrate" text="Delete" width=""/>
+							<Label text="Mfg Source" class="fontclass"/>
+							<Input id="add_mfg"/>
+							<Button press="addMfg" text="Add" width=""/>
+							<Button press="removeMfg" text="Delete" width=""/>
+							<!--	<Label text="Mixing of Packaging Guidelines" id="mixpack" class="fontclass"/><Input id="add_Mixchange"/><Button press="addMixChange" text="Add" width=""/><Button press="removeMixChange" text="Delete" width=""/><Label text="NIM" class="fontclass"/><Input id="add_nim"/><Button press="addNIM" text="Add" width=""/><Button press="removeNIM" text="Delete" width=""/>-->
+							<Label text="NIM Led or CM Led" class="fontclass"/>
+							<Input id="add_nim_cm"/>
+							<Button press="addNIMCM" text="Add" width=""/>
+							<Button press="removeNIMCM" text="Delete" width=""/>
+							<Label text="Pack Size" class="fontclass"/>
+							<Input id="add_psize"/>
+							<Button press="addPSize" text="Add" width=""/>
+							<Button press="removePSize" text="Delete" width=""/>
+							<Label text="Package Type" class="fontclass"/>
+							<Input id="add_package"/>
+							<Button press="addPackage" text="Add" width=""/>
+							<Button press="removePackage" text="Delete" width=""/>
+							<Label text="Pallet Types" class="fontclass"/>
+							<Input id="add_pallet"/>
+							<Button press="addPallet" text="Add" width=""/>
+							<Button press="removePallet" text="Delete" width=""/>
+							<Label text="Print Process" class="fontclass"/>
+							<Input id="add_process"/>
+							<Button press="addProcess" text="Add" width=""/>
+							<Button press="removeProcess" text="Delete" width=""/>
+							<Label text="Print Supplier" class="fontclass"/>
+							<Input id="add_print"/>
+							<Button press="addPrint" text="Add" width=""/>
+							<Button press="removePrint" text="Delete" width=""/>
+							<Label text="Producing Sites" class="fontclass"/>
+							<Input id="add_prod"/>
+							<Button press="addSites" text="Add" width=""/>
+							<Button press="removeSites" text="Delete" width=""/>
+							<Label text="Product Container" class="fontclass"/>
+							<Input id="add_cont"/>
+							<Button press="addContainer" text="Add" width=""/>
+							<Button press="removeContainer" text="Delete" width=""/>
+							<Label text="Product Pack Size" class="fontclass"/>
+							<Input id="add_pack"/>
+							<Button press="addPack" text="Add" width=""/>
+							<Button press="removePack" text="Delete" width=""/>
+							<Label text="Project Category" class="fontclass"/>
+							<Input id="add_cat"/>
+							<Button press="addCategory" text="Add" width=""/>
+							<Button press="removeCategory" text="Delete" width=""/>
+							<Label id="project_group" text="Project Group" class="fontclass"/>
+							<Input id="add_group"/>
+							<Button press="addGroup" text="Add" width=""/>
+							<Button press="removeGroup" text="Delete" width=""/>
+							<Label id="label_type" class="fontclass" text="Project Type"/>
+							<Input id="add_type"/>
+							<Button press="addType" text="Add" width=""/>
+							<Button press="removeType" text="Delete" width=""/>
+							<Label id="label_theme" text="Promotion Type" class="fontclass"/>
+							<Input id="add_theme"/>
+							<Button press="addTheme" text="Add" width=""/>
+							<Button press="removeTheme" text="Delete" width=""/>
+							<Label text="Promotional Mechanic" class="fontclass"/>
+							<Input id="add_prommech"/>
+							<Button press="addPromotionalMech" text="Add" width=""/>
+							<Button press="removePromotionalMech" text="Delete" width=""/>
+							<Label text="Promotional Type" class="fontclass"/>
+							<Input id="add_prom"/>
+							<Button press="addPromotional" text="Add" width=""/>
+							<Button press="removePromotional" text="Delete" width=""/>
+							<Label text="RMWO Currency" id="rmwo" class="fontclass"/>
+							<Input id="add_rmwo"/>
+							<Button press="addRmwo" text="Add" width=""/>
+							<Button press="removeRmwo" text="Delete" width=""/>
+							<Label text="Status" class="fontclass"/>
+							<Input id="add_status"/>
+							<Button press="addStatus" text="Add" width=""/>
+							<Button press="removeStatus" text="Delete" width=""/>
+							<Label id="label_sup" text="Supplier Name for Supply Chain project" class="fontclass"/>
+							<Input id="add_sup"/>
+							<Button press="addSupplier" text="Add" width=""/>
+							<Button press="removeSupplier" text="Delete" width=""/>
+							<Label text="Type of Change" class="fontclass"/>
+							<Input id="add_change"/>
+							<Button press="addChange" text="Add" width=""/>
+							<Button press="removeChange" text="Delete" width=""/>
+							<Label  text="Type of Transition" class="fontclass"/>
+							<Input id="add_transition"/>
+							<Button press="addTransition" text="Add" width=""/>
+							<Button press="removeTransition" text="Delete" width=""/>
+							<Label text="Who will pay for artwork changes?" id="artworkchange" class="fontclass"/>
+							<Input id="add_Artwork"/>
+							<Button press="addArtworkChange" text="Add" width=""/>
+							<Button press="removeArtworkChange" text="Delete" width=""/>
+							<Label id="label_tr" text="Who will pay for the trials?" class="fontclass"/>
+							<Input id="add_trials"/>
+							<Button press="addTrial" text="Add" width=""/>
+							<Button press="removeTrial" text="Delete" width=""/>
+							<Label id="label_pcbinit" text="PCB Initiator" class="fontclass"/>
+							<Input id="add_pcbinit"/>
+							<Button press="addpcbinit" text="Add" width=""/>
+							<Button press="removepcbinit" text="Delete" width=""/>
+							<Label id="label_pcbprm" text="PCB Promotion Type" class="fontclass"/>
+							<Input id="add_pcbprm"/>
+							<Button press="addPCBprm" text="Add" width=""/>
+							<Button press="removePCBprm" text="Delete" width=""/>
+							<!--	<Label text="File Upload" id="fileupload" class="fontclass"/><Button
+				text="Upload File"
+				press="handleUploadPress"/>-->
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm class="hideClass" editable="false"  id="stakeholderEval">
+						<sap.ui.layout.form:content>
+							<core:Title text="StakeHolder Evaluation" />
+							<sap.ui.layout:VerticalLayout>
+								<sap.ui.layout.form:SimpleForm editable="false" id="stakeholderEval2" class="shiftTable" layout="ResponsiveGridLayout">
+									<sap.ui.layout.form:content></sap.ui.layout.form:content>
+								</sap.ui.layout.form:SimpleForm>
+								<u:FileUploader class="uploadLabel"
+				id="fileUploader_stake"
+				name="myFileUpload_stake"
+				uploadUrl="upload/"
+				width="400px"
+				fileType="csv"
+				typeMissmatch="handleTypeMissmatch"
+				tooltip="Upload your file to the local server"
+				uploadComplete="doFileLoadCompleteStake"/>
+								<Button  class="uploadLabel"
+				text="Upload File"
+				press="doFileUploadStake"/>
+							</sap.ui.layout:VerticalLayout>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" columnsM="10" class="hideClass" editable="true" id="country_url_form" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title id="create_title_url" text="Add Details"/>
+							<c:Label id='countryid'  text="Country" class="fontclass"/>
+							<Input id="countryid_input" editable="true" width="50%"/>
+							<c:Label id='urlid'  text="SKU Database URL" class="fontclass"/>
+							<Input id="urlid_input" editable="true" width="50%"/>
+							<Label/>
+							<Button id="url_add"   press="onPressAddSKUURL" text="Add" width="30%"/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" columnsM="10" class="hideClass" editable="true" id="commodity_form" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title id="ctitle" text="Add Details"/>
+							<c:Label id='materialgrp'  text="SAP Material Group" class="fontclass whitespace"/>
+							<Input id="materialgrp_input" editable="true" width="50%"/>
+							<c:Label id='desc'  text="SAP Material Group Description" class="fontclass whitespace"/>
+							<Input id="desc_input" editable="true" width="50%"/>
+							<c:Label id='commodityid'  text="Commodities" class="fontclass whitespace"/>
+							<Input id="commodityid_input" editable="true" width="50%"/>
+							<Label/>
+							<Button id="url_addc"   press="onPressAddCommodity" text="Add" width="30%"/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" columnsM="10" class="hideClass" editable="true" id="User_create_form" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title id="create_title1" text="Create New User details"/>
+							<c:Label required="true" id='admuserid'  text="User Id" class="fontclass"/>
+							<Input id="admuserid_input" editable="true" width="50%"/>
+							<c:Label required="true" id='admusername'  text="User Name" class="fontclass"/>
+							<Input id="admusername_input" editable="true" width="50%"/>
+							<c:Label required="true" id='admuseremail'  text="User Email" class="fontclass"/>
+							<Input id="admuseremail_input" editable="true" width="50%"/>
+							<c:Label required="true" id='admuserdept'  text="User Department" class="fontclass"/>
+							<Select id="admuserdept_input" editable="true" width="50%" selectedKey=" ">
+							<core:Item key=" " text=" " />
+					        <core:Item key="Central Production Planning" text="Central Production Planning" />
+					        <core:Item key="CoFill" text="CoFill" />
+					        <core:Item key="Commercialisation" text="Commercialisation" />
+					        <core:Item key="Customer Logistics" text="Customer Logistics" />
+					        <core:Item key="Demand Planning" text="Demand Planning" />
+					        <core:Item key="Deployment" text="Deployment" />
+					        <core:Item key="E and T" text="E and T" />
+					        <core:Item key="Finance Freight/Delivery" text="Finance Freight/Delivery" />
+					        <core:Item key="Finance MD Costing" text="Finance MD Costing" />
+					        <core:Item key="IT" text="IT" />
+					        <core:Item key="Master Data" text="Master Data" />
+					        <core:Item key="Material Supply" text="Material Supply" />
+					        <core:Item key="NIM" text="NIM" />
+					        <core:Item key="Procurement Cofill" text="Procurement Cofill" />
+					        <core:Item key="QESH Manufacturing" text="QESH Manufacturing" />
+					        <core:Item key="QESH RTM" text="QESH RTM" />
+					        <core:Item key="QESH Supplier" text="QESH Supplier" />
+					        <core:Item key="Repack" text="Repack" />
+					        <core:Item key="Residuals" text="Residuals" />
+					        <core:Item key="Taxation" text="Taxation" />
+					        <core:Item key="Warehouses" text="Warehouses" />
+					        <core:Item key="Technologist BE:Antwerp" text="Technologist BE:Antwerp" />
+					        <core:Item key="Technologist BE:Chaudfontaine" text="Technologist BE:Chaudfontaine" />
+					        <core:Item key="Technologist BE:Ghent" text="Technologist BE:Ghent" />
+					        <core:Item key="Technologist FR:Clamart" text="Technologist FR:Clamart" />
+					        <core:Item key="Technologist FR:Dunkirk" text="Technologist FR:Dunkirk" />
+					        <core:Item key="Technologist FR:Grigny" text="Technologist FR:Grigny" />
+					        <core:Item key="Technologist FR:Marseille" text="Technologist FR:Marseille" />
+					        <core:Item key="Technologist FR:Toulouse" text="Technologist FR:Toulouse" />
+					        <core:Item key="Technologist GB:East Kilbride" text="Technologist GB:East Kilbride" />
+					        <core:Item key="Technologist GB:Edmonton" text="Technologist GB:Edmonton" />
+					        <core:Item key="Technologist GB:Milton Keynes" text="Technologist GB:Milton Keynes" />
+					        <core:Item key="Technologist GB:Morpeth" text="Technologist GB:Morpeth" />
+					        <core:Item key="Technologist GB:Sidcup" text="Technologist GB:Sidcup" />
+					        <core:Item key="Technologist GB:Wakefield" text="Technologist GB:Wakefield" />
+					        <core:Item key="Technologist NL:Dongen" text="Technologist NL:Dongen" />
+					        <core:Item key="Technologist NO:Lorenskog" text="Technologist NO:Lorenskog" />
+					        <core:Item key="Technologist NO:Mack" text="Technologist NO:Mack" />
+					        <core:Item key="Technologist SE:Jordbro" text="Technologist SE:Jordbro" />
+					        </Select>
+							<c:Label required="true" id='admusercntry'  text="User Country Based" class="fontclass"/>
+							<Input id="admusercntry_input" editable="true" width="50%"/>
+							<c:Label required="true" id='admcntryhub'  text="User Country HUB" class="fontclass"/>
+							<Input id="admusercntryhub_input" editable="true" width="50%"/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" id="user_buttons_form" class="hideClass" editable="true" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<Button id="user_add_details"   press="onPressAdduser" text="Add New User" width="30%"/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="10" columnsM="10" labelSpanL="3"
+					class="hideClass"  id="nimadminTable" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="NIM Details"/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" columnsM="10" class="hideClass" editable="true" id="nim_add" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title id="ctitle1" text="Add Details"/>
+							<c:Label id='initial'  text="NIM Initials" class="fontclass whitespace"/>
+							<Input id="ini_input" editable="true" width="50%"/>
+							<c:Label id='nimname'  text="NIM Name" class="fontclass whitespace"/>
+							<Input id="nimname_input" editable="true" width="50%"/>
+							<c:Label id='countrybased'  text="Country Based" class="fontclass whitespace"/>
+							<Input id="countrybased_input" editable="true" width="50%"/>
+							<c:Label id='countryhub'  text="Country Hub" class="fontclass whitespace"/>
+							<Input id="countryhub_input" editable="true" width="50%"/>
+							<Label/>
+							<Button id="add_nim"   press="onPressAddNIM" text="Add NIM" width="30%"/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="10" columnsM="10" labelSpanL="3"
+					class="hideClass"  id="dfremailtable" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="DF Request Email"/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" columnsM="10" class="hideClass" editable="true" id="email_add" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title id="cetitle" text="Add Details"/>
+							<c:Label id='dest'  text="Destination Market" class="fontclass whitespace"/>
+							<Input id="dest_input" editable="true" width="50%"/>
+							<c:Label id='name'  text="Name" class="fontclass whitespace"/>
+							<Input id="name_input" editable="true" width="50%"/>
+							<c:Label id='email'  text="Email" class="fontclass whitespace"/>
+							<Input id="email_input" editable="true" width="50%"/>
+							<Label/>
+							<Button id="add_email"   press="onPressAddEmail" text="Add" width="30%"/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+				</content>
+			</Page>
+		</detailPages>
+		<masterPages>
+			<Page id="adminmaster" title="User Profile Admin Updates" icon="sap-icon://action" class="sapUiStdPage">
+				<content>
+					<List itemPress="onPressSplitAdmin" width="200%">
+						<items>
+							<StandardListItem id="UserProf" title="User Profiles" type="Active" />
+							<StandardListItem id="country_sku_DB" title="Country-Based SKU Database" type="Active" />
+							<StandardListItem id="admin" title="Admin Form" type="Active" />
+							<StandardListItem id="nim_admin" title="NIM Admin Form" type="Active" />
+							<StandardListItem id="mat_sec" title="Material Supply" type="Active" />
+							<StandardListItem id="stakeholder_eval" title="Stakeholder Evaluation" type="Active" visible="false"/>
+							<StandardListItem id="commodi" title="Commodities" type="Active" />
+							<StandardListItem id="grp_dept" title="Project Group and Department" type="Active" />
+							<StandardListItem id="dept_loc" title="Department and Location" type="Active" />
+							<StandardListItem id="location" title="Locations" type="Active" />
+							<StandardListItem id="loc_dest" title="Location-Destination Market" type="Active" />
+							<StandardListItem id="repack" title="Repack Involvement" type="Active" />
+							<StandardListItem id="stake_country" title="Stakeholders Country" type="Active" />
+							<StandardListItem id="stake_site" title="Stakeholders Site" type="Active" />
+							<StandardListItem id="x_border" title="X-Border Combinations" type="Active" />
+							<StandardListItem id="cat_scat" title="Category/Sub-Category" type="Active" />
+							<StandardListItem id="dfr_email" title="DF Request Email" type="Active" />
+						</items>
+					</List>
+				</content>
+			</Page>
+		</masterPages>
+	</SplitContainer>
+</core:View>

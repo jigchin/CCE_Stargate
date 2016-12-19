@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.3" id="SG_CL_PROJ_TYPE" applyPrivilegeType="NONE" defaultClient="crossClient" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" dataCategory="CUBE" dimensionType="STANDARD" enforceSqlExecution="true" outputViewType="Aggregation">
+<descriptions defaultDescription="SG_CL_PROJ_TYPE"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="SG_CL_PROJ_TYPE_FNL" type="CALCULATION_VIEW">
+    <viewAttributes allViewAttributes="true"/>
+    <resourceUri>/dfrequest3.SG_HANA_DF/calculationviews/SG_CL_PROJ_TYPE_FNL</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="SG_CL_PROJ_TYPE_FNL">
+  <attributes>
+    <attribute id="ACTUAL_COMPLETION_DESPATCH" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Actual Project Completion Date"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="ACTUAL_COMPLETION_DESPATCH"/>
+    </attribute>
+    <attribute id="ACTUAL_FIRST_DESPATCH" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Actual First Despatch"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="ACTUAL_FIRST_DESPATCH"/>
+    </attribute>
+    <attribute id="ACTUAL_PCB_FTP_DATE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Actual PCK FTP date"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="ACTUAL_PCB_FTP_DATE"/>
+    </attribute>
+    <attribute id="BRAND" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Brand"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="BRAND"/>
+    </attribute>
+    <attribute id="BRANDOWNER_NAME" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Brand Owner Name"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="BRANDOWNER_NAME"/>
+    </attribute>
+    <attribute id="BRAND_OWNER" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Brand Owner"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="BRAND_OWNER"/>
+    </attribute>
+    <attribute id="COMMENTS" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Comments"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="COMMENTS"/>
+    </attribute>
+    <attribute id="DF_CIRCULATION_STARTED" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DF Workflow Circulation Started"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="DF_CIRCULATION_STARTED"/>
+    </attribute>
+    <attribute id="DF_ID" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DF Request Number"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="DF_ID"/>
+    </attribute>
+    <attribute id="DF_RECEIVED" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DF Received"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="DF_RECEIVED"/>
+    </attribute>
+    <attribute id="EST_PROD_WEEK_INPT" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="First estimate Production week to hit required first Despatch"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="EST_PROD_WEEK_INPT"/>
+    </attribute>
+    <attribute id="ET_SPEED" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="E&amp;T Speed"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="ET_SPEED"/>
+    </attribute>
+    <attribute id="FAST_TRACK" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Fast Track?"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="FAST_TRACK"/>
+    </attribute>
+    <attribute id="FEEDBACK_TO_STAKEHOLDER" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DF feedback sent to stakeholder"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="FEEDBACK_TO_STAKEHOLDER"/>
+    </attribute>
+    <attribute id="FINAL_PSS_COMPLETION" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Final PSS Completion"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="FINAL_PSS_COMPLETION"/>
+    </attribute>
+    <attribute id="FIRST_LAST_DISPATCH_DATE" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Date of First/Last Despatches from CCE Warehouses"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="FIRST_LAST_DISPATCH_DATE"/>
+    </attribute>
+    <attribute id="GATE1" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Gate1"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="GATE1"/>
+    </attribute>
+    <attribute id="GATE2" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Gate2"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="GATE2"/>
+    </attribute>
+    <attribute id="GATE_3" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Gate 3"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="GATE_3"/>
+    </attribute>
+    <attribute id="GATE_4" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Gate 4"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="GATE_4"/>
+    </attribute>
+    <attribute id="HIERARCHY" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Hierarchy"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="HIERARCHY"/>
+    </attribute>
+    <attribute id="HUB" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="HUB"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="HUB"/>
+    </attribute>
+    <attribute id="INCREMENTAL_VOLUME1" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Incremental Volume details"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="INCREMENTAL_VOLUME1"/>
+    </attribute>
+    <attribute id="INITIATOR" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DF Initiator Name"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="INITIATOR"/>
+    </attribute>
+    <attribute id="INITIATOR_DEPT" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DF Initiator Dept"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="INITIATOR_DEPT"/>
+    </attribute>
+    <attribute id="ISSCOM_CREATED" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BBN/ISSCOM Created"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="ISSCOM_CREATED"/>
+    </attribute>
+    <attribute id="MAPC" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Planned MAPC Approved"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="MAPC"/>
+    </attribute>
+    <attribute id="MAPX" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Planned MAPX DF GO"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="MAPX"/>
+    </attribute>
+    <attribute id="MAPX_PERMISSION" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAPX permission to produce"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="MAPX_PERMISSION"/>
+    </attribute>
+    <attribute id="MASTER_DATA_ON_TIME" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Mdata on time?"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="MASTER_DATA_ON_TIME"/>
+    </attribute>
+    <attribute id="MFG_SOURCE" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Manufacturing Source"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="MFG_SOURCE"/>
+    </attribute>
+    <attribute id="NIM1" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NIM"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="NIM1"/>
+    </attribute>
+    <attribute id="NIM_CM" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NIM Led or CM Led"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="NIM_CM"/>
+    </attribute>
+    <attribute id="NUM_ARTWORKS" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of Artworks"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="NUM_ARTWORKS"/>
+    </attribute>
+    <attribute id="NUM_SKU" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Number of SKU&apos;s"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="NUM_SKU"/>
+    </attribute>
+    <attribute id="ONGOING" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Quarantine period for finished product on ongoing production required?"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="ONGOING"/>
+    </attribute>
+    <attribute id="PAR_APPROVED_ACTUAL" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAR Approved (actual)"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="PAR_APPROVED_ACTUAL"/>
+    </attribute>
+    <attribute id="PAR_APPROVED_PLAN" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAR Approved(Plan)"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="PAR_APPROVED_PLAN"/>
+    </attribute>
+    <attribute id="PCB_TO_SCHAWK" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PCB to Schwak Date"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="PCB_TO_SCHAWK"/>
+    </attribute>
+    <attribute id="PLANNED_FINAL_PSS_COMPLETION" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Planned Final PSS Completion"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="PLANNED_FINAL_PSS_COMPLETION"/>
+    </attribute>
+    <attribute id="PROJECT_GROUP" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Project Group"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="PROJECT_GROUP"/>
+    </attribute>
+    <attribute id="PROJECT_GROUP_STDWKS" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Project Group StdWks"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="PROJECT_GROUP_1"/>
+    </attribute>
+    <attribute id="PROJECT_PHASE" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Project Phase"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="PROJECT_PHASE"/>
+    </attribute>
+    <attribute id="PROJECT_TYPE" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Project Type"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="PROJECT_TYPE"/>
+    </attribute>
+    <attribute id="QUANRANTINE_INPT" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Quarantine period for finished product on first production required?"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="QUANRANTINE_INPT"/>
+    </attribute>
+    <attribute id="SELLING_COUNTRY" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Selling Country"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="SELLING_COUNTRY"/>
+    </attribute>
+    <attribute id="SKU_CREATION_COMPLETE" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SKU Creation (Completed)"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="SKU_CREATION_COMPLETE"/>
+    </attribute>
+    <attribute id="SKU_CREATION_START" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SKU Creation (Start)"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="SKU_CREATION_START"/>
+    </attribute>
+    <attribute id="START_DATE" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Project Start Date"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="START_DATE"/>
+    </attribute>
+    <attribute id="STATUS_NAME" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DF Request Status"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="STATUS_NAME"/>
+    </attribute>
+    <attribute id="TCCC_PRICING" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TCCC Pricing per part"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="TCCC_PRICING"/>
+    </attribute>
+    <attribute id="TITLE" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Title of Project"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="TITLE"/>
+    </attribute>
+    <attribute id="WEEKNUM" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Completed Week"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="WEEKNUM"/>
+    </attribute>
+    <attribute id="YEAR" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Despatch Year"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="YEAR"/>
+    </attribute>
+    <attribute id="ASSIGNMENT_DELAY" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Assignment Delay"/>
+      <keyMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="ASSIGNMENT_DELAY"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="COUNT_ASSIGNMENT_DELAY" order="8" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Count of Assignment Delay"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="COUNT_ASSIGNMENT_DELAY"/>
+    </measure>
+    <measure id="COUNT_OF_STATUSES" order="9" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Status Count"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="COUNT_OF_STATUSES"/>
+    </measure>
+    <measure id="COUNT_PROJECT_GROUPS" order="10" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Project Groups Count"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="COUNT_PROJECT_GROUPS"/>
+    </measure>
+    <measure id="COUNT_PROJECT_PHASES" order="11" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Project Phases Count"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="COUNT_PROJECT_PHASES"/>
+    </measure>
+    <measure id="COUNT_PROJECT_TYPES" order="12" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Project Type Count"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="COUNT_PROJECT_TYPES"/>
+    </measure>
+    <measure id="DUMMY" order="16" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="DUMMY"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="DUMMY"/>
+    </measure>
+    <measure id="MASTER_DATA_SPEED" order="37" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Master Data Speed"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="MASTER_DATA_SPEED"/>
+    </measure>
+    <measure id="SCHAWK_SPEED" order="53" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Schawk Speed"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="SCHAWK_SPEED"/>
+    </measure>
+    <measure id="STD_WEEKS" order="59" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Std Weeks"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="STD_WEEKS"/>
+    </measure>
+    <measure id="STD_WEEKS_GB" order="60" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Std Weeks GB"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="STD_WEEKS_GB"/>
+    </measure>
+    <measure id="STD_WEEKS_MASTERDATE" order="61" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Std Weeks Masterdata"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="STD_WEEKS_MASTERDATE"/>
+    </measure>
+    <measure id="SUPPLY_SPEED" order="62" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Supply Speed"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="SUPPLY_SPEED"/>
+    </measure>
+    <measure id="TCCC_SPEED" order="64" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="TCCC Speed"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="TCCC_SPEED"/>
+    </measure>
+    <measure id="VARIANCE_FROM_AGREED" order="66" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Variance From Agreed"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="VARIANCE_FROM_AGREED"/>
+    </measure>
+    <measure id="WEEKS_FOR_PROJECT" order="68" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Weeks for Project"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="WEEKS_FOR_PROJECT"/>
+    </measure>
+    <measure id="WEEKS_VARIANCE" order="69" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="Weeks Variance"/>
+      <measureMapping columnObjectName="SG_CL_PROJ_TYPE_FNL" columnName="WEEKS_VARIANCE"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,733 @@
+	<core:View xmlns:core="sap.ui.core" xmlns:u="sap.ui.unified" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" 
+	xmlns:c="sap.ui.commons"  xmlns:m="sap.suite.ui.commons" 
+		xmlns:viz="sap.viz.ui5.controls"    
+	xmlns:table="sap.ui.table" 
+	controllerName="view.CreateDF">   
+	
+<html:script src="view/test.js" type="text/javascript" />
+
+		<Page backgroundDesign="Transparent" id="pageID" icon=""> 
+		<customHeader>
+				<Bar id="HeadingBar"> 
+				<contentLeft>
+				<Button icon="sap-icon://nav-back" press="onNavBack" /> 
+				<Button icon="sap-icon://home" press="homePage" /> 
+				<Button icon="sap-icon://menu" id="linktomenu" press="onCollapseExpandPress" tooltip="Menu" />
+				<Image activeSrc="/dfrequest3/images/CCEP_LOGO.jpg" height="70%" id="__image2" src="/dfrequest3/images/CCEP_LOGO.jpg" width="100px" class="homebutton"/> 
+				</contentLeft>
+				<contentMiddle>
+					<Label id="Heading" text="NEW INITIATIVES" design="Bold" labelSpanL="3"/>
+				</contentMiddle>
+				<contentRight>
+					<Button id="search" icon="sap-icon://search" press="searchbutton" tooltip="Search" class="hideClass"/>
+					<Button id="user" icon="sap-icon://person-placeholder" press="onUserPress" tooltip="User details"/>
+					<Button id="log" icon="sap-icon://log" press="logOff" tooltip="Log Out"/>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content width="100%">
+		
+						<sap.ui.layout.form:SimpleForm  id="Userform" layout="ResponsiveLayout" width="100%">
+								<sap.ui.layout.form:content>
+								<Label  class="alignLabel" text="Date and Time"></Label>
+								<DateTimeInput id="myDP" value="" editable="false"></DateTimeInput>
+								<Label  class="alignLabel" text="User Name" width="100%"/>
+								<Input id="AuthorTextInput" editable="false"/>
+								<Label  class="alignLabel" text="User Dept"  width="100%"/>
+								<Input id="AuthorDepartmentTextInput" editable="false" width="100%"/>
+								</sap.ui.layout.form:content>
+						</sap.ui.layout.form:SimpleForm>
+						<IconTabHeader select="onSelectChanged" id="Iconheader">
+							<items>
+								<IconTabFilter  id="NPT_button" key="NPT_button" text="Project Tracker" icon="sap-icon://clinical-tast-tracker" iconColor="Negative" visible="false"/>
+								<IconTabFilter text="DF Request" count="" icon="sap-icon://request" iconColor="Positive" id="request_button" key="request_button"/>
+								<IconTabFilter text="DF Evaluation" count="" icon="sap-icon://workflow-tasks" iconColor="Critical" id="workflow_button" key="workflow_button"/>
+								<IconTabFilter  id="activityTracker_button" key="activityTracker_button" text="Data Platform" icon="sap-icon://database" iconColor="Positive"/>
+								<IconTabFilter  id="sku_meeting" key="sku_meeting_button" text="SKU Meeting" icon="sap-icon://meeting-room" iconColor="Neutral"/>
+								<IconTabFilter  id="SKU_database" key="sku_database_button" text="SKU Database" icon="sap-icon://database" iconColor="Critical"/>
+								<IconTabFilter  id="forms_button" key="forms_button" text="BOM Materials" icon="sap-icon://form" iconColor="Positive"/>
+							<!--	<IconTabFilter  id="NPT_button" key="NPT_button" text="Project Tracker" icon="sap-icon://clinical-tast-tracker" iconColor="blue"/> -->
+								<IconTabFilter  id="KBI_Main_Page" key="KBI_Main_Page" text="KBI" icon="sap-icon://kpi-corporate-performance" iconColor="Neutral"/>
+								<IconTabFilter  id="Reports_button" key="Reports_button" text="Reports" icon="sap-icon://documents" iconColor="Neutral"/>
+								<IconTabFilter  id="admin_button" key="admin_button" text="Admin" icon="sap-icon://settings" iconColor="Neutral"/>
+							<!--	<IconTabFilter text="To-Do" count="" icon="sap-icon://drop-down-list" iconColor="Critical" id="todo_button" key="todo_button"/>  -->
+						   <!--     <IconTabFilter  id="KBI_button" key="KBI_button" text="KBI" icon="sap-icon://kpi-corporate-performance" iconColor="orange"/> -->
+								
+								
+								
+								
+						 <!--       <IconTabFilter  id="Test" key="Test" text="PieChart" icon="sap-icon://kpi-corporate-performance" iconColor="green"/> -->
+						<!--		<IconTabFilter  id="Test1" key="Test1" text="KBI_Samina" icon="sap-icon://kpi-corporate-performance" iconColor="green"/> -->
+						 </items>
+						</IconTabHeader> 
+						
+						
+			<sap.ui.layout.form:SimpleForm columnsL="4" columnsM="10" class="hideClass" editable="false" id="kbiMainPage" layout="ResponsiveGridLayout" width="100%">
+		<sap.ui.layout.form:content>
+		<core:Title id="kbimain" text="BU NIM KBI MAIN MENU"/>
+		<sap.ui.layout:FixFlex id="idFixFlex5" class="fixFlexFixedSize" minFlexSize="250"> 
+		<sap.ui.layout:fixContent>
+		
+		<Panel id="PanelMain-1" class="panelStyle" expandable="true" expanded="true" headerText="The Number and types of projects delivered over time">
+				 
+								<VBox id="BM-1" class="boxPosition" width="1000px">
+									<Label id='title1_label' design="Bold"/>
+									<Button  text="Project Type by Week" id="Week_button" press="typechartdisplay" width="50%"/>
+									  <Label  design="Bold" />
+									<Button  text="Project Type Over Time" id="Time_button" press="piechartdisplay" width="50%"/>
+									  <Label  design="Bold" />
+									<Button  text="Project Groups by week" id="Group_Week_button" press="groupchartdisplay" width="50%"/>
+								</VBox>
+		</Panel>
+		<Panel id="PanelMain-2" class="panelStyle" expandable="true" expanded="true" headerText="Workload Graphs of Project Delivery over time">
+				 
+								<VBox id="BM-2" class="boxPosition" width="1000px">
+									<Label id='title4_label' design="Bold" text="Resource Graphs by workload hub" />
+									<Button  text="GB" id="GB_button" press="GBchartdisplay" width="30%"/>
+									<Label  design="Bold" />
+									<Button  text="FR" id="FR_button" press="FRchartdisplay" width="30%"/>
+									<Label design="Bold" />
+									<Button  text="NEBU" id="NEBU_button" press="NEBUchartdisplay" width="30%"/>
+									
+								</VBox>
+								<VBox id="BM-3" class="boxPosition" width="1000px">
+									<Label id='title5_label' design="Bold" text="Resource Graphs by selling country" />
+									<Button  text="BNL" id="BNL_button" press="BNLchartdisplay" width="30%"/>
+									<Label design="Bold" />
+									<Button  text="SE" id="SE_button" press="SEchartdisplay" width="30%"/>
+									<Label  design="Bold" />
+									<Button  text="BE" id="BE_button" press="BEchartdisplay" width="30%"/>
+									<Label  design="Bold" />
+									<Button  text="NO" id="NO_button" press="NOchartdisplay" width="30%" />
+									<Label  design="Bold" />
+									<Button  text="NL" id="NL_button" press="NLchartdisplay" width="30%" />
+									<Label  design="Bold" />
+									<Button  text="Unassigned due to insufficient NIM Resource" id="Unassigned_button" press="Unassignedchartdisplay" width="30%"/>
+									
+								</VBox>
+		</Panel>
+	   
+			<Panel id="PanelMain-3" class="panelStyle" expandable="true" expanded="true" headerText="Non Value added Hours">
+				 
+								<VBox id="BM-4" class="boxPosition" width="400px">
+								<Label id='title6_label' design="Bold"/>
+								<Button  text="Number of Cancelled Projects" id="cancelled_proj_button" press="canprjdisplay" width="100%"/>
+								<Label  design="Bold" />
+								<Button  text="Workload Impact of Cancelled and Hold" id="cancelled_hold_button" press="canholddisplay" width="100%"/> 
+									
+								</VBox>
+		</Panel>
+		<Panel id="PanelMain-4" class="panelStyle" expandable="true" expanded="true" headerText="Time taken to deliver a project type">
+		   <VBox id="BM-5" class="boxPosition" width="400px">       
+			<Label  design="Bold"/>
+			<Button  text="Project Completion Time Against STD" id="STD_proj_button" press="stdprjdisplay" width="100%"/>
+			<Label  design="Bold" />
+			<Button  text="Project Completion Time Against Plan" id="plan_proj_button" press="planprjdisplay" width="100%"/>                     
+			<Label  design="Bold" />
+			<Button  text="Fasttrack Projects against STD" id="fasttrack_proj_button" press="fastprjdisplay" width="100%"/>
+			 <Label  design="Bold" />
+			<Button  text="On Time Against Plan" id="ontime_proj_button" press="ontimedisplay" width="100%"/> 
+			</VBox>
+			
+		</Panel>
+		<Panel id="PanelMain-5" class="panelStyle" expandable="true" expanded="true" headerText="Time taken by Stakeholders">
+			   <VBox id="BM-6" class="boxPosition" width="400px"> 
+			   <Label  design="Bold"/>
+			<Button  text="Master Data" id="mtdstk_proj_button" press="mtdstkdisplay" width="100%"/>
+			<Label  design="Bold" />
+			<Button  text="TCCC" id="tccc_stk_button" press="tcccstkdisplay" width="100%"/>                     
+			<Label  design="Bold" />
+			<Button  text="Schawk" id="schawk_stk_button" press="schawkstkdisplay" width="100%"/>  
+			<Label  design="Bold" />
+			<Button  text="Supply" id="supply_stk_button" press="supplystkdisplay" width="100%"/> 
+			 <Label  design="Bold" />
+			<Button  text="E and T" id="EnT_stk_button" press="entstkdisplay" width="100%"/> 
+			</VBox>
+		</Panel>
+		<Panel id="PanelMain-6" class="panelStyle" expandable="true" expanded="true" headerText=" Workload by project type by Stakeholder">
+			 <VBox id="BM-7" class="boxPosition" width="400px">       
+			 <Label design="Bold"/>
+			<Button  text="Master Data" id="mtd_wrkld_button" press="mtdwrklddisplay" width="100%"/>
+			<Label  design="Bold" />
+			<Button  text="TCCC" id="tccc_wrkld_button" press="tcccwrklddisplay" width="100%"/>                     
+			<Label  design="Bold" />
+			<Button  text="Schawk" id="schawk_wrkld_button" press="schawkwrklddisplay" width="100%"/>  
+			<Label  design="Bold" />
+			<Button  text="Supply" id="supply_wrkld_button" press="supplywrklddisplay" width="100%"/> 
+			</VBox>
+								
+		</Panel>
+		<Panel id="PanelMain-7" class="panelStyle" expandable="true" expanded="true" headerText="Schawk Data from Tonica">
+			   <VBox id="BM-8" class="boxPosition" width="400px">     
+			   <Label  design="Bold" />
+			<Button  text="Number of Artworks" id="artwork_button" press="artworkdisplay" width="100%"/>                     
+			<Label  design="Bold" />
+			<Button  text="Artwork Completion versus Required" id="artwork_req_button" press="artworkreqdisplay" width="100%"/>
+			 <Label  design="Bold" />
+			<Button  text="Artwork Completion versus Revised" id="artwork_rev_button" press="artworkrevdisplay" width="100%"/> 
+			</VBox>
+		</Panel> 
+		<Panel id="PanelMain-8" class="panelStyle" expandable="true" expanded="true" headerText="Admin Settings">
+			   <VBox id="BM-9" class="boxPosition" width="400px">     
+			   <Label  design="Bold" />
+			<Button  text="Update NIMs" id="addNIM_button" press="nimdisplay" width="100%"/>                     
+			
+			</VBox>
+		</Panel> 
+		
+	<!--	<c:Label  id='title_label' design="Bold" text="The Number and types of projects delivered over time" />
+		<Button  text="Project Type by Week" id="Week_button" press="typechartdisplay" width="30%"/>
+		<c:Label id='title2_label' design="Bold" />
+		<Button  text="Project Type Over Time" id="Time_button" press="piechartdisplay" width="30%"/>
+		<c:Label id='title3_label' design="Bold" />
+		<Button  text="Project Groups by week" id="Group_Week_button" press="groupchartdisplay" width="30%"/>
+		<c:Label  id='title1_label' design="Bold" text="Workload Graphs of Project Delivery Over Time" />
+		<Button  text="Resource Graphs By Workload Hub" id="Workload_button" press="workloaddisplay" width="30%"/> -->
+		 <viz:Popover id="idPopOver5" /> 
+		</sap.ui.layout:fixContent>
+		</sap.ui.layout:FixFlex>
+		</sap.ui.layout.form:content>
+					
+		</sap.ui.layout.form:SimpleForm> 
+		<sap.ui.layout.form:SimpleForm columnsL="4" class="hideClass" editable="true" id="NIM_form" layout="ResponsiveGridLayout">
+					<sap.ui.layout.form:content>
+						<core:Title text="Update NIM details"/>
+		</sap.ui.layout.form:content>
+		</sap.ui.layout.form:SimpleForm>
+		<sap.ui.layout.form:SimpleForm columnsL="4" columnsM="10" class="hideClass" editable="true" id="previous_records_mm" layout="ResponsiveGridLayout">
+					<sap.ui.layout.form:content>
+						<core:Title text="Feedback records are as follows:"/>
+			
+						</sap.ui.layout.form:content>
+					
+						</sap.ui.layout.form:SimpleForm>
+		<sap.ui.layout.form:SimpleForm columnsL="4" columnsM="10" class="hideClass" editable="true" id="previous_records_pp" layout="ResponsiveGridLayout">
+					<sap.ui.layout.form:content>
+						<core:Title text="Feedback records are as follows:"/>
+			
+						</sap.ui.layout.form:content>
+					
+						</sap.ui.layout.form:SimpleForm>
+		<sap.ui.layout.form:SimpleForm columnsL="4" columnsM="10" class="hideClass" editable="true" id="previous_records_sn" layout="ResponsiveGridLayout">
+					<sap.ui.layout.form:content>
+						<core:Title text="Feedback records are as follows:"/>
+			
+						</sap.ui.layout.form:content>
+					
+						</sap.ui.layout.form:SimpleForm>
+		
+						
+		<sap.ui.layout.form:SimpleForm columnsL="4" columnsM="10" class="hideClass" editable="true" id="User_create_form" layout="ResponsiveGridLayout">
+					<sap.ui.layout.form:content>
+						<core:Title id="create_title1" text="Create New User details"/>
+						<c:Label required="true" id='admuserid'  text="User Id" class="fontclass"/>
+						<Input id="admuserid_input" editable="true" width="50%"/>
+						<c:Label required="true" id='admusername'  text="User Name" class="fontclass"/>
+						<Input id="admusername_input" editable="true" width="50%"/>
+						<c:Label required="true" id='admuseremail'  text="User Email" class="fontclass"/>
+						<Input id="admuseremail_input" editable="true" width="50%"/>
+						<c:Label required="true" id='admuserdept'  text="User Department" class="fontclass"/>
+						<Input id="admuserdept_input" editable="true" width="50%"/>
+						<c:Label required="true" id='admusercntry'  text="User Country Based" class="fontclass"/>
+						<Input id="admusercntry_input" editable="true" width="50%"/>
+						<c:Label required="true" id='admcntryhub'  text="User Country HUB" class="fontclass"/>
+						<Input id="admusercntryhub_input" editable="true" width="50%"/> 
+			</sap.ui.layout.form:content>
+		</sap.ui.layout.form:SimpleForm> 
+			<sap.ui.layout.form:SimpleForm columnsL="4" id="user_buttons_form"  editable="true" layout="ResponsiveGridLayout">
+					 <sap.ui.layout.form:content>
+							<Button id="user_add_details"   press="onPressAdduser" text="Add New User" width="30%"/>
+					</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+			<sap.ui.layout.form:SimpleForm columnsL="4" columnsM="10" class="hideClass" editable="true" id="country_url_form" layout="ResponsiveGridLayout">
+					<sap.ui.layout.form:content>
+						<core:Title id="create_title_url" text="Add Details"/>
+						<c:Label id='countryid'  text="Country" class="fontclass"/>
+						<Input id="countryid_input" editable="true" width="50%"/>
+						<c:Label id='urlid'  text="SKU Database URL" class="fontclass"/>
+						<Input id="urlid_input" editable="true" width="50%"/>
+						<Label/>
+						<Button id="url_add"   press="onPressAddSKUURL" text="Add" width="30%"/>
+			</sap.ui.layout.form:content>
+		</sap.ui.layout.form:SimpleForm> 
+			<sap.ui.layout.form:SimpleForm columnsL="4" columnsM="10" class="hideClass" editable="true" id="NIM_create_form" layout="ResponsiveGridLayout">
+					<sap.ui.layout.form:content>
+						<core:Title id="create_title" text="Create New NIM details"/>
+						<c:Label required="true" id='niminit'  text="NIM Initials" class="fontclass"/>
+						<Input id="niminit_input" editable="true" width="50%"/>
+						<c:Label required="true" id='nimname'  text="NIM Name" class="fontclass"/>
+						<Input id="nimname_input" editable="true" width="50%"/>
+						<c:Label required="true" id='nimcntrybased'  text="NIM - Country Based" class="fontclass"/>
+						<Input id="nimcntrybased_input" editable="true" width="50%"/>
+						<c:Label required="true" id='nimcntryhub'  text="NIM - Country HUB" class="fontclass"/>
+						<Input id="nimcntryhub_input" editable="true" width="50%"/>
+			</sap.ui.layout.form:content>
+		</sap.ui.layout.form:SimpleForm>
+				<sap.ui.layout.form:SimpleForm columnsL="4" id="nim_buttons_form"  editable="true" layout="ResponsiveGridLayout">
+					 <sap.ui.layout.form:content>
+							<Button id="nim_add_details"   press="onPressAdd" text="Add NIM" width="30%"/>
+					</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+						<sap.ui.layout.form:SimpleForm columnsL="4" id="previous_buttons_form"  class="hideClass" editable="true" layout="ResponsiveGridLayout">
+					 <sap.ui.layout.form:content>
+							<Button id="previous_button"   press="onPressPrev" text="Back" width="30%"/>
+					</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+
+		
+		<sap.ui.layout.form:SimpleForm columnsL="4" class="hideClass" editable="false" id="kbiPage4" layout="ResponsiveGridLayout" width="100%">
+		<sap.ui.layout.form:content>
+		<sap.ui.layout:FixFlex id="idFixFlex3" class="fixFlexFixedSize" minFlexSize="250"> 
+		<sap.ui.layout:fixContent>
+		<Panel id="PGB-1" class="panelStyle" expandable="true" expanded="true" headerText="Settings" layout="ResponsiveGridLayout">
+				<VBox id="BGB-1" class="boxPosition" width="1000px">
+				<Button  text="Main KBI Screen" id="KBI_back2" press="back2chartdisplay" width="15%"/>
+				 </VBox>
+		</Panel>
+		<m:ChartContainer
+			id="idChartContainer4"
+			showFullScreen="true"
+			showPersonalization="false"
+			autoAdjustHeight="false"
+			showLegend="true"
+			personalizationPress="attachPersonalizationPress"
+			contentChange="attachContentChange"
+			title="WorkLoad KBIs"
+			width="100%"/>
+		
+		<viz:Popover id="idPopOver3" /> 
+		</sap.ui.layout:fixContent>
+		</sap.ui.layout:FixFlex>
+		</sap.ui.layout.form:content>
+					
+		</sap.ui.layout.form:SimpleForm> 
+		<sap.ui.layout.form:SimpleForm columnsL="4" class="hideClass" editable="false" id="kbiPage3" layout="ResponsiveGridLayout" width="100%">
+		<sap.ui.layout.form:content>
+		<sap.ui.layout:FixFlex id="idFixFlex2" class="fixFlexFixedSize" minFlexSize="250"> 
+		<sap.ui.layout:fixContent>
+		<Panel id="PG-1" class="panelStyle" expandable="true" expanded="true" headerText="Settings" layout="GridLayout">
+				  
+								<VBox id="BGR-1" class="boxPosition" width="1000px">
+								  
+									<Button  text="Main KBI Screen" id="KBI_back" press="backchartdisplay" width="auto"/>
+									<Label text="Selling Country"  design="Bold"/>
+									<RadioButtonGroup columns="10" id="rgr1" width="100%">
+									<RadioButton  id="RGR1-0" text="ALL" selected="true"/>
+									<RadioButton  id="RGR1-1" text="BE"/>
+									<RadioButton  id="RGR1-2"  text="DE" />
+									<RadioButton  id="RGR1-3"  text="EXPORT"/>
+									<RadioButton  id="RGR1-4" text="FR"/>
+									<RadioButton  id="RGR1-5" text="GB"/>
+									<RadioButton  id="RGR1-6"  text="LU"/>
+									<RadioButton  id="RGR1-7" text="NL"/>
+									<RadioButton  id="RGR1-8"  text="NO"/>
+									<RadioButton  id="RGR1-9"  text="SE"/>
+									</RadioButtonGroup>
+									<Label text="NIM"  design="Bold"/>
+									<RadioButtonGroup columns="10" id="rgr2" width="100%">
+									<RadioButton  id="RGR2-0"  text="ALL"  selected="true" />
+									<RadioButton  id="RGR2-1"  text="AM"/>
+									<RadioButton  id="RGR2-2"  text="AE" />
+									<RadioButton  id="RGR2-3" text="BRI"/>
+									<RadioButton  id="RGR2-4"  text="BW"/>
+									<RadioButton  id="RGR2-5"  text="CL"/>
+									<RadioButton  id="RGR2-6" text="DE"/>
+									<RadioButton  id="RGR2-7"  text="DL"/>
+									<RadioButton  id="RGR2-8" text="FF"/>
+									<RadioButton  id="RGR2-9"  text="FM"/>
+									<RadioButton  id="RGR2-10"  text="FH"/>
+									<RadioButton  id="RGR2-11"  text="KN"/>
+									<RadioButton  id="RGR2-12"  text="LD"/>
+									<RadioButton  id="RGR2-13"  text="LVS"/>
+									<RadioButton  id="RGR2-14"  text="MB"/>
+									<RadioButton  id="RGR2-15"  text="NF"/>
+									<RadioButton  id="RGR2-16"  text="RS"/>
+									<RadioButton  id="RGR2-17"  text="ST"/>
+									<RadioButton  id="RGR2-18"  text="SH"/>
+									<RadioButton  id="RGR2-19"  text="SM"/>
+									</RadioButtonGroup>
+									<Label text="Completed Week"  design="Bold"/>
+									<RadioButtonGroup columns="15" id="rgr3" width="100%">
+									<RadioButton  id="RGR3-0"  text="ALL"  selected="true" />
+									<RadioButton  id="RGR3-1"  text="1"/>
+									<RadioButton  id="RGR3-2"  text="2" />
+									<RadioButton  id="RGR3-3" text="3"/>
+									<RadioButton  id="RGR3-4"  text="4"/>
+									<RadioButton  id="RGR3-5"  text="5"/>
+									<RadioButton  id="RGR3-6" text="6"/>
+									<RadioButton  id="RGR3-7"  text="7"/>
+									<RadioButton  id="RGR3-8" text="8"/>
+									<RadioButton  id="RGR3-9"  text="9"/>
+									<RadioButton  id="RGR3-10"  text="10"/>
+									<RadioButton  id="RGR3-11"  text="11"/>
+									<RadioButton  id="RGR3-12"  text="12"/>
+									<RadioButton  id="RGR3-13"  text="13"/>
+									<RadioButton  id="RGR3-14"  text="14"/>
+									<RadioButton  id="RGR3-15"  text="15"/>
+									<RadioButton  id="RGR3-16"  text="16"/>
+									<RadioButton  id="RGR3-17"  text="17"/>
+									<RadioButton  id="RGR3-18"  text="18"/>
+									<RadioButton  id="RGR3-19"  text="19"/>
+									<RadioButton  id="RGR3-20"  text="20"/>
+									<RadioButton  id="RGR3-21"  text="21"/>
+									<RadioButton  id="RGR3-22"  text="22"/>
+									<RadioButton  id="RGR3-23"  text="23"/>
+									<RadioButton  id="RGR3-24"  text="24"/>
+									<RadioButton  id="RGR3-25"  text="25"/>
+									<RadioButton  id="RGR3-26"  text="26"/>
+									<RadioButton  id="RGR3-27"  text="27"/>
+									<RadioButton  id="RGR3-28"  text="28"/>
+									<RadioButton  id="RGR3-29"  text="29"/>
+									<RadioButton  id="RGR3-30"  text="30"/>
+									<RadioButton  id="RGR3-31"  text="31"/>
+									<RadioButton  id="RGR3-32"  text="32"/>
+									<RadioButton  id="RGR3-33"  text="33"/>
+									<RadioButton  id="RGR3-34"  text="34"/>
+									<RadioButton  id="RGR3-35"  text="35"/>
+									<RadioButton  id="RGR3-36"  text="36"/>
+									<RadioButton  id="RGR3-37"  text="37"/>
+									<RadioButton  id="RGR3-38"  text="38"/>
+									<RadioButton  id="RGR3-39"  text="39"/>
+									<RadioButton  id="RGR3-40"  text="40"/>
+									<RadioButton  id="RGR3-41"  text="41"/>
+									<RadioButton  id="RGR3-42"  text="42"/>
+									<RadioButton  id="RGR3-43"  text="43"/>
+									<RadioButton  id="RGR3-44"  text="44"/>
+									<RadioButton  id="RGR3-45"  text="45"/>
+									<RadioButton  id="RGR3-46"  text="46"/>
+									<RadioButton  id="RGR3-47"  text="47"/>
+									<RadioButton  id="RGR3-48"  text="48"/>
+									<RadioButton  id="RGR3-49"  text="49"/>
+									<RadioButton  id="RGR3-50"  text="50"/>
+									<RadioButton  id="RGR3-51"  text="51"/>
+									<RadioButton  id="RGR3-52"  text="52"/>
+									</RadioButtonGroup>
+									<Label text="Completed Year"  design="Bold"/>
+									<RadioButtonGroup columns="15" id="rgr4" width="100%">
+									<RadioButton  id="RGR4-0"  text="2016"  selected="true" />
+									<RadioButton  id="RGR4-1"  text="2017" />
+									<RadioButton  id="RGR4-2" text="2011"/>
+									<RadioButton  id="RGR4-3"  text="2012"/>
+									<RadioButton  id="RGR4-4"  text="2013"/>
+									<RadioButton  id="RGR4-5" text="2014"/>
+									<RadioButton  id="RGR4-6"  text="2015"/>
+									</RadioButtonGroup>
+								</VBox>
+							   </Panel>
+		
+		<m:ChartContainer
+			id="idChartContainer3"
+			showFullScreen="true"
+			showPersonalization="false"
+			autoAdjustHeight="false"
+			showLegend="true"
+			personalizationPress="attachPersonalizationPress"
+			contentChange="attachContentChange"
+			title="Project Group KBIs"
+			width="100%"/>
+		
+	<!--	<viz:Popover id="idPopOver2" /> -->
+		</sap.ui.layout:fixContent>
+		</sap.ui.layout:FixFlex>
+		</sap.ui.layout.form:content>
+					
+		</sap.ui.layout.form:SimpleForm> 
+		<sap.ui.layout.form:SimpleForm columnsL="4" class="hideClass" editable="false" id="kbiPage2" layout="ResponsiveGridLayout" width="100%">
+		<sap.ui.layout.form:content>
+		 <sap.ui.layout:FixFlex id="idFixFlex1" class="fixFlexFixedSize" minFlexSize="250"> 
+		<sap.ui.layout:fixContent>
+		<Panel id="P-1" class="panelStyle" expandable="true" expanded="true" headerText="Settings">
+				  <!--  <ScrollContainer
+						class="scrollStyle"
+						height="100%"
+						width="100%"
+						horizontal="false"
+						vertical="true"
+						focusable="false">
+						<HBox class="settingBottomStyle" width="auto">
+							<HBox id="H-1" class="HBoxStyle"> -->
+								<VBox id="B-1" class="boxPosition" width="1000px">
+								   
+									<Button  text="Main KBI Screen" id="KBI_back1" press="back1chartdisplay" width="15%"/>
+									<Label text="Selling Country"  design="Bold"/>
+									<RadioButtonGroup columns="10" id="rg1" width="100%">
+									<RadioButton  id="R1-0" text="ALL" selected="true"/>
+									<RadioButton  id="R1-1" text="BE"/>
+									<RadioButton  id="R1-2"  text="DE" />
+									<RadioButton  id="R1-3"  text="EXPORT"/>
+									<RadioButton  id="R1-4" text="FR"/>
+									<RadioButton  id="R1-5" text="GB"/>
+									<RadioButton  id="R1-6"  text="LU"/>
+									<RadioButton  id="R1-7" text="NL"/>
+									<RadioButton  id="R1-8"  text="NO"/>
+									<RadioButton  id="R1-9"  text="SE"/>
+									</RadioButtonGroup>
+									<Label text="NIM"  design="Bold"/>
+									<RadioButtonGroup columns="10" id="rg2" width="100%">
+									<RadioButton  id="R2-0"  text="ALL"  selected="true" />
+									<RadioButton  id="R2-1"  text="AM"/>
+									<RadioButton  id="R2-2"  text="AE" />
+									<RadioButton  id="R2-3" text="BRI"/>
+									<RadioButton  id="R2-4"  text="BW"/>
+									<RadioButton  id="R2-5"  text="CL"/>
+									<RadioButton  id="R2-6" text="DE"/>
+									<RadioButton  id="R2-7"  text="DL"/>
+									<RadioButton  id="R2-8" text="FF"/>
+									<RadioButton  id="R2-9"  text="FM"/>
+									<RadioButton  id="R2-10"  text="FH"/>
+									<RadioButton  id="R2-11"  text="KN"/>
+									<RadioButton  id="R2-12"  text="LD"/>
+									<RadioButton  id="R2-13"  text="LVS"/>
+									<RadioButton  id="R2-14"  text="MB"/>
+									<RadioButton  id="R2-15"  text="NF"/>
+									<RadioButton  id="R2-16"  text="RS"/>
+									<RadioButton  id="R2-17"  text="ST"/>
+									<RadioButton  id="R2-18"  text="SH"/>
+									<RadioButton  id="R2-19"  text="SM"/>
+									</RadioButtonGroup>
+									<Label text="Completed Week"  design="Bold"/>
+									<RadioButtonGroup columns="15" id="r3" width="100%">
+									<RadioButton  id="R3-0"  text="ALL"  selected="true" />
+									<RadioButton  id="R3-1"  text="1"/>
+									<RadioButton  id="R3-2"  text="2" />
+									<RadioButton  id="R3-3" text="3"/>
+									<RadioButton  id="R3-4"  text="4"/>
+									<RadioButton  id="R3-5"  text="5"/>
+									<RadioButton  id="R3-6" text="6"/>
+									<RadioButton  id="R3-7"  text="7"/>
+									<RadioButton  id="R3-8" text="8"/>
+									<RadioButton  id="R3-9"  text="9"/>
+									<RadioButton  id="R3-10"  text="10"/>
+									<RadioButton  id="R3-11"  text="11"/>
+									<RadioButton  id="R3-12"  text="12"/>
+									<RadioButton  id="R3-13"  text="13"/>
+									<RadioButton  id="R3-14"  text="14"/>
+									<RadioButton  id="R3-15"  text="15"/>
+									<RadioButton  id="R3-16"  text="16"/>
+									<RadioButton  id="R3-17"  text="17"/>
+									<RadioButton  id="R3-18"  text="18"/>
+									<RadioButton  id="R3-19"  text="19"/>
+									<RadioButton  id="R3-20"  text="20"/>
+									<RadioButton  id="R3-21"  text="21"/>
+									<RadioButton  id="R3-22"  text="22"/>
+									<RadioButton  id="R3-23"  text="23"/>
+									<RadioButton  id="R3-24"  text="24"/>
+									<RadioButton  id="R3-25"  text="25"/>
+									<RadioButton  id="R3-26"  text="26"/>
+									<RadioButton  id="R3-27"  text="27"/>
+									<RadioButton  id="R3-28"  text="28"/>
+									<RadioButton  id="R3-29"  text="29"/>
+									<RadioButton  id="R3-30"  text="30"/>
+									<RadioButton  id="R3-31"  text="31"/>
+									<RadioButton  id="R3-32"  text="32"/>
+									<RadioButton  id="R3-33"  text="33"/>
+									<RadioButton  id="R3-34"  text="34"/>
+									<RadioButton  id="R3-35"  text="35"/>
+									<RadioButton  id="R3-36"  text="36"/>
+									<RadioButton  id="R3-37"  text="37"/>
+									<RadioButton  id="R3-38"  text="38"/>
+									<RadioButton  id="R3-39"  text="39"/>
+									<RadioButton  id="R3-40"  text="40"/>
+									<RadioButton  id="R3-41"  text="41"/>
+									<RadioButton  id="R3-42"  text="42"/>
+									<RadioButton  id="R3-43"  text="43"/>
+									<RadioButton  id="R3-44"  text="44"/>
+									<RadioButton  id="R3-45"  text="45"/>
+									<RadioButton  id="R3-46"  text="46"/>
+									<RadioButton  id="R3-47"  text="47"/>
+									<RadioButton  id="R3-48"  text="48"/>
+									<RadioButton  id="R3-49"  text="49"/>
+									<RadioButton  id="R3-50"  text="50"/>
+									<RadioButton  id="R3-51"  text="51"/>
+									<RadioButton  id="R3-52"  text="52"/>
+									</RadioButtonGroup>
+									<Label text="Completed Year"  design="Bold"/>
+									<RadioButtonGroup columns="15" id="r4" width="100%">
+									<RadioButton  id="R4-0"  text="2016"  selected="true" />
+									<RadioButton  id="R4-1"  text="2017" />
+									<RadioButton  id="R4-2" text="2011"/>
+									<RadioButton  id="R4-3"  text="2012"/>
+									<RadioButton  id="R4-4"  text="2013"/>
+									<RadioButton  id="R4-5" text="2014"/>
+									<RadioButton  id="R4-6"  text="2015"/>
+									</RadioButtonGroup>
+								</VBox>
+				 <!--           </HBox>
+						</HBox> 
+					</ScrollContainer> -->
+					</Panel>
+		
+		<m:ChartContainer
+			id="idChartContainer2"
+			showFullScreen="true"
+			showPersonalization="false"
+			autoAdjustHeight="false"
+			showLegend="true"
+			personalizationPress="attachPersonalizationPress"
+			contentChange="attachContentChange"
+			title="NIM KBIs"
+			width="100%"/>
+		<viz:Popover id="idPopOver1" /> 
+		</sap.ui.layout:fixContent>
+		</sap.ui.layout:FixFlex>	
+
+		
+		</sap.ui.layout.form:content>
+					
+		</sap.ui.layout.form:SimpleForm> 
+		<sap.ui.layout.form:SimpleForm columnsL="4" class="hideClass" editable="false" id="kbiPage1" layout="ResponsiveGridLayout" width="100%">
+					<sap.ui.layout.form:content>
+					<!-- <viz:Popover id="idPopOver"></viz:Popover>-->
+				<!--	<viz:Popover id="idPopOver"></viz:Popover>
+				<viz:VizFrame id="idChartContainer1" uiConfig="{applicationSet:'fiori'}" height="100%" width="100%"></viz:VizFrame>-->
+				<sap.ui.layout:FixFlex id="idFixFlex" class="fixFlexFixedSize" minFlexSize="250"> 
+				<sap.ui.layout:fixContent>
+				<Panel id="PN-1" class="panelStyle" expandable="true" expanded="true" headerText="Settings">
+					<!--<ScrollContainer
+						class="scrollStyle"
+						height="100%"
+						width="100%"
+						horizontal="true"
+						vertical="false"
+						focusable="false">
+						<HBox class="settingBottomStyle" width="auto">
+							<HBox id="HB-1" class="HBoxStyle">-->
+								<VBox id="BX-1" class="boxPosition" width="1200px">
+								   <Button  text="Main KBI Screen" id="KBI_back3" press="back3chartdisplay" width="15%"/>
+									<Label text="Selling Country"  design="Bold"/>
+									<RadioButtonGroup columns="10" id="r1" width="100%">
+									<RadioButton  id="RB1-0"  text="ALL" selected="true"/>
+									<RadioButton  id="RB1-1" text="BE"/>
+									<RadioButton  id="RB1-2"  text="DE" />
+									<RadioButton  id="RB1-3"  text="EXPORT"/>
+									<RadioButton  id="RB1-4"  text="FR"/>
+									<RadioButton  id="RB1-5"  text="GB"/>
+									<RadioButton  id="RB1-6"  text="LU"/>
+									<RadioButton  id="RB1-7" text="NL"/>
+									<RadioButton  id="RB1-8"  text="NO"/>
+									<RadioButton  id="RB1-9"  text="SE"/>
+									</RadioButtonGroup>
+									<Label text="NIM"  design="Bold"/>
+									<RadioButtonGroup columns="15" id="r2" width="100%">
+									<RadioButton  id="RB2-0"  text="ALL" />
+									<RadioButton  id="RB2-1"  text="AM"/>
+									<RadioButton  id="RB2-2"  text="AE" />
+									<RadioButton  id="RB2-3" text="BRI"/>
+									<RadioButton  id="RB2-4"  text="BW"/>
+									<RadioButton  id="RB2-5"  text="CL"/>
+									<RadioButton  id="RB2-6" text="DE"/>
+									<RadioButton  id="RB2-7"  text="DL"/>
+									<RadioButton  id="RB2-8" text="FF"/>
+									<RadioButton  id="RB2-9"  text="FM"/>
+									<RadioButton  id="RB2-10"  text="FH"/>
+									<RadioButton  id="RB2-11"  text="FN"/>
+									<RadioButton  id="RB2-12"  text="KN"/>
+									<RadioButton  id="RB2-13"  text="LD"/>
+									<RadioButton  id="RB2-14"  text="LVS"/>
+									<RadioButton  id="RB2-15"  text="MB"/><RadioButton  id="RB2-16"  text="NF"/>
+									<RadioButton  id="RB2-17"  text="RS"/>
+									<RadioButton  id="RB2-18"  text="ST"/>
+									<RadioButton  id="RB2-19"  text="SH"/><RadioButton  id="RB2-20"  text="SM"/>
+									</RadioButtonGroup>
+								</VBox>
+							<!--</HBox>
+						</HBox>
+					</ScrollContainer>-->
+					</Panel>
+	<m:ChartContainer
+			id="idChartContainer1"
+			showFullScreen="true"
+			showPersonalization="false"
+			autoAdjustHeight="false"
+			showLegend="true"
+			personalizationPress="attachPersonalizationPress"
+			contentChange="attachContentChange"
+			title="Project Type delivered over Time"
+			width="100%"/>
+	<viz:Popover id="idPopOver" /> 
+	</sap.ui.layout:fixContent>
+	</sap.ui.layout:FixFlex>
+					</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm> 
+
+							<sap.ui.layout.form:SimpleForm columnsL="4" class="hideClass" editable="false" id="kbiPage" layout="ResponsiveGridLayout" width="100%">
+					<sap.ui.layout.form:content>
+						
+		<m:ChartContainer
+			id="idChartContainer"
+			showFullScreen="true"
+			showPersonalization="false"
+			autoAdjustHeight="false"
+			showLegend="true"
+			personalizationPress="attachPersonalizationPress"
+			contentChange="attachContentChange"
+			title="Revenue">
+			<m:dimensionSelectors>
+				<Select id="idoSelect1" change="handleSelectionChange">
+					<core:Item key="0" text="Sales by Product" />
+					<core:Item key="1" text="Sales by Country" />
+				</Select>
+			</m:dimensionSelectors>
+		</m:ChartContainer>
+					</sap.ui.layout.form:content>
+					
+					</sap.ui.layout.form:SimpleForm> 
+				<sap.ui.layout.form:SimpleForm  editable="false"  id="home_form"  >
+					<sap.ui.layout.form:content>
+						<core:Title text="Welcome to CCEP New Initiatives"/>
+						<Text id="text" text="Welcome to the Home Page of CCEP New Initiatives! Please use the menu button for further options." wrapping="None"/>
+						</sap.ui.layout.form:content>
+						</sap.ui.layout.form:SimpleForm> 
+				<sap.ui.layout.form:SimpleForm columnsL="4" class="hideClass" editable="true" id="tonica_form" layout="ResponsiveGridLayout">
+					<sap.ui.layout.form:content>
+						<core:Title text="Tonica"/>
+						</sap.ui.layout.form:content>
+						</sap.ui.layout.form:SimpleForm>
+				
+					
+						
+			<!--			<sap.ui.layout.form:SimpleForm columnsL="4" class="hideClass" editable="true" id="bom_material" layout="ResponsiveGridLayout">
+					<sap.ui.layout.form:content>
+						<core:Title text="BOM Materials"/>
+					
+							 <sap.ui.layout:VerticalLayout>
+		<sap.ui.layout.form:SimpleForm columnsL="2" editable="false" id="bom_mat2" layout="ResponsiveLayout">
+					<sap.ui.layout.form:content> 
+			
+		<sap.ui.layout.form:SimpleForm columnsL="4" editable="false" id="bom_mat1" layout="ResponsiveLayout">
+					<sap.ui.layout.form:content> 
+		
+	 
+					</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					
+					</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>		                 
+			<u:FileUploader
+				id="fileUploader_bom"
+				name="myFileUpload_bom"
+				uploadUrl="upload/"
+				width="400px"
+				fileType="csv"
+				typeMissmatch="handleTypeMissmatch"
+				tooltip="Upload your file to the local server"
+				uploadComplete="doFileLoadCompleteBOM"/>
+		<Button
+				text="Upload File"
+				press="doFileUploadBOM"/>
+		<c:Label text="Last Modified Date:" class="fontclass"/>
+		<Input id="last_upload" editable="false"/>
+		<c:Label text="Last Modified User:" class="fontclass"/>
+		<Input id="last_upload_user" editable="false"/>	
+
+		</sap.ui.layout:VerticalLayout>
+		
+						</sap.ui.layout.form:content>
+						</sap.ui.layout.form:SimpleForm> -->
+					
+							
+			</content>
+		
+		</Page>
+	</core:View>	

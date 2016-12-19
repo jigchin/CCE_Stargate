@@ -1,0 +1,16 @@
+{
+     "exposed" : true,  
+     "cache_control" : "no-store",
+     "authentication" :                                            
+            {
+               "method": "Form"  
+            },
+    "authorization" : ["dfrequest3::Basic"],
+        
+     "cors" :                      
+            {
+              "enabled" : true, "allowMethods":["GET","PUT","POST","HEAD","DELETE","OPTIONS"]
+               
+            }, 
+     "default_file": "index.html"  
+}

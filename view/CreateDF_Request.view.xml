@@ -1,0 +1,1517 @@
+<core:View
+	xmlns:core="sap.ui.core"
+	xmlns:u="sap.ui.unified"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:sap.ui.layout.form="sap.ui.layout.form"
+	xmlns:sap.ui.layout="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:ux3="sap.ui.ux3"
+	xmlns:c="sap.ui.commons"
+	xmlns:m="sap.suite.ui.commons"
+	xmlns:viz="sap.viz.ui5.controls"
+	xmlns:table="sap.ui.table" 
+	controllerName="view.CreateDF_Request">
+	<sap.ui.layout.form:SimpleForm  id="Userform" layout="ResponsiveLayout" width="100%" class="hideClass">
+		<sap.ui.layout.form:content>
+			<Label  class="alignLabel" text="Date and Time"></Label>
+			<DateTimeInput id="myDP" value="" editable="false"></DateTimeInput>
+			<Label  class="alignLabel" text="User Name" width="100%"/>
+			<Input id="AuthorTextInput" editable="false"/>
+			<Label  class="alignLabel" text="User Dept"  width="100%"/>
+			<Input id="AuthorDepartmentTextInput" editable="false" width="100%"/>
+		</sap.ui.layout.form:content>
+	</sap.ui.layout.form:SimpleForm>
+	<SplitContainer id="dfSplit" class="showClass" initialDetail="detail" initialMaster="master">
+		<detailPages>
+			<Page id="detail" class="sapUiStdPage">
+				<content>
+					<sap.ui.layout.form:SimpleForm  editable="false"  id="main">
+						<sap.ui.layout.form:content>
+							<Text text="DF Request Details" />
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" class="hideClass" editable="false" id="sku_form" layout="ResponsiveLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="DF SKU Codes"/>
+							<sap.ui.layout:VerticalLayout>
+								<u:FileUploader
+			class="uploadLabel"
+				id="fileUploader"
+				name="myFileUpload"
+				uploadUrl="upload/"
+				width="400px"
+				tooltip="Upload your file to the local server"
+				uploadComplete="doFileLoadComplete"/>
+								<Button
+			class="uploadLabel"
+				text="Upload File"
+				press="doFileUpload"/>
+							</sap.ui.layout:VerticalLayout>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" class="hideClass" editable="false" id="allPage" layout="ResponsiveLayout">
+						<sap.ui.layout.form:content></sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" class="hideClass" editable="false" id="historicPage" layout="ResponsiveLayout">
+						<sap.ui.layout.form:content></sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<!--<sap.ui.layout.form:SimpleForm class="hideClass" editable="false"  id="myPage">-->
+					<sap.ui.layout.form:SimpleForm columnsL="4" class="hideClass" editable="false" id="myPage" layout="ResponsiveLayout">
+						<sap.ui.layout.form:content></sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" class="hideClass" editable="false" id="adminPage" layout="ResponsiveLayout">
+						<sap.ui.layout.form:content></sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm labelSpanL="5" labelSpanM="2" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1" 
+					class="hideClass" editable="false" id="submittedFormPage" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<Toolbar id="TB1">
+								<Title text="Details for Selected ID" level="H4" titleStyle="H4"/>
+								<ToolbarSpacer />
+								<Button icon="sap-icon://download" press="downloadPDF" id="buttonpdf"/>
+								<Button text="Duplicate DF" id="duplicate_df" press="duplicateDF"/>
+								<Button id="edit_df_request1" press="onPressEdit" text="Edit DF request" width=""/>
+							</Toolbar>
+							<core:Title text=""/>
+							<Label id='status_label1'  text="Status" class="fontclass1"/>
+							<Text id="status_input1" editable="false" />
+							<Label id='df_id_label1' text="DF ID" class="fontclass1"/>
+							<Text id="df_id_selected1" editable="false" />
+							<Label id="init11" text="DF Initiator Name" class="fontclass1"/>
+							<Text id="init1" editable="false" />
+							<Label id="nim1" text="NIM" class="fontclass1"/>
+							<Text id="nim11" editable="false" />
+							<Label  id="title_s" text="Title of Project" class="fontclass1"/>
+							<Text id="title1" editable="false" />
+							<Label id="goal_s" text="Goal of Project" class="fontclass1"/>
+							<Text id="goal1" editable="false" />
+							<Label id="group_s" text="Project Group" class="fontclass1"/>
+							<Text id="group1" editable="false" />
+							<Label id="market11" text="Destination Market" class="fontclass1"/>
+							<Text id="market1" editable="false"/>
+							<!--	<Label id="matching1" text="Mixing and Matching Rules" class="fontclass1"/><Text id="matching11" editable="false" />-->
+							<Label id="type1" text="Type of Project" class="fontclass1"/>
+							<Text id="type11" editable="false" />
+							<Label  id="theme_l" text="Promotion Type" class="fontclass1"/>
+							<Text id="theme1" editable="false"/>
+							<Label  id="start1" text="Theme Start Date (in Market)" class="fontclass1"/>
+							<Text id="start11" editable="false"/>
+							<Label id="initdept11" text="DF Initiator Department" class="fontclass1"/>
+							<Text id="initdept1" editable="false" />
+							<Label id="approver1_label" text="DF Approver Name" class="fontclass1"/>
+							<Text  id="approver1" editable="false"/>
+							<Label id="approver_email1_label" text="DF Approver Email" class="fontclass1"/>
+							<Text  id="approver_email1" editable="false"/>
+							<Label id="affected1" text="Has the affected brand owner agreed to this project/change?" class="fontclass1"/>
+							<Text id="affected11" editable="false" />
+							<Label id="owner1"  text="Brand Owner Name" class="fontclass1"/>
+							<Text id="owner11"  editable="false" />
+							<Label id="email1"  text="Brand Owner Email" class="fontclass1"/>
+							<Text id="email11"  editable="false" />
+							
+							<Label id="selecte_site1"  text="Selected Producing Sites"  class="fontclass1"/>
+							<Text id="selecte_site11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="finished_site_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--<Label id="Repacking1" text="Repacking Required" class="fontclass1"/><Text id="Repacking11" editable="false"/>-->
+							<Label id="despatch1" text="Date of First/Last (if Delist) Despatches from CCEP Warehouses" class="fontclass1"/>
+							<Text id="date_despatch" editable="false" />
+							<Label  id="end1" text="Theme End Date(CCEP Warehouse availability)" class="fontclass1"/>
+							<Text id="end11" editable="false"/>
+						
+							<Label id="newsku1" text="Is a new Finished Goods SKU code needed?" class="fontclass1"/>
+							<Text id="newsku11" editable="false" />
+							<Label id="newskutbd1" text="TBD(please specify)" class="fontclass1"/>
+							<Text id="newskutbd11" editable="false" />
+							<Label id="forecastreq1" text="Date of Forecast required" class="fontclass1"/>
+							<Text id="date_forecastreq" editable="false" />
+							<Label id="forecast1" text="The initiator assumes the responsibility to confirm the availability of the forecast with Demand Planning 10 weeks prior to the first despatch from CCEP Warehouses" class="fontclass1"/>
+							<Text id="forecast11" editable="false" />
+							<Label id="notagree1" text="Please explain why you do not agree" class="fontclass1"/>
+							<Text id="notagree11" editable="false" />
+							<Label id="tradewin1" text="Trade Window to follow" class="fontclass1"/>
+							<Text id="tradewin11" editable="false" />
+							<Label id="trade1" text="Technical file/ Trade Registration / Line Forms Date?" class="fontclass1"/>
+							<Text id="trade11" editable="false" />
+							<Label id="tempsku1" text="Is a temporary Finished Goods SKU code needed?" class="fontclass1"/>
+							<Text id="tempsku11" editable="false" />
+							<Label id="tempskuyes1" text="Yes(please specify)" class="fontclass1"/>
+							<Text id="tempskuyes11" editable="false" />
+							<Label id="tempskutbd1" text="TBD(please specify)" class="fontclass1"/>
+							<Text id="tempskutbd11" editable="false" />
+							<Label id="finishedgoods1" text="Will existing Finished Goods SKU codes be impacted by this DF?" class="fontclass1"/>
+							<Text id="finishedgoods11" editable="false" />
+							<!--<Label id="launched1" text="Has this product been launched previously?" class="fontclass1"/><Text id="launched11" editable="false" /><Label id="vol1"  text="Did this product achieve its volumes and targets?" class="fontclass1"/><Text id="vol11" editable="false" /><Label id="countries1"  text="What countries was this product launched in?" class="fontclass1"/><Text id="countries11" editable="false" />-->
+							<Label id="finsku1"  text="Select Finished Goods SKU’s codes impacted by the DF " class="fontclass1"/>
+							<Text id="finsku11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="finished_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="volumes1" text="Please enter all Volumes in Unit Cases" class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="volumes_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="link1"  text="Please add all new Product details for this DF " class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="link11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="vol1"  text="Please enter all Volumes in Unit Cases " class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="finished_tabl11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="bomdata1"  text="Select Raw Material codes impacted by the DF " class="fontclass1"/>
+							<Text id="bomdata11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="bomdata_table1" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label  id="incremental1" text="Incremental Volume" class="fontclass1"/>
+							<Text id="incremental11" editable="false" />
+							<Label  id="specify1" text="Incremental Volumes details" class="fontclass1"/>
+							<Text id="specify11" editable="false" />
+							<Label  id="canni1" text="Cannibalisation" class="fontclass1"/>
+							<Text id="canni11" editable="false" />
+							<Label id="fingoods1"  text="Select Finished Goods SKU codes impacted by the cannibalisation and enter the Cannibalisation rate as a percentage" class="fontclass1"/>
+							<Text id="fingoods11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="finishedgoods_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="change1" text="Change Palletisation" class="fontclass1"/>
+							<Text  id="change11" editable="false" />
+							<Label id="changeother1" text="Yes(please specify)" class="fontclass1"/>
+							<Text  id="changeother11" editable="false" />
+							<Label id="changeotheryes1" text="Other(please specify)" class="fontclass1"/>
+							<Text  id="changeotheryes11" editable="false" />
+							<!--	<Label  id="pallet1" text="Pallet Types" class="fontclass1"/><Text  id="pallet11" editable="false"/><Label id="palletother1"  text="Other(please specify)" class="fontclass1"/><Text id="palletother11"  editable="false"/>-->
+							<Label  id="channel1" text="Channel" class="fontclass1"/>
+							<Text  id="channel11" editable="false" />
+							<Label id="cusspecific1" text="Customer Specific" class="fontclass1"/>
+							<Text id="cusspecific11" editable="false" />
+							<Label id="cusname1" text="Please provide the names of the customer(s)" class="fontclass1"/>
+							<Text id="cusname11"  editable="false" />
+							<Label id="info1" text="List Customers not to be included in the Promotion" class="fontclass1"/>
+							<Text id="info11" editable="false" />
+							<Label id="modi1" text="Do any Packaging Materials require changing?" class="fontclass1"/>
+							<Text id="modi11" editable="false" />
+						
+							<Label id="mat1" text="Please select all Materials which are impacted" class="fontclass1"/>
+							<Text id="mat11" editable="false" />
+								<Label id="mat_other1" text="Material Change – Other (please specify)" class="fontclass1"/>
+							<Text id="mat_other11" editable="false" />
+							<Label id="rmwo1" text="In the event of raw material write off (RMWO), which department will cover the costs" class="fontclass1"/>
+							<Text id="rmwo11" editable="false" />
+							<Label id="rmwoother1" text="RMWO Costs – Other (please specify)" class="fontclass1"/>
+							<Text id="rmwoother11" editable="false" />
+							<Label id="com_rmwo1" text="Please add comments about the RMWO costs" class="fontclass1"/>
+							<Text id="com_rmwo11" editable="false" />
+							
+							
+							<Label id="mechanic1" text="Promotional Mechanic" class="fontclass1"/>
+							<Text id="mechanic11" editable="false" />
+							<Label id="mechanic_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="mechanic_other11" editable="false" />
+							<Label id="guidelines1" text="Mixing of Packaging Guidelines" class="fontclass1"/>
+							<Text id="guidelines11" editable="false" />
+							<Label id="mix1" text="Please enter Mixing of Packaging Guideline details" class="fontclass1"/>
+							<Text id="mix11" editable="false" />
+							<Label id="mix_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="mix_other11" editable="false" />
+							<Label id="rules1" text="Raw Material Indication of Run-out Rules?" class="fontclass1"/>
+							<Text id="rules11" editable="false" />
+							<Label id="add1" text="Please enter any additional information" class="fontclass1"/>
+							<Text id="add11" editable="false" />
+							<Label id="artwork1" text="Who will pay for artwork changes?" class="fontclass1"/>
+							<Text id="artwork11" editable="false" />
+							<Label id="artworkother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="artworkother11"  editable="false"/>
+							<Label id="trials1" text="If trials are required, who will be the budget holder for the trials?" class="fontclass1"/>
+							<Text id="trials11" editable="false" />
+							<Label id="trialother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="trialother11"  editable="false"/>
+								<Label id="costpo1" text="Cost Center and PO Number" class="fontclass1 whitespace"/>
+							<Text id="costpo11" editable="false" />
+							<Label id="supplier1"  text="Supplier Name for Supply Chain project" class="fontclass1"/>
+							<Text id="supplier11" editable="false" />
+							<Label id="supplierother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="supplierother11"  editable="false"/>
+							<Label id="comment1" text="Comment on any supply specifics" class="fontclass1"/>
+							<Text id="comment11" editable="false" />
+							<Label id="material_spec1" text="Materials Specification" class="fontclass1"/>
+							<Text id="material_spec11"  editable="false" />
+							<Label id="sites1" text="List all sites and lines affected" class="fontclass1"/>
+							<Text id="sites11"  editable="false" />
+							<Label id="qesh1"  text="Supplier QESH guidance on trialling" class="fontclass1"/>
+							<Text id="qesh11"  editable="false" />
+							<Label id="annualised1" text="Annualised Savings" class="fontclass1"/>
+							<Text id="annualised11"  editable="false" />
+							<Label id="charter1" text="Will Charterhouse be involved in this project (e.g. Shroud or Display Unit)" class="fontclass1"/>
+							<Text id="charter11"  editable="false" />
+							<Label id="doc1" text="Uploaded Document" class="fontclass1"/>
+							<Link id="doc11"  editable="false" />
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm labelSpanL="5" labelSpanM="2" emptySpanL="3" emptySpanM="1" columnsL="1" columnsM="1" 
+					class="hideClass" editable="false" id="nim_submittedFormPage" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Details for Selected ID"/>
+							<Label id='nim_status_label1'  text="Status" class="fontclass1"/>
+							<Text id="nim_status_input1" editable="false" />
+							<Label id='nim_df_id_label1' text="DF ID" class="fontclass1"/>
+							<Text id="nim_df_id_selected1" editable="false" />
+							<Label id="nim_init11" text="DF Initiator Name" class="fontclass1"/>
+							<Text id="nim_init1" editable="false" />
+							<Label id="nim_nim1" text="NIM" class="fontclass1"/>
+							<Text id="nim_nim11" editable="false" />
+							<Label  id="nim_title_s" text="Title of Project" class="fontclass1"/>
+							<Text id="nim_title1" editable="false" />
+							<Label id="nim_goal_s" text="Goal of Project" class="fontclass1"/>
+							<Text id="nim_goal1" editable="false" />
+							<Label id="nim_group_s" text="Project Group" class="fontclass1"/>
+							<Text id="nim_group1" editable="false" />
+							<!--	<Label id="matching1" text="Mixing and Matching Rules" class="fontclass1"/><Text id="matching11" editable="false" />-->
+							<Label id="nim_type1" text="Type of Project" class="fontclass1"/>
+							<Text id="nim_type11" editable="false" />
+							<Label  id="nim_theme_l" text="Promotion Type" class="fontclass1"/>
+							<Text id="nim_theme1" editable="false"/>
+							<Label  id="nim_start1" text="Theme Start Date (in Market)" class="fontclass1"/>
+							<Text id="nim_start11" editable="false"/>
+							<Label  id="nim_end1" text="Theme End Date (in Market)" class="fontclass1"/>
+							<Text id="nim_end11" editable="false"/>
+							<Label id="nim_initdept11" text="DF Initiator Department" class="fontclass1"/>
+							<Text id="nim_initdept1" editable="false" />
+							<Label id="nim_approver1_label" text="DF Approver Name" class="fontclass1"/>
+							<Text  id="nim_approver1" editable="false"/>
+							<Label id="nim_affected1" text="Has the affected brand owner agreed to this project/change?" class="fontclass1"/>
+							<Text id="nim_affected11" editable="false" />
+							<Label id="nim_owner1"  text="Brand Owner Name" class="fontclass1"/>
+							<Text id="nim_owner11"  editable="false" />
+							<Label id="nim_email1"  text="Brand Owner Email" class="fontclass1"/>
+							<Text id="nim_email11"  editable="false" />
+							<Label id="nim_market11" text="Destination Market" class="fontclass1"/>
+							<Text id="nim_market1" editable="false"/>
+							<Label id="nim_selecte_site1"  text="Selected Producing Sites"  class="fontclass1"/>
+							<Text id="nim_selecte_site11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="nim_finished_site_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--<Label id="Repacking1" text="Repacking Required" class="fontclass1"/><Text id="Repacking11" editable="false"/>-->
+							<Label id="nim_despatch1" text="Date of First/Last (if Delist) Despatches from CCEP Warehouses" class="fontclass1"/>
+							<Text id="nim_date_despatch" editable="false" />
+							<Label id="nim_forecastreq1" text="Date of Forecast required" class="fontclass1"/>
+							<Text id="nim_date_forecastreq" editable="false" />
+							<Label id="nim_forecast1" text="The initiator assumes the responsibility to confirm the availability of the forecast with Demand Planning 10 weeks prior to the first despatch from CCEP Warehouses" class="fontclass1"/>
+							<Text id="nim_forecast11" editable="false" />
+							<Label id="nim_notagree1" text="Please explain why you do not agree" class="fontclass1"/>
+							<Text id="nim_notagree11" editable="false" />
+							<Label id="nim_newsku1" text="Is a new Finished Goods SKU code needed?" class="fontclass1"/>
+							<Text id="nim_newsku11" editable="false" />
+							<Label id="nim_tradewin1" text="Trade Window to follow" class="fontclass1"/>
+							<Text id="nim_tradewin11" editable="false" />
+							<Label id="nim_trade1" text="Technical file/ Trade Registration / Line Forms Date?" class="fontclass1"/>
+							<Text id="nim_trade11" editable="false" />
+							<Label id="nim_tempsku1" text="Is a temporary Finished Goods SKU code needed?" class="fontclass1"/>
+							<Text id="nim_tempsku11" editable="false" />
+							<Label id="nim_tempskuyes1" text="Yes(please specify)" class="fontclass1"/>
+							<Text id="nim_tempskuyes11" editable="false" />
+							<Label id="nim_tempskutbd1" text="TBD(please specify)" class="fontclass1"/>
+							<Text id="nim_tempskutbd11" editable="false" />
+							<Label id="nim_finishedgoods1" text="Will existing Finished Goods SKU codes be impacted by this DF?" class="fontclass1"/>
+							<Text id="nim_finishedgoods11" editable="false" />
+							<!--<Label id="launched1" text="Has this product been launched previously?" class="fontclass1"/><Text id="launched11" editable="false" /><Label id="vol1"  text="Did this product achieve its volumes and targets?" class="fontclass1"/><Text id="vol11" editable="false" /><Label id="countries1"  text="What countries was this product launched in?" class="fontclass1"/><Text id="countries11" editable="false" />-->
+							<Label id="nim_finsku1"  text="Select Finished Goods SKU’s codes impacted by the DF " class="fontclass1"/>
+							<Text id="nim_finsku11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="nim_finished_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="nim_volumes1" text="Please enter all Volumes in Unit Cases" class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="nim_volumes_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="nim_link1"  text="Please add all new Product details for this DF " class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="nim_link11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="nim_vol1"  text="Please enter all Volumes in Unit Cases " class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="nim_finished_tabl11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--<Label id="newpack1" text="Is this a new pack?" class="fontclass1"/><Text id="newpack11"  editable="false" /><Label id="newpackdetail1" text="Please provide details about the new pack" class="fontclass1"/><Text id="newpackdetail11"  editable="false" /><Label id="brand1" text="Brand" class="fontclass1"/><Text id="brand11" editable="false"/><Label id="brandother1"  text="Other(please specify)" class="fontclass1"/><Text id="brandother11" editable="false"/><Label id="flavor1" text="Flavours" class="fontclass1"/><Text id="flavour11" editable="false" /><Label id="flavourother1"  text="Other(please specify)" class="fontclass1"/><Text id="flavourother11" editable="false"/><Label id="sku1"  text="SKUs that will be impacted by this new pack?" class="fontclass1"/><Text id="sku11"  editable="false"/>-->
+							<Label  id="nim_incremental1" text="Incremental Volume" class="fontclass1"/>
+							<Text id="nim_incremental11" editable="false" />
+							<Label  id="nim_specify1" text="Incremental Volumes details" class="fontclass1"/>
+							<Text id="nim_specify11" editable="false" />
+							<Label  id="nim_canni1" text="Cannibalisation" class="fontclass1"/>
+							<Text id="nim_canni11" editable="false" />
+							<Label id="nim_fingoods1"  text="Select Finished Goods SKU codes impacted by the cannibalisation and enter the Cannibalisation rate as a percentage" class="fontclass1"/>
+							<Text id="nim_fingoods11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="nim_finishedgoods_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--		<Label class="hideClass" id="volumes1" text="Volumes"/>-->
+							<!--	<Text id="volumes11" class="hideClass" editable="false"/> -->
+							<!--	<Label id="container1"  text="Product Container" class="fontclass1"/><Text id="container11"  editable="false" /><Label id="containerother1" text="Other(please specify)" class="fontclass1"/><Text id="containerother11"  editable="false"/><Label id="package1"  text="Package Type" class="fontclass1"/><Text id="package11"  editable="false" /><Label id="size1"  text="Product Pack Size" class="fontclass1"/><Text id="size11"  editable="false" /><Label id="sizeother1" text="Other(please specify)" class="fontclass1"/><Text id="sizeother11" editable="false"/>-->
+							<Label id="nim_change1" text="Change Palletisation" class="fontclass1"/>
+							<Text  id="nim_change11" editable="false" />
+							<Label id="nim_changeother1" text="Yes(please specify)" class="fontclass1"/>
+							<Text  id="nim_changeother11" editable="false" />
+							<Label id="nim_changeotheryes1" text="Other(please specify)" class="fontclass1"/>
+							<Text  id="nim_changeotheryes11" editable="false" />
+							<!--	<Label  id="pallet1" text="Pallet Types" class="fontclass1"/><Text  id="pallet11" editable="false"/><Label id="palletother1"  text="Other(please specify)" class="fontclass1"/><Text id="palletother11"  editable="false"/>-->
+							<Label  id="nim_channel1" text="Channel" class="fontclass1"/>
+							<Text  id="nim_channel11" editable="false" />
+							<Label id="nim_cusspecific1" text="Customer Specific" class="fontclass1"/>
+							<Text id="nim_cusspecific11" editable="false" />
+							<Label id="nim_cusname1" text="Please provide the names of the customer(s)" class="fontclass1"/>
+							<Text id="nim_cusname11"  editable="false" />
+							<Label id="nim_info1" text="List Customers not to be included in the Promotion" class="fontclass1"/>
+							<Text id="nim_info11" editable="false" />
+							<Label id="nim_modi1" text="What Packaging Materials require changing?" class="fontclass1"/>
+							<Text id="nim_modi11" editable="false" />
+							<Label id="nim_mat1" text="Please select all Materials that will change" class="fontclass1"/>
+							<Text id="nim_mat11" editable="false" />
+							<Label id="nim_mat_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="nim_mat_other11" editable="false" />
+							<Label id="nim_mechanic1" text="Promotional Mechanic" class="fontclass1"/>
+							<Text id="nim_mechanic11" editable="false" />
+							<Label id="nim_mechanic_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="nim_mechanic_other11" editable="false" />
+							<Label id="nim_guidelines1" text="Mixing of Packaging Guidelines" class="fontclass1"/>
+							<Text id="nim_guidelines11" editable="false" />
+							<Label id="nim_mix1" text="Please enter Mixing of Packaging Guideline details" class="fontclass1"/>
+							<Text id="nim_mix11" editable="false" />
+							<Label id="nim_mix_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="nim_mix_other11" editable="false" />
+							<Label id="nim_rules1" text="Raw Material Indication of Run-out Rules?" class="fontclass1"/>
+							<Text id="nim_rules11" editable="false" />
+							<Label id="nim_add1" text="Please enter any additional information" class="fontclass1"/>
+							<Text id="nim_add11" editable="false" />
+							<Label id="nim_artwork1" text="Who will pay for artwork changes?" class="fontclass1"/>
+							<Text id="nim_artwork11" editable="false" />
+							<Label id="nim_artworkother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="nim_artworkother11"  editable="false"/>
+							<Label id="nim_trials1" text="Who will pay for the trials?" class="fontclass1"/>
+							<Text id="nim_trials11" editable="false" />
+							<Label id="nim_trialother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="nim_trialother11"  editable="false"/>
+							<Label id="nim_supplier1"  text="Supplier Name for Supply Chain project" class="fontclass1"/>
+							<Text id="nim_supplier11" editable="false" />
+							<Label id="nim_supplierother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="nim_supplierother11"  editable="false"/>
+							<Label id="nim_comment1" text="Comment on any supply specifics" class="fontclass1"/>
+							<Text id="nim_comment11" editable="false" />
+							<Label id="nim_material_spec1" text="Materials Specification" class="fontclass1"/>
+							<Text id="nim_material_spec11"  editable="false" />
+							<Label id="nim_sites1" text="List all sites and lines affected" class="fontclass1"/>
+							<Text id="nim_sites11"  editable="false" />
+							<Label id="nim_qesh1"  text="Supplier QESH guidance on trialling" class="fontclass1"/>
+							<Text id="nim_qesh11"  editable="false" />
+							<Label id="nim_annualised1" text="Annualised Savings" class="fontclass1"/>
+							<Text id="nim_annualised11"  editable="false" />
+							<Label id="charter2" text="Will Charterhouse be involved in this project" class="fontclass1"/>
+							<Text id="charter22"  editable="false" />
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm labelSpanL="5" labelSpanM="2" emptySpanL="3" emptySpanM="1" columnsL="1" columnsM="1" 
+					class="hideClass" editable="false" id="psh_submittedFormPage" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Details for Selected ID"/>
+							<Label id='psh_status_label1'  text="Status" class="fontclass1"/>
+							<Text id="psh_status_input1" editable="false" />
+							<Label id='psh_df_id_label1' text="DF ID" class="fontclass1"/>
+							<Text id="psh_df_id_selected1" editable="false" />
+							<Label id="psh_init11" text="DF Initiator Name" class="fontclass1"/>
+							<Text id="psh_init1" editable="false" />
+							<Label id="psh_nim1" text="NIM" class="fontclass1"/>
+							<Text id="psh_nim11" editable="false" />
+							<Label  id="psh_title_s" text="Title of Project" class="fontclass1"/>
+							<Text id="psh_title1" editable="false" />
+							<Label id="psh_goal_s" text="Goal of Project" class="fontclass1"/>
+							<Text id="psh_goal1" editable="false" />
+							<Label id="psh_group_s" text="Project Group" class="fontclass1"/>
+							<Text id="psh_group1" editable="false" />
+							<!--	<Label id="psh_matching1" text="Mixing and Matching Rules" class="fontclass1"/><Text id="psh_matching11" editable="false" />-->
+							<Label id="psh_type1" text="Type of Project" class="fontclass1"/>
+							<Text id="psh_type11" editable="false" />
+							<Label  id="psh_theme_l" text="Promotion Type" class="fontclass1"/>
+							<Text id="psh_theme1" editable="false"/>
+							<Label  id="psh_start1" text="Theme Start Date (in Market)" class="fontclass1"/>
+							<Text id="psh_start11" editable="false"/>
+							<Label  id="psh_end1" text="Theme End Date (in Market)" class="fontclass1"/>
+							<Text id="psh_end11" editable="false"/>
+							<Label id="psh_initdept11" text="DF Initiator Department" class="fontclass1"/>
+							<Text id="psh_initdept1" editable="false" />
+							<Label id="psh_approver1_label" text="DF Approver" class="fontclass1"/>
+							<Text  id="psh_approver1" editable="false"/>
+							<Label id="psh_affected1" text="Has the affected brand owner agreed to this project/change?" class="fontclass1"/>
+							<Text id="psh_affected11" editable="false" />
+							<Label id="psh_owner1"  text="Brand Owner Name" class="fontclass1"/>
+							<Text id="psh_owner11"  editable="false" />
+							<Label id="psh_email1"  text="Brand Owner Email" class="fontclass1"/>
+							<Text id="psh_email11"  editable="false" />
+							<Label id="psh_market11" text="Destination Market" class="fontclass1"/>
+							<Text id="psh_market1" editable="false"/>
+							<Label id="psh_selecte_site1"  text="Selected Producing Sites"  class="fontclass1"/>
+							<Text id="psh_selecte_site11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="psh_finished_site_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--<Label id="psh_Repacking1" text="Repacking Required" class="fontclass1"/><Text id="psh_Repacking11" editable="false"/>-->
+							<Label id="psh_despatch1" text="Date of First/Last (if Delist) Despatches from CCEP Warehouses" class="fontclass1"/>
+							<Text id="psh_date_despatch" editable="false" />
+							<Label id="psh_forecastreq1" text="Date of Forecast required" class="fontclass1"/>
+							<Text id="psh_date_forecastreq" editable="false" />
+							<Label id="psh_forecast1" text="The initiator assumes the responsibility to confirm the availability of the forecast with Demand Planning 10 weeks prior to the first despatch from CCEP Warehouses" class="fontclass1"/>
+							<Text id="psh_forecast11" editable="false" />
+							<Label id="psh_notagree1" text="Please explain why you do not agree" class="fontclass1"/>
+							<Text id="psh_notagree11" editable="false" />
+							<Label id="psh_newsku1" text="Is a new Finished Goods SKU code needed?" class="fontclass1"/>
+							<Text id="psh_newsku11" editable="false" />
+							<Label id="psh_tradewin1" text="Trade Window to follow" class="fontclass1"/>
+							<Text id="psh_tradewin11" editable="false" />
+							<Label id="psh_trade1" text="Technical file/ Trade Registration / Line Forms Date?" class="fontclass1"/>
+							<Text id="psh_trade11" editable="false" />
+							<Label id="psh_tempsku1" text="Is a temporary Finished Goods SKU code needed?" class="fontclass1"/>
+							<Text id="psh_tempsku11" editable="false" />
+							<Label id="psh_tempskuyes1" text="Yes(please specify)" class="fontclass1"/>
+							<Text id="psh_tempskuyes11" editable="false" />
+							<Label id="psh_tempskutbd1" text="TBD(please specify)" class="fontclass1"/>
+							<Text id="psh_tempskutbd11" editable="false" />
+							<Label id="psh_finishedgoods1" text="Will existing Finished Goods SKU codes be impacted by this DF?" class="fontclass1"/>
+							<Text id="psh_finishedgoods11" editable="false" />
+							<!--<Label id="psh_launched1" text="Has this product been launched previously?" class="fontclass1"/><Text id="psh_launched11" editable="false" /><Label id="psh_vol1"  text="Did this product achieve its volumes and targets?" class="fontclass1"/><Text id="psh_vol11" editable="false" /><Label id="psh_countries1"  text="What countries was this product launched in?" class="fontclass1"/><Text id="psh_countries11" editable="false" />-->
+							<Label id="psh_finsku1"  text="Select Finished Goods SKU’s codes impacted by the DF " class="fontclass1"/>
+							<Text id="psh_finsku11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="psh_finished_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="psh_volumes1" text="Please enter all Volumes in Unit Cases" class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="psh_volumes_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="psh_link1"  text="Please add all new Product details for this DF " class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="psh_link11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="psh_vol1"  text="Please enter all Volumes in Unit Cases " class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="psh_finished_tabl11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--<Label id="psh_newpack1" text="Is this a new pack?" class="fontclass1"/><Text id="psh_newpack11"  editable="false" /><Label id="psh_newpackdetail1" text="Please provide details about the new pack" class="fontclass1"/><Text id="psh_newpackdetail11"  editable="false" /><Label id="psh_brand1" text="Brand" class="fontclass1"/><Text id="psh_brand11" editable="false"/><Label id="psh_brandother1"  text="Other(please specify)" class="fontclass1"/><Text id="psh_brandother11" editable="false"/><Label id="psh_flavor1" text="Flavours" class="fontclass1"/><Text id="psh_flavour11" editable="false" /><Label id="psh_flavourother1"  text="Other(please specify)" class="fontclass1"/><Text id="psh_flavourother11" editable="false"/><Label id="psh_sku1"  text="SKUs that will be impacted by this new pack?" class="fontclass1"/><Text id="psh_sku11"  editable="false"/>-->
+							<Label  id="psh_incremental1" text="Incremental Volume" class="fontclass1"/>
+							<Text id="psh_incremental11" editable="false" />
+							<Label  id="psh_specify1" text="Incremental Volumes details" class="fontclass1"/>
+							<Text id="psh_specify11" editable="false" />
+							<Label  id="psh_canni1" text="Cannibalisation" class="fontclass1"/>
+							<Text id="psh_canni11" editable="false" />
+							<Label id="psh_fingoods1"  text="Select Finished Goods SKU codes impacted by the cannibalisation and enter the Cannibalisation rate as a percentage" class="fontclass1"/>
+							<Text id="psh_fingoods11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="psh_finishedgoods_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--		<Label class="showClass" id="psh_volumes1" text="Volumes"/>-->
+							<!--	<Text id="psh_volumes11" class="showClass" editable="false"/> -->
+							<!--	<Label id="psh_container1"  text="Product Container" class="fontclass1"/><Text id="psh_container11"  editable="false" /><Label id="psh_containerother1" text="Other(please specify)" class="fontclass1"/><Text id="psh_containerother11"  editable="false"/><Label id="psh_package1"  text="Package Type" class="fontclass1"/><Text id="psh_package11"  editable="false" /><Label id="psh_size1"  text="Product Pack Size" class="fontclass1"/><Text id="psh_size11"  editable="false" /><Label id="psh_sizeother1" text="Other(please specify)" class="fontclass1"/><Text id="psh_sizeother11" editable="false"/>-->
+							<Label id="psh_change1" text="Change Palletisation" class="fontclass1"/>
+							<Text  id="psh_change11" editable="false" />
+							<Label id="psh_changeother1" text="Yes(please specify)" class="fontclass1"/>
+							<Text  id="psh_changeother11" editable="false" />
+							<Label id="psh_changeotheryes1" text="Other(please specify)" class="fontclass1"/>
+							<Text  id="psh_changeotheryes11" editable="false" />
+							<!--	<Label  id="psh_pallet1" text="Pallet Types" class="fontclass1"/><Text  id="psh_pallet11" editable="false"/><Label id="psh_palletother1"  text="Other(please specify)" class="fontclass1"/><Text id="psh_palletother11"  editable="false"/>-->
+							<Label  id="psh_channel1" text="Channel" class="fontclass1"/>
+							<Text  id="psh_channel11" editable="false" />
+							<Label id="psh_cusspecific1" text="Customer Specific" class="fontclass1"/>
+							<Text id="psh_cusspecific11" editable="false" />
+							<Label id="psh_cusname1" text="Please provide the names of the customer(s)" class="fontclass1"/>
+							<Text id="psh_cusname11"  editable="false" />
+							<Label id="psh_info1" text="List Customers not to be included in the Promotion" class="fontclass1"/>
+							<Text id="psh_info11" editable="false" />
+							<Label id="psh_modi1" text="What Packaging Materials require changing?" class="fontclass1"/>
+							<Text id="psh_modi11" editable="false" />
+							<Label id="psh_mat1" text="Please select all Materials that will change" class="fontclass1"/>
+							<Text id="psh_mat11" editable="false" />
+							<Label id="psh_mat_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="psh_mat_other11" editable="false" />
+							<Label id="psh_mechanic1" text="Promotional Mechanic" class="fontclass1"/>
+							<Text id="psh_mechanic11" editable="false" />
+							<Label id="psh_mechanic_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="psh_mechanic_other11" editable="false" />
+							<Label id="psh_guidelines1" text="Mixing of Packaging Guidelines" class="fontclass1"/>
+							<Text id="psh_guidelines11" editable="false" />
+							<Label id="psh_mix1" text="Please enter Mixing of Packaging Guideline details" class="fontclass1"/>
+							<Text id="psh_mix11" editable="false" />
+							<Label id="psh_mix_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="psh_mix_other11" editable="false" />
+							<Label id="psh_rules1" text="Indication of Run- Out Rules" class="fontclass1"/>
+							<Text id="psh_rules11" editable="false" />
+							<Label id="psh_add1" text="Please enter any additional information" class="fontclass1"/>
+							<Text id="psh_add11" editable="false" />
+							<Label id="psh_artwork1" text="Who will pay for artwork changes?" class="fontclass1"/>
+							<Text id="psh_artwork11" editable="false" />
+							<Label id="psh_artworkother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="psh_artworkother11"  editable="false"/>
+							<Label id="psh_trials1" text="Who will pay for the trials?" class="fontclass1"/>
+							<Text id="psh_trials11" editable="false" />
+							<Label id="psh_trialother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="psh_trialother11"  editable="false"/>
+							<Label id="psh_supplier1"  text="Supplier Name for Supply Chain project" class="fontclass1"/>
+							<Text id="psh_supplier11" editable="false" />
+							<Label id="psh_supplierother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="psh_supplierother11"  editable="false"/>
+							<Label id="psh_comment1" text="Comment on any supply specifics" class="fontclass1"/>
+							<Text id="psh_comment11" editable="false" />
+							<Label id="psh_material_spec1" text="Materials Specification" class="fontclass1"/>
+							<Text id="psh_material_spec11"  editable="false" />
+							<Label id="psh_sites1" text="List all sites and lines affected" class="fontclass1"/>
+							<Text id="psh_sites11"  editable="false" />
+							<Label id="psh_qesh1"  text="Supplier QESH guidance on trialling" class="fontclass1"/>
+							<Text id="psh_qesh11"  editable="false" />
+							<Label id="psh_annualised1" text="Annualised Savings" class="fontclass1"/>
+							<Text id="psh_annualised11"  editable="false" />
+							<Label id="charter3" text="Will Charterhouse be involved in this project" class="fontclass1"/>
+							<Text id="charter33"  editable="false" />
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm labelSpanL="5" labelSpanM="2" emptySpanL="3" emptySpanM="1" columnsL="1" columnsM="1"
+					class="hideClass" editable="false" id="csh_submittedFormPage" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Details for Selected ID"/>
+							<Label id='csh_status_label1'  text="Status" class="fontclass1"/>
+							<Text id="csh_status_input1" editable="false" />
+							<Label id='csh_df_id_label1' text="DF ID" class="fontclass1"/>
+							<Text id="csh_df_id_selected1" editable="false" />
+							<Label id="csh_init11" text="DF Initiator Name" class="fontclass1"/>
+							<Text id="csh_init1" editable="false" />
+							<Label id="csh_nim1" text="NIM" class="fontclass1"/>
+							<Text id="csh_nim11" editable="false" />
+							<Label  id="csh_title_s" text="Title of Project" class="fontclass1"/>
+							<Text id="csh_title1" editable="false" />
+							<Label id="csh_goal_s" text="Goal of Project" class="fontclass1"/>
+							<Text id="csh_goal1" editable="false" />
+							<Label id="csh_group_s" text="Project Group" class="fontclass1"/>
+							<Text id="csh_group1" editable="false" />
+							<!--	<Label id="csh_matching1" text="Mixing and Matching Rules" class="fontclass1"/><Text id="csh_matching11" editable="false" />-->
+							<Label id="csh_type1" text="Type of Project" class="fontclass1"/>
+							<Text id="csh_type11" editable="false" />
+							<Label  id="csh_theme_l" text="Promotion Type" class="fontclass1"/>
+							<Text id="csh_theme1" editable="false"/>
+							<Label  id="csh_start1" text="Theme Start Date (in Market)" class="fontclass1"/>
+							<Text id="csh_start11" editable="false"/>
+							<Label  id="csh_end1" text="Theme End Date (in Market)" class="fontclass1"/>
+							<Text id="csh_end11" editable="false"/>
+							<Label id="csh_initdept11" text="DF Initiator Department" class="fontclass1"/>
+							<Text id="csh_initdept1" editable="false" />
+							<Label id="csh_approver1_label" text="DF Approver" class="fontclass1"/>
+							<Text  id="csh_approver1" editable="false"/>
+							<Label id="csh_affected1" text="Has the affected brand owner agreed to this project/change?" class="fontclass1"/>
+							<Text id="csh_affected11" editable="false" />
+							<Label id="csh_owner1"  text="Brand Owner Name" class="fontclass1"/>
+							<Text id="csh_owner11"  editable="false" />
+							<Label id="csh_email1"  text="Brand Owner Email" class="fontclass1"/>
+							<Text id="csh_email11"  editable="false" />
+							<Label id="csh_market11" text="Destination Market" class="fontclass1"/>
+							<Text id="csh_market1" editable="false"/>
+							<Label id="csh_selecte_site1"  text="Selected Producing Sites"  class="fontclass1"/>
+							<Text id="csh_selecte_site11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="csh_finished_site_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--<Label id="csh_Repacking1" text="Repacking Required" class="fontclass1"/><Text id="csh_Repacking11" editable="false"/>-->
+							<Label id="csh_despatch1" text="Date of First/Last (if Delist) Despatches from CCEP Warehouses" class="fontclass1"/>
+							<Text id="csh_date_despatch" editable="false" />
+							<Label id="csh_forecastreq1" text="Date of Forecast required" class="fontclass1"/>
+							<Text id="csh_date_forecastreq" editable="false" />
+							<Label id="csh_forecast1" text="The initiator assumes the responsibility to confirm the availability of the forecast with Demand Planning 10 weeks prior to the first despatch from CCEP Warehouses" class="fontclass1"/>
+							<Text id="csh_forecast11" editable="false" />
+							<Label id="csh_notagree1" text="Please explain why you do not agree" class="fontclass1"/>
+							<Text id="csh_notagree11" editable="false" />
+							<Label id="csh_newsku1" text="Is a new Finished Goods SKU code needed?" class="fontclass1"/>
+							<Text id="csh_newsku11" editable="false" />
+							<Label id="csh_tradewin1" text="Trade Window to follow" class="fontclass1"/>
+							<Text id="csh_tradewin11" editable="false" />
+							<Label id="csh_trade1" text="Technical file/ Trade Registration / Line Forms Date?" class="fontclass1"/>
+							<Text id="csh_trade11" editable="false" />
+							<Label id="csh_tempsku1" text="Is a temporary Finished Goods SKU code needed?" class="fontclass1"/>
+							<Text id="csh_tempsku11" editable="false" />
+							<Label id="csh_tempskuyes1" text="Yes(please specify)" class="fontclass1"/>
+							<Text id="csh_tempskuyes11" editable="false" />
+							<Label id="csh_tempskutbd1" text="TBD(please specify)" class="fontclass1"/>
+							<Text id="csh_tempskutbd11" editable="false" />
+							<Label id="csh_finishedgoods1" text="Will existing Finished Goods SKU codes be impacted by this DF?" class="fontclass1"/>
+							<Text id="csh_finishedgoods11" editable="false" />
+							<!--<Label id="csh_launched1" text="Has this product been launched previously?" class="fontclass1"/><Text id="csh_launched11" editable="false" /><Label id="csh_vol1"  text="Did this product achieve its volumes and targets?" class="fontclass1"/><Text id="csh_vol11" editable="false" /><Label id="csh_countries1"  text="What countries was this product launched in?" class="fontclass1"/><Text id="csh_countries11" editable="false" />-->
+							<Label id="csh_finsku1"  text="Select Finished Goods SKU’s codes impacted by the DF " class="fontclass1"/>
+							<Text id="csh_finsku11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="csh_finished_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="csh_volumes1" text="Please enter all Volumes in Unit Cases" class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="csh_volumes_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="csh_link1"  text="Please add all new Product details for this DF " class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="csh_link11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="csh_vol1"  text="Please enter all Volumes in Unit Cases " class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="csh_finished_tabl11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--<Label id="csh_newpack1" text="Is this a new pack?" class="fontclass1"/><Text id="csh_newpack11"  editable="false" /><Label id="csh_newpackdetail1" text="Please provide details about the new pack" class="fontclass1"/><Text id="csh_newpackdetail11"  editable="false" /><Label id="csh_brand1" text="Brand" class="fontclass1"/><Text id="csh_brand11" editable="false"/><Label id="csh_brandother1"  text="Other(please specify)" class="fontclass1"/><Text id="csh_brandother11" editable="false"/><Label id="csh_flavor1" text="Flavours" class="fontclass1"/><Text id="csh_flavour11" editable="false" /><Label id="csh_flavourother1"  text="Other(please specify)" class="fontclass1"/><Text id="csh_flavourother11" editable="false"/><Label id="csh_sku1"  text="SKUs that will be impacted by this new pack?" class="fontclass1"/><Text id="csh_sku11"  editable="false"/>-->
+							<Label  id="csh_incremental1" text="Incremental Volume" class="fontclass1"/>
+							<Text id="csh_incremental11" editable="false" />
+							<Label  id="csh_specify1" text="Incremental Volumes details" class="fontclass1"/>
+							<Text id="csh_specify11" editable="false" />
+							<Label  id="csh_canni1" text="Cannibalisation" class="fontclass1"/>
+							<Text id="csh_canni11" editable="false" />
+							<Label id="csh_fingoods1"  text="Select Finished Goods SKU codes impacted by the cannibalisation and enter the Cannibalisation rate as a percentage" class="fontclass1"/>
+							<Text id="csh_fingoods11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="csh_finishedgoods_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--		<Label class="showClass" id="csh_volumes1" text="Volumes"/>-->
+							<!--	<Text id="csh_volumes11" class="showClass" editable="false"/> -->
+							<!--	<Label id="csh_container1"  text="Product Container" class="fontclass1"/><Text id="csh_container11"  editable="false" /><Label id="csh_containerother1" text="Other(please specify)" class="fontclass1"/><Text id="csh_containerother11"  editable="false"/><Label id="csh_package1"  text="Package Type" class="fontclass1"/><Text id="csh_package11"  editable="false" /><Label id="csh_size1"  text="Product Pack Size" class="fontclass1"/><Text id="csh_size11"  editable="false" /><Label id="csh_sizeother1" text="Other(please specify)" class="fontclass1"/><Text id="csh_sizeother11" editable="false"/>-->
+							<Label id="csh_change1" text="Change Palletisation" class="fontclass1"/>
+							<Text  id="csh_change11" editable="false" />
+							<Label id="csh_changeother1" text="Yes(please specify)" class="fontclass1"/>
+							<Text  id="csh_changeother11" editable="false" />
+							<Label id="csh_changeotheryes1" text="Other(please specify)" class="fontclass1"/>
+							<Text  id="csh_changeotheryes11" editable="false" />
+							<!--	<Label  id="csh_pallet1" text="Pallet Types" class="fontclass1"/><Text  id="csh_pallet11" editable="false"/><Label id="csh_palletother1"  text="Other(please specify)" class="fontclass1"/><Text id="csh_palletother11"  editable="false"/>-->
+							<Label  id="csh_channel1" text="Channel" class="fontclass1"/>
+							<Text  id="csh_channel11" editable="false" />
+							<Label id="csh_cusspecific1" text="Customer Specific" class="fontclass1"/>
+							<Text id="csh_cusspecific11" editable="false" />
+							<Label id="csh_cusname1" text="Please provide the names of the customer(s)" class="fontclass1"/>
+							<Text id="csh_cusname11"  editable="false" />
+							<Label id="csh_info1" text="List Customers not to be included in the Promotion" class="fontclass1"/>
+							<Text id="csh_info11" editable="false" />
+							<Label id="csh_modi1" text="What Packaging Materials require changing?" class="fontclass1"/>
+							<Text id="csh_modi11" editable="false" />
+							<Label id="csh_mat1" text="Please select all Materials that will change" class="fontclass1"/>
+							<Text id="csh_mat11" editable="false" />
+							<Label id="csh_mat_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="csh_mat_other11" editable="false" />
+							<Label id="csh_mechanic1" text="Promotional Mechanic" class="fontclass1"/>
+							<Text id="csh_mechanic11" editable="false" />
+							<Label id="csh_mechanic_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="csh_mechanic_other11" editable="false" />
+							<Label id="csh_guidelines1" text="Mixing of Packaging Guidelines" class="fontclass1"/>
+							<Text id="csh_guidelines11" editable="false" />
+							<Label id="csh_mix1" text="Please enter Mixing of Packaging Guideline details" class="fontclass1"/>
+							<Text id="csh_mix11" editable="false" />
+							<Label id="csh_mix_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="csh_mix_other11" editable="false" />
+							<Label id="csh_rules1" text="Indication of Run- Out Rules" class="fontclass1"/>
+							<Text id="csh_rules11" editable="false" />
+							<Label id="csh_add1" text="Please enter any additional information" class="fontclass1"/>
+							<Text id="csh_add11" editable="false" />
+							<Label id="csh_artwork1" text="Who will pay for artwork changes?" class="fontclass1"/>
+							<Text id="csh_artwork11" editable="false" />
+							<Label id="csh_artworkother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="csh_artworkother11"  editable="false"/>
+							<Label id="csh_trials1" text="Who will pay for the trials?" class="fontclass1"/>
+							<Text id="csh_trials11" editable="false" />
+							<Label id="csh_trialother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="csh_trialother11"  editable="false"/>
+							<Label id="csh_supplier1"  text="Supplier Name for Supply Chain project" class="fontclass1"/>
+							<Text id="csh_supplier11" editable="false" />
+							<Label id="csh_supplierother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="csh_supplierother11"  editable="false"/>
+							<Label id="csh_comment1" text="Comment on any supply specifics" class="fontclass1"/>
+							<Text id="csh_comment11" editable="false" />
+							<Label id="csh_material_spec1" text="Materials Specification" class="fontclass1"/>
+							<Text id="csh_material_spec11"  editable="false" />
+							<Label id="csh_sites1" text="List all sites and lines affected" class="fontclass1"/>
+							<Text id="csh_sites11"  editable="false" />
+							<Label id="csh_qesh1"  text="Supplier QESH guidance on trialling" class="fontclass1"/>
+							<Text id="csh_qesh11"  editable="false" />
+							<Label id="csh_annualised1" text="Annualised Savings" class="fontclass1"/>
+							<Text id="csh_annualised11"  editable="false" />
+							<Label id="charter4" text="Will Charterhouse be involved in this project" class="fontclass1"/>
+							<Text id="charter44"  editable="false" />
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm labelSpanL="5" labelSpanM="2" emptySpanL="3" emptySpanM="1" columnsL="1" columnsM="1"
+					class="hideClass" editable="false" id="maptbl_submittedFormPage" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Details for Selected ID"/>
+							<Label id='maptbl_status_label1'  text="Status" class="fontclass1"/>
+							<Text id="maptbl_status_input1" editable="false" />
+							<Label id='maptbl_df_id_label1' text="DF ID" class="fontclass1"/>
+							<Text id="maptbl_df_id_selected1" editable="false" />
+							<Label id="maptbl_init11" text="DF Initiator Name" class="fontclass1"/>
+							<Text id="maptbl_init1" editable="false" />
+							<Label id="maptbl_nim1" text="NIM" class="fontclass1"/>
+							<Text id="maptbl_nim11" editable="false" />
+							<Label  id="maptbl_title_s" text="Title of Project" class="fontclass1"/>
+							<Text id="maptbl_title1" editable="false" />
+							<Label id="maptbl_goal_s" text="Goal of Project" class="fontclass1"/>
+							<Text id="maptbl_goal1" editable="false" />
+							<Label id="maptbl_group_s" text="Project Group" class="fontclass1"/>
+							<Text id="maptbl_group1" editable="false" />
+							<!--	<Label id="maptbl_matching1" text="Mixing and Matching Rules" class="fontclass1"/><Text id="maptbl_matching11" editable="false" />-->
+							<Label id="maptbl_type1" text="Type of Project" class="fontclass1"/>
+							<Text id="maptbl_type11" editable="false" />
+							<Label  id="maptbl_theme_l" text="Promotion Type" class="fontclass1"/>
+							<Text id="maptbl_theme1" editable="false"/>
+							<Label  id="maptbl_start1" text="Theme Start Date (in Market)" class="fontclass1"/>
+							<Text id="maptbl_start11" editable="false"/>
+							<Label  id="maptbl_end1" text="Theme End Date (in Market)" class="fontclass1"/>
+							<Text id="maptbl_end11" editable="false"/>
+							<Label id="maptbl_initdept11" text="DF Initiator Department" class="fontclass1"/>
+							<Text id="maptbl_initdept1" editable="false" />
+							<Label id="maptbl_approver1_label" text="DF Approver" class="fontclass1"/>
+							<Text  id="maptbl_approver1" editable="false"/>
+							<Label id="maptbl_affected1" text="Has the affected brand owner agreed to this project/change?" class="fontclass1"/>
+							<Text id="maptbl_affected11" editable="false" />
+							<Label id="maptbl_owner1"  text="Brand Owner Name" class="fontclass1"/>
+							<Text id="maptbl_owner11"  editable="false" />
+							<Label id="maptbl_email1"  text="Brand Owner Email" class="fontclass1"/>
+							<Text id="maptbl_email11"  editable="false" />
+							<Label id="maptbl_market11" text="Destination Market" class="fontclass1"/>
+							<Text id="maptbl_market1" editable="false"/>
+							<Label id="maptbl_selecte_site1"  text="Selected Producing Sites"  class="fontclass1"/>
+							<Text id="maptbl_selecte_site11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="maptbl_finished_site_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--<Label id="maptbl_Repacking1" text="Repacking Required" class="fontclass1"/><Text id="maptbl_Repacking11" editable="false"/>-->
+							<Label id="maptbl_despatch1" text="Date of First/Last (if Delist) Despatches from CCEP Warehouses" class="fontclass1"/>
+							<Text id="maptbl_date_despatch" editable="false" />
+							<Label id="maptbl_forecastreq1" text="Date of Forecast required" class="fontclass1"/>
+							<Text id="maptbl_date_forecastreq" editable="false" />
+							<Label id="maptbl_forecast1" text="The initiator assumes the responsibility to confirm the availability of the forecast with Demand Planning 10 weeks prior to the first despatch from CCEP Warehouses" class="fontclass1"/>
+							<Text id="maptbl_forecast11" editable="false" />
+							<Label id="maptbl_notagree1" text="Please explain why you do not agree" class="fontclass1"/>
+							<Text id="maptbl_notagree11" editable="false" />
+							<Label id="maptbl_newsku1" text="Is a new Finished Goods SKU code needed?" class="fontclass1"/>
+							<Text id="maptbl_newsku11" editable="false" />
+							<Label id="maptbl_tradewin1" text="Trade Window to follow" class="fontclass1"/>
+							<Text id="maptbl_tradewin11" editable="false" />
+							<Label id="maptbl_trade1" text="Technical file/ Trade Registration / Line Forms Date?" class="fontclass1"/>
+							<Text id="maptbl_trade11" editable="false" />
+							<Label id="maptbl_tempsku1" text="Is a temporary Finished Goods SKU code needed?" class="fontclass1"/>
+							<Text id="maptbl_tempsku11" editable="false" />
+							<Label id="maptbl_tempskuyes1" text="Yes(please specify)" class="fontclass1"/>
+							<Text id="maptbl_tempskuyes11" editable="false" />
+							<Label id="maptbl_tempskutbd1" text="TBD(please specify)" class="fontclass1"/>
+							<Text id="maptbl_tempskutbd11" editable="false" />
+							<Label id="maptbl_finishedgoods1" text="Will existing Finished Goods SKU codes be impacted by this DF?" class="fontclass1"/>
+							<Text id="maptbl_finishedgoods11" editable="false" />
+							<!--<Label id="maptbl_launched1" text="Has this product been launched previously?" class="fontclass1"/><Text id="maptbl_launched11" editable="false" /><Label id="maptbl_vol1"  text="Did this product achieve its volumes and targets?" class="fontclass1"/><Text id="maptbl_vol11" editable="false" /><Label id="maptbl_countries1"  text="What countries was this product launched in?" class="fontclass1"/><Text id="maptbl_countries11" editable="false" />-->
+							<Label id="maptbl_finsku1"  text="Select Finished Goods SKU’s codes impacted by the DF " class="fontclass1"/>
+							<Text id="maptbl_finsku11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="maptbl_finished_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="maptbl_volumes1" text="Please enter all Volumes in Unit Cases" class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="maptbl_volumes_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="maptbl_link1"  text="Please add all new Product details for this DF " class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="maptbl_link11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="maptbl_vol1"  text="Please enter all Volumes in Unit Cases " class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="maptbl_finished_tabl11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--<Label id="maptbl_newpack1" text="Is this a new pack?" class="fontclass1"/><Text id="maptbl_newpack11"  editable="false" /><Label id="maptbl_newpackdetail1" text="Please provide details about the new pack" class="fontclass1"/><Text id="maptbl_newpackdetail11"  editable="false" /><Label id="maptbl_brand1" text="Brand" class="fontclass1"/><Text id="maptbl_brand11" editable="false"/><Label id="maptbl_brandother1"  text="Other(please specify)" class="fontclass1"/><Text id="maptbl_brandother11" editable="false"/><Label id="maptbl_flavor1" text="Flavours" class="fontclass1"/><Text id="maptbl_flavour11" editable="false" /><Label id="maptbl_flavourother1"  text="Other(please specify)" class="fontclass1"/><Text id="maptbl_flavourother11" editable="false"/><Label id="maptbl_sku1"  text="SKUs that will be impacted by this new pack?" class="fontclass1"/><Text id="maptbl_sku11"  editable="false"/>-->
+							<Label  id="maptbl_incremental1" text="Incremental Volume" class="fontclass1"/>
+							<Text id="maptbl_incremental11" editable="false" />
+							<Label  id="maptbl_specify1" text="Incremental Volumes details" class="fontclass1"/>
+							<Text id="maptbl_specify11" editable="false" />
+							<Label  id="maptbl_canni1" text="Cannibalisation" class="fontclass1"/>
+							<Text id="maptbl_canni11" editable="false" />
+							<Label id="maptbl_fingoods1"  text="Select Finished Goods SKU codes impacted by the cannibalisation and enter the Cannibalisation rate as a percentage" class="fontclass1"/>
+							<Text id="maptbl_fingoods11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="maptbl_finishedgoods_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--		<Label class="hideClass" id="maptbl_volumes1" text="Volumes"/>-->
+							<!--	<Text id="maptbl_volumes11" class="showClass" editable="false"/> -->
+							<!--	<Label id="maptbl_container1"  text="Product Container" class="fontclass1"/><Text id="maptbl_container11"  editable="false" /><Label id="maptbl_containerother1" text="Other(please specify)" class="fontclass1"/><Text id="maptbl_containerother11"  editable="false"/><Label id="maptbl_package1"  text="Package Type" class="fontclass1"/><Text id="maptbl_package11"  editable="false" /><Label id="maptbl_size1"  text="Product Pack Size" class="fontclass1"/><Text id="maptbl_size11"  editable="false" /><Label id="maptbl_sizeother1" text="Other(please specify)" class="fontclass1"/><Text id="maptbl_sizeother11" editable="false"/>-->
+							<Label id="maptbl_change1" text="Change Palletisation" class="fontclass1"/>
+							<Text  id="maptbl_change11" editable="false" />
+							<Label id="maptbl_changeother1" text="Yes(please specify)" class="fontclass1"/>
+							<Text  id="maptbl_changeother11" editable="false" />
+							<Label id="maptbl_changeotheryes1" text="Other(please specify)" class="fontclass1"/>
+							<Text  id="maptbl_changeotheryes11" editable="false" />
+							<!--	<Label  id="maptbl_pallet1" text="Pallet Types" class="fontclass1"/><Text  id="maptbl_pallet11" editable="false"/><Label id="maptbl_palletother1"  text="Other(please specify)" class="fontclass1"/><Text id="maptbl_palletother11"  editable="false"/>-->
+							<Label  id="maptbl_channel1" text="Channel" class="fontclass1"/>
+							<Text  id="maptbl_channel11" editable="false" />
+							<Label id="maptbl_cusspecific1" text="Customer Specific" class="fontclass1"/>
+							<Text id="maptbl_cusspecific11" editable="false" />
+							<Label id="maptbl_cusname1" text="Please provide the names of the customer(s)" class="fontclass1"/>
+							<Text id="maptbl_cusname11"  editable="false" />
+							<Label id="maptbl_info1" text="List Customers not to be included in the Promotion" class="fontclass1"/>
+							<Text id="maptbl_info11" editable="false" />
+							<Label id="maptbl_modi1" text="What Packaging Materials require changing?" class="fontclass1"/>
+							<Text id="maptbl_modi11" editable="false" />
+							<Label id="maptbl_mat1" text="Please select all Materials that will change" class="fontclass1"/>
+							<Text id="maptbl_mat11" editable="false" />
+							<Label id="maptbl_mat_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="maptbl_mat_other11" editable="false" />
+							<Label id="maptbl_mechanic1" text="Promotional Mechanic" class="fontclass1"/>
+							<Text id="maptbl_mechanic11" editable="false" />
+							<Label id="maptbl_mechanic_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="maptbl_mechanic_other11" editable="false" />
+							<Label id="maptbl_guidelines1" text="Mixing of Packaging Guidelines" class="fontclass1"/>
+							<Text id="maptbl_guidelines11" editable="false" />
+							<Label id="maptbl_mix1" text="Please enter Mixing of Packaging Guideline details" class="fontclass1"/>
+							<Text id="maptbl_mix11" editable="false" />
+							<Label id="maptbl_mix_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="maptbl_mix_other11" editable="false" />
+							<Label id="maptbl_rules1" text="Indication of Run- Out Rules" class="fontclass1"/>
+							<Text id="maptbl_rules11" editable="false" />
+							<Label id="maptbl_add1" text="Please enter any additional information" class="fontclass1"/>
+							<Text id="maptbl_add11" editable="false" />
+							<Label id="maptbl_artwork1" text="Who will pay for artwork changes?" class="fontclass1"/>
+							<Text id="maptbl_artwork11" editable="false" />
+							<Label id="maptbl_artworkother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="maptbl_artworkother11"  editable="false"/>
+							<Label id="maptbl_trials1" text="Who will pay for the trials?" class="fontclass1"/>
+							<Text id="maptbl_trials11" editable="false" />
+							<Label id="maptbl_trialother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="maptbl_trialother11"  editable="false"/>
+							<Label id="maptbl_supplier1"  text="Supplier Name for Supply Chain project" class="fontclass1"/>
+							<Text id="maptbl_supplier11" editable="false" />
+							<Label id="maptbl_supplierother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="maptbl_supplierother11"  editable="false"/>
+							<Label id="maptbl_comment1" text="Comment on any supply specifics" class="fontclass1"/>
+							<Text id="maptbl_comment11" editable="false" />
+							<Label id="maptbl_material_spec1" text="Materials Specification" class="fontclass1"/>
+							<Text id="maptbl_material_spec11"  editable="false" />
+							<Label id="maptbl_sites1" text="List all sites and lines affected" class="fontclass1"/>
+							<Text id="maptbl_sites11"  editable="false" />
+							<Label id="maptbl_qesh1"  text="Supplier QESH guidance on trialling" class="fontclass1"/>
+							<Text id="maptbl_qesh11"  editable="false" />
+							<Label id="maptbl_annualised1" text="Annualised Savings" class="fontclass1"/>
+							<Text id="maptbl_annualised11"  editable="false" />
+							<Label id="charter5" text="Will Charterhouse be involved in this project" class="fontclass1"/>
+							<Text id="charter55"  editable="false" />
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm labelSpanL="5" labelSpanM="2" emptySpanL="3" emptySpanM="1" columnsL="1" columnsM="1"
+					class="hideClass" editable="false" id="past_submittedFormPage" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<core:Title text="Details for Selected ID"/>
+							<Label id='past_status_label1'  text="Status" class="fontclass1"/>
+							<Text id="past_status_input1" editable="false" />
+							<Label id='past_df_id_label1' text="DF ID" class="fontclass1"/>
+							<Text id="past_df_id_selected1" editable="false" />
+							<Label id="past_init11" text="DF Initiator Name" class="fontclass1"/>
+							<Text id="past_init1" editable="false" />
+							<Label id="past_nim1" text="NIM" class="fontclass1"/>
+							<Text id="past_nim11" editable="false" />
+							<Label  id="past_title_s" text="Title of Project" class="fontclass1"/>
+							<Text id="past_title1" editable="false" />
+							<Label id="past_goal_s" text="Goal of Project" class="fontclass1"/>
+							<Text id="past_goal1" editable="false" />
+							<Label id="past_group_s" text="Project Group" class="fontclass1"/>
+							<Text id="past_group1" editable="false" />
+							<!--	<Label id="past_matching1" text="Mixing and Matching Rules" class="fontclass1"/><Text id="past_matching11" editable="false" />-->
+							<Label id="past_type1" text="Type of Project" class="fontclass1"/>
+							<Text id="past_type11" editable="false" />
+							<Label  id="past_theme_l" text="Promotion Type" class="fontclass1"/>
+							<Text id="past_theme1" editable="false"/>
+							<Label  id="past_start1" text="Theme Start Date (in Market)" class="fontclass1"/>
+							<Text id="past_start11" editable="false"/>
+							<Label  id="past_end1" text="Theme End Date (in Market)" class="fontclass1"/>
+							<Text id="past_end11" editable="false"/>
+							<Label id="past_initdept11" text="DF Initiator Department" class="fontclass1"/>
+							<Text id="past_initdept1" editable="false" />
+							<Label id="past_approver1_label" text="DF Approver" class="fontclass1"/>
+							<Text  id="past_approver1" editable="false"/>
+							<Label id="past_affected1" text="Has the affected brand owner agreed to this project/change?" class="fontclass1"/>
+							<Text id="past_affected11" editable="false" />
+							<Label id="past_owner1"  text="Brand Owner Name" class="fontclass1"/>
+							<Text id="past_owner11"  editable="false" />
+							<Label id="past_email1"  text="Brand Owner Email" class="fontclass1"/>
+							<Text id="past_email11"  editable="false" />
+							<Label id="past_market11" text="Destination Market" class="fontclass1"/>
+							<Text id="past_market1" editable="false"/>
+							<Label id="past_selecte_site1"  text="Selected Producing Sites"  class="fontclass1"/>
+							<Text id="past_selecte_site11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="past_finished_site_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--<Label id="past_Repacking1" text="Repacking Required" class="fontclass1"/><Text id="past_Repacking11" editable="false"/>-->
+							<Label id="past_despatch1" text="Date of First/Last (if Delist) Despatches from CCEP Warehouses" class="fontclass1"/>
+							<Text id="past_date_despatch" editable="false" />
+							<Label id="past_forecastreq1" text="Date of Forecast required" class="fontclass1"/>
+							<Text id="past_date_forecastreq" editable="false" />
+							<Label id="past_forecast1" text="The initiator assumes the responsibility to confirm the availability of the forecast with Demand Planning 10 weeks prior to the first despatch from CCEP Warehouses" class="fontclass1"/>
+							<Text id="past_forecast11" editable="false" />
+							<Label id="past_notagree1" text="Please explain why you do not agree" class="fontclass1"/>
+							<Text id="past_notagree11" editable="false" />
+							<Label id="past_newsku1" text="Is a new Finished Goods SKU code needed?" class="fontclass1"/>
+							<Text id="past_newsku11" editable="false" />
+							<Label id="past_tradewin1" text="Trade Window to follow" class="fontclass1"/>
+							<Text id="past_tradewin11" editable="false" />
+							<Label id="past_trade1" text="Technical file/ Trade Registration / Line Forms Date?" class="fontclass1"/>
+							<Text id="past_trade11" editable="false" />
+							<Label id="past_tempsku1" text="Is a temporary Finished Goods SKU code needed?" class="fontclass1"/>
+							<Text id="past_tempsku11" editable="false" />
+							<Label id="past_tempskuyes1" text="Yes(please specify)" class="fontclass1"/>
+							<Text id="past_tempskuyes11" editable="false" />
+							<Label id="past_tempskutbd1" text="TBD(please specify)" class="fontclass1"/>
+							<Text id="past_tempskutbd11" editable="false" />
+							<Label id="past_finishedgoods1" text="Will existing Finished Goods SKU codes be impacted by this DF?" class="fontclass1"/>
+							<Text id="past_finishedgoods11" editable="false" />
+							<!--<Label id="past_launched1" text="Has this product been launched previously?" class="fontclass1"/><Text id="past_launched11" editable="false" /><Label id="past_vol1"  text="Did this product achieve its volumes and targets?" class="fontclass1"/><Text id="past_vol11" editable="false" /><Label id="past_countries1"  text="What countries was this product launched in?" class="fontclass1"/><Text id="past_countries11" editable="false" />-->
+							<Label id="past_finsku1"  text="Select Finished Goods SKU’s codes impacted by the DF " class="fontclass1"/>
+							<Text id="past_finsku11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="past_finished_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="past_volumes1" text="Please enter all Volumes in Unit Cases" class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="past_volumes_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="past_link1"  text="Please add all new Product details for this DF " class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="past_link11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="past_vol1"  text="Please enter all Volumes in Unit Cases " class="fontclass1"/>
+							<sap.ui.layout.form:SimpleForm id="past_finished_tabl11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--<Label id="past_newpack1" text="Is this a new pack?" class="fontclass1"/><Text id="past_newpack11"  editable="false" /><Label id="past_newpackdetail1" text="Please provide details about the new pack" class="fontclass1"/><Text id="past_newpackdetail11"  editable="false" /><Label id="past_brand1" text="Brand" class="fontclass1"/><Text id="past_brand11" editable="false"/><Label id="past_brandother1"  text="Other(please specify)" class="fontclass1"/><Text id="past_brandother11" editable="false"/><Label id="past_flavor1" text="Flavours" class="fontclass1"/><Text id="past_flavour11" editable="false" /><Label id="past_flavourother1"  text="Other(please specify)" class="fontclass1"/><Text id="past_flavourother11" editable="false"/><Label id="past_sku1"  text="SKUs that will be impacted by this new pack?" class="fontclass1"/><Text id="past_sku11"  editable="false"/>-->
+							<Label  id="past_incremental1" text="Incremental Volume" class="fontclass1"/>
+							<Text id="past_incremental11" editable="false" />
+							<Label  id="past_specify1" text="Incremental Volumes details" class="fontclass1"/>
+							<Text id="past_specify11" editable="false" />
+							<Label  id="past_canni1" text="Cannibalisation" class="fontclass1"/>
+							<Text id="past_canni11" editable="false" />
+							<Label id="past_fingoods1"  text="Select Finished Goods SKU codes impacted by the cannibalisation and enter the Cannibalisation rate as a percentage" class="fontclass1"/>
+							<Text id="past_fingoods11"  editable="false" />
+							<Label/>
+							<sap.ui.layout.form:SimpleForm id="past_finishedgoods_table11" width="100%">
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<!--		<Label class="showClass" id="past_volumes1" text="Volumes"/>-->
+							<!--	<Text id="past_volumes11" class="showClass" editable="false"/> -->
+							<!--	<Label id="past_container1"  text="Product Container" class="fontclass1"/><Text id="past_container11"  editable="false" /><Label id="past_containerother1" text="Other(please specify)" class="fontclass1"/><Text id="past_containerother11"  editable="false"/><Label id="past_package1"  text="Package Type" class="fontclass1"/><Text id="past_package11"  editable="false" /><Label id="past_size1"  text="Product Pack Size" class="fontclass1"/><Text id="past_size11"  editable="false" /><Label id="past_sizeother1" text="Other(please specify)" class="fontclass1"/><Text id="past_sizeother11" editable="false"/>-->
+							<Label id="past_change1" text="Change Palletisation" class="fontclass1"/>
+							<Text  id="past_change11" editable="false" />
+							<Label id="past_changeother1" text="Yes(please specify)" class="fontclass1"/>
+							<Text  id="past_changeother11" editable="false" />
+							<Label id="past_changeotheryes1" text="Other(please specify)" class="fontclass1"/>
+							<Text  id="past_changeotheryes11" editable="false" />
+							<!--	<Label  id="past_pallet1" text="Pallet Types" class="fontclass1"/><Text  id="past_pallet11" editable="false"/><Label id="past_palletother1"  text="Other(please specify)" class="fontclass1"/><Text id="past_palletother11"  editable="false"/>-->
+							<Label  id="past_channel1" text="Channel" class="fontclass1"/>
+							<Text  id="past_channel11" editable="false" />
+							<Label id="past_cusspecific1" text="Customer Specific" class="fontclass1"/>
+							<Text id="past_cusspecific11" editable="false" />
+							<Label id="past_cusname1" text="Please provide the names of the customer(s)" class="fontclass1"/>
+							<Text id="past_cusname11"  editable="false" />
+							<Label id="past_info1" text="List Customers not to be included in the Promotion" class="fontclass1"/>
+							<Text id="past_info11" editable="false" />
+							<Label id="past_modi1" text="What Packaging Materials require changing?" class="fontclass1"/>
+							<Text id="past_modi11" editable="false" />
+							<Label id="past_mat1" text="Please select all Materials that will change" class="fontclass1"/>
+							<Text id="past_mat11" editable="false" />
+							<Label id="past_mat_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="past_mat_other11" editable="false" />
+							<Label id="past_mechanic1" text="Promotional Mechanic" class="fontclass1"/>
+							<Text id="past_mechanic11" editable="false" />
+							<Label id="past_mechanic_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="past_mechanic_other11" editable="false" />
+							<Label id="past_guidelines1" text="Mixing of Packaging Guidelines" class="fontclass1"/>
+							<Text id="past_guidelines11" editable="false" />
+							<Label id="past_mix1" text="Please enter Mixing of Packaging Guideline details" class="fontclass1"/>
+							<Text id="past_mix11" editable="false" />
+							<Label id="past_mix_other1" text="Other (please specify)" class="fontclass1"/>
+							<Text id="past_mix_other11" editable="false" />
+							<Label id="past_rules1" text="Indication of Run- Out Rules" class="fontclass1"/>
+							<Text id="past_rules11" editable="false" />
+							<Label id="past_add1" text="Please enter any additional information" class="fontclass1"/>
+							<Text id="past_add11" editable="false" />
+							<Label id="past_artwork1" text="Who will pay for artwork changes?" class="fontclass1"/>
+							<Text id="past_artwork11" editable="false" />
+							<Label id="past_artworkother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="past_artworkother11"  editable="false"/>
+							<Label id="past_trials1" text="Who will pay for the trials?" class="fontclass1"/>
+							<Text id="past_trials11" editable="false" />
+							<Label id="past_trialother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="past_trialother11"  editable="false"/>
+							<Label id="past_supplier1"  text="Supplier Name for Supply Chain project" class="fontclass1"/>
+							<Text id="past_supplier11" editable="false" />
+							<Label id="past_supplierother1"  text="Other(please specify)" class="fontclass1"/>
+							<Text id="past_supplierother11"  editable="false"/>
+							<Label id="past_comment1" text="Comment on any supply specifics" class="fontclass1"/>
+							<Text id="past_comment11" editable="false" />
+							<Label id="past_material_spec1" text="Materials Specification" class="fontclass1"/>
+							<Text id="past_material_spec11"  editable="false" />
+							<Label id="past_sites1" text="List all sites and lines affected" class="fontclass1"/>
+							<Text id="past_sites11"  editable="false" />
+							<Label id="past_qesh1"  text="Supplier QESH guidance on trialling" class="fontclass1"/>
+							<Text id="past_qesh11"  editable="false" />
+							<Label id="past_annualised1" text="Annualised Savings" class="fontclass1"/>
+							<Text id="past_annualised11"  editable="false" />
+							<Label id="charter6" text="Will Charterhouse be involved in this project" class="fontclass1"/>
+							<Text id="charter66"  editable="false" />
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" columnsM="10" class="hideClass" editable="true" id="request_form" layout="ResponsiveGridLayout" height="200%">
+						<sap.ui.layout.form:content>
+							<core:Title id="request" text="Request"/>
+							<c:Label id='status_label'  text="Status" class="fontclass"/>
+							<Text id="status_input" editable="false" width="100%"/>
+							<c:Label id='df_id_label' text="DF ID" class="fontclass"/>
+							<Input id="df_id_selected" editable="false" width="100%"/>
+							<c:Label required="true"  class="fontclass"  id="initiator" text="DF Initiator Name" />
+							<Input id="initiator_name" editable="false" width="100%"/>
+							<c:Label id="initlabel"  class="hideClass fontclass_red" text="*NIM" />
+							<Select id="NIM_dropdown"  class="hideClass" required="true" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></Select>
+							<c:Label id="generate_DF"  text="Generate New DF Request ID’s" class="fontclass"/>
+							<Input id="generate_DF_input" wrapping="None"/>
+							<Button text="OK" id="ok_button" press="okDialogPress"></Button>
+							<c:Label id="multiple_df_id" text="Multiple DF IDs" class="fontclass"/>
+							<TextArea id="mul_df_id_input" editable = "false"/>
+							<c:Label id="__label6" icon="sap-icon://message-information" class="fontclass" required="true" text="*Title of Project" tooltip="Title of the project"/>
+							<TextArea id="description" wrapping="None" width="100%"/> 
+							<c:Label required="true" id="goals" class="fontclass" icon="sap-icon://message-information" text="*Goal Of Project" tooltip="Please explain your proposed project in as much detail as required to assist understanding. This will help to form outlines, the scope and success criteria for the project. Detail also any switching of SKUs, any specific artwork changes (unique coding, different designs etc). PLEASE be explicit about what is changing and why. If delisting please list the SKUs as well or attach a separate file containing the SKU list (BASIS/SAP/BAP codes)"/>
+							<TextArea id="goals_input" wrapping="None"/>
+							<c:Label required="true" id="Prjgrp"   text="*Project Group" class="fontclass"/>
+							<Select id="group_dropdown"  required="true" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></Select>
+							<c:Label required="true" id="destination" text="*Destination Market" icon="sap-icon://message-information"  class="fontclass" tooltip="Please select all markets where this product is sold"/>
+							<!--<MultiComboBox id="markets_dropdown" selectionFinish="marketSelectionFinish" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>-->
+							<Select id="markets_dropdown" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></Select>
+							<!--<Label id="__label7"  class="hideClass" text="Label" width="100%"/>-->
+							<c:Label id="project_types" class="hideClass fontclass" required="true" text="*Project Type" />
+							<MultiComboBox id="type_dropdown"  class="hideClass" selectionFinish="typeSelectionFinish" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>
+							<c:Label icon="sap-icon://message-information" id="Themelabel" class="fontclass" text="*Promotion Type" tooltip="Please select the relevant Promotion Type: Theme (e.g. Share a Coke), Standard, Promo (e.g. 3+1, Price Mark)"/>
+							<!--	<Select id="theme_dropdown" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></Select>-->
+							<MultiComboBox id="theme_dropdown" selectionFinish="PromotionSelectionFinish" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>
+							<c:Label tooltip="Please note the NIM commitment will be only on the first despatch date from warehouse" class="fontclass" icon="sap-icon://message-information" id="start_date" required="true" text="*Theme Start Date (in Market)"/>
+							<DatePicker id="start_date_input" width="100%" height="200px" />
+							<c:Label  class="fontclass" id="Initiator_label" text="*DF Initiator Department" />
+							<Select id="initdept_dropdown" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></Select>
+							<c:Label  class="fontclass whitespace" id="approver" text="*DF Approver Name" icon="sap-icon://message-information" tooltip="Please enter the name of the DF Approver who is an Associate Director level or above"/>
+							<Input id="approver_input" width="100%"/>
+							<c:Label  class="fontclass whitespace" id="approver_email" text="*DF Approver Email" icon="sap-icon://message-information" tooltip="Please note a confirmation email will be sent to the DF Approver Email. If more than one email please use a ; to separate these with the following format: abc@email.com; xyz@email.com "/>
+							<Input id="approver_email_input" width="100%"/>
+							<c:Label class="fontclass" required="true" id="affected_brand" text="*Has the affected brand owner agreed to this project/change? " />
+							<RadioButtonGroup columns="2" id="affected_brand_radio" width="100%">
+								<buttons>
+									<RadioButton id="affected_yes" text="YES"/>
+									<RadioButton id="affected_no" text="NO"/>
+								</buttons>
+							</RadioButtonGroup>
+							<c:Label  id="brand_owner" class="fontclass" required="true" text="*Brand Owner Name" />
+							<TextArea id="brand_owner_input" wrapping="None" />
+							<c:Label  id="brand_owner_email" class="fontclass" required="true" text="*Brand Owner Email" icon="sap-icon://message-information" tooltip="Please note a confirmation email will be sent to the Brand Owner Email. If more than one email please use a ; to separate these with the following format: abc@email.com; xyz@email.com"/>
+							<TextArea id="brand_owner_input_email" wrapping="None"/>
+							
+							<c:Label  class="fontclass" id="producing_sites" text="Producing Site(s)" wrapping="true"/>
+							<Button  class="hideClass" text="Please selected all Producing sites" id="select_producing_button" press="producingSelectDialogPress">
+								<customData>
+									<core:CustomData
+							key="multi"
+							value="true" />
+								</customData>
+							</Button>
+							<c:Label required="true" class="hideClass fontclass" id="finished_table2" />
+							<sap.ui.layout.form:SimpleForm class="hideClass" editable="true"  id="finished_table3" >
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label  class="hideClass" id="site"  />
+							<Input  class="hideClass" id="site_selected" width="100%"/>
+							<c:Label id="repackinglabel" required="true"  class="fontclass" text="*Repacking Required" wrapping="true"/>
+							<RadioButtonGroup columns="2" id="repacking" width="100%">
+								<buttons>
+									<RadioButton id="repacking_yes" text="YES"/>
+									<RadioButton id="repacking_no" text="NO"/>
+								</buttons>
+							</RadioButtonGroup>
+							<c:Label   icon="sap-icon://message-information"  class="fontclass" id="first_last_dispatch_lbl" text="*Date of First/Last (if Delist) Despatches from CCEP Warehouses" tooltip="Please select a Friday date only"/>
+							<DatePicker valueFormat="yyyy-MM-dd" id="first_last_dispatch_input" width="100%" height="200px" change="onDateChange"/>
+							<c:Label tooltip="Please note the NIM commitment will be only on the first despatch date from warehouse" class="fontclass" icon="sap-icon://message-information" id="end_date" required="true" text="*Theme End Date (CCEP Warehouse availability)"/>
+							<DatePicker valueFormat="yyyy-MM-dd" id="end_date_input" width="100%" height="200px" change="onDateChange1"/>
+							
+							<c:Label class="fontclass" id="launchedlabel" required="true" text="*Has this product been launched previously?" wrapping="true"/>
+							<RadioButtonGroup columns="2" id="launched_previously" width="100%">
+								<buttons>
+									<RadioButton id="launched_previously_yes" text="YES"/>
+									<RadioButton id="launched_previously_no" text="NO"/>
+								</buttons>
+							</RadioButtonGroup>
+							<c:Label   required="true" id="volumes_targets_label" class="hideClass fontclass" text="*Did this product achieve its volumes and targets?" />
+							<TextArea  id="volumes_targets_input" class="hideClass" width="100%"/>
+							<c:Label   id="launch_others_label" class="hideClass fontclass" required="true" text="*What countries was this product launched in?" />
+							<MultiComboBox id="launch_other_dropdown" class="hideClass" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>
+							<c:Label class="fontclass" required="true" id="new_sku" text="*Is a new Finished Goods SKU code needed?" />
+							<RadioButtonGroup columns="3" id="new_sku_radio" width="100%">
+								<buttons>
+									<RadioButton id="new_sku_yes" text="YES"/>
+									<RadioButton id="new_sku_no" text="NO"/>
+									<RadioButton id="new_sku_tbd" text="TBD"/>
+								</buttons>
+							</RadioButtonGroup>
+							<c:Label  class="fontclass" required="true" id="new_tbd" text="*TBD (please specify)" />
+							<Input  id="new_tbd_input" width="100%"/>
+							<c:Label class="fontclass" id="forecast_req" text="Date of Forecast required" />
+							<Input id="forecast_req_inpt" width="100%" height="200px" editable="false"/>
+							<c:Label id="forecast" required="true" class="fontclass" text="*The initiator assumes the responsibility to confirm the availability of the forecast with Demand Planning 10 weeks prior to the first despatch from CCEP Warehouses"  />
+							<!--<TextArea id="forecast_input" wrapping="None"/>-->
+							<RadioButtonGroup  columns="2" id="forecast_input" width="100%">
+								<buttons>
+									<RadioButton id="forecast_input_yes" text="Agree"/>
+									<RadioButton id="forecast_input_no" text="Not Agree"/>
+								</buttons>
+							</RadioButtonGroup>
+							<c:Label id="not_agree" class="fontclass" text="*Please explain why you do not agree"/>
+							<TextArea id="not_agree_inpt" wrapping="None" width="100%"/>
+							
+							<c:Label  class="fontclass" id="trade_win" text="*Trade Window to follow" />
+							<DatePicker valueFormat="yyyy-MM-dd" id="trade_win_inpt" width="100%" height="200px" change="onDateChange2"/>
+							<c:Label id="technical_date_label" icon="sap-icon://message-information" class="fontclass" required="true" text="Technical file/ Trade Registration / Line Forms Date?" tooltip="When is the Technical file/ Trade Registration/ Line Form required to set up codes with the customer (EAN codes / finished case good codes)?"/>
+							<DatePicker valueFormat="yyyy-MM-dd" id="technical_date" width="100%" height="200px" change="onDateChange3"/>
+							<c:Label class="fontclass" required="true" id="temp_sku" text="*Is a temporary Finished Goods SKU code needed?" />
+							<RadioButtonGroup columns="3" id="temp_sku_radio" width="100%">
+								<buttons>
+									<RadioButton id="temp_sku_yes" text="YES"/>
+									<RadioButton id="temp_sku_no" text="NO"/>
+									<RadioButton id="temp_sku_tbd" text="TBD"/>
+								</buttons>
+							</RadioButtonGroup>
+							<c:Label  class="fontclass hideClass" required="true" id="temp_yes" text="*Yes (please specify)" />
+							<Input  id="temp_yes_input" class="hideClass" width="100%"/>
+							<c:Label  class="fontclass hideClass" required="true" id="temp_tbd" text="*TBD (please specify)" />
+							<Input  id="temp_tbd_input" class="hideClass" width="100%"/>
+							<c:Label class="fontclass" id="finished_select" required="true" text="*Will existing Finished Goods SKU codes be impacted by this DF?" wrapping="true"/>
+							<RadioButtonGroup columns="2" id="finished_select1" width="100%">
+								<buttons>
+									<RadioButton id="finished_select_yes" text="YES"/>
+									<RadioButton id="finished_select_no" text="NO"/>
+								</buttons>
+							</RadioButtonGroup>
+							<c:Label icon="sap-icon://message-information"  text="*Select Finished Goods SKU codes impacted by the DF" required="true" class="hideClass fontclass" id="select_list" tooltip="Please enter SAP SKU / BAP codes which are impacted by the project unless new SKU required as part of scope."/>
+							<Button  class="hideClass" text="Select Finished Goods SKU’s codes impacted by the DF" id="select_list_button" press="tableSelectDialogPress">
+								<customData>
+									<core:CustomData
+							key="multi"
+							value="true" />
+								</customData>
+							</Button>
+							<c:Label required="true" class="fontclass" id="finished_table" />
+							<sap.ui.layout.form:SimpleForm class="" editable="true"  id="finished_table1" >
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label  class="hideClass" id="material"  />
+							<Input  class="hideClass" id="material_selected" width="100%" editable="false"/>
+							<c:Label  required="true" class="hideClass fontclass" id="new_pack" text="*Is this a new pack?" />
+							<RadioButtonGroup  class="visibilityClass" columns="2"   id="new_pack_radio" width="100%">
+								<buttons >
+									<RadioButton id="new_pack_yes" text="YES"/>
+									<RadioButton id="new_pack_no"  text="NO"/>
+								</buttons>
+							</RadioButtonGroup>
+							<c:Label id="new_pack_detail" class="fontclass hideClass" required="true" text="*Please provide details about the new pack" />
+							<TextArea id="new_pack_detail1" class="hideClass" wrapping="None" width="100%"/>
+							<c:Label id="brand" icon="sap-icon://message-information"  class="fontclass hideClass" required="true" text="*Brand" tooltip="Please select all brands in scope of this project. If this is a New Product Development please select Other and provide details on the new brand."/>
+							<MultiComboBox class="hideClass" id="brand_dropdown" selectionFinish="brandSelectionFinish" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>
+							<c:Label class="hideClass fontclass" design="Bold" required="true" id="brand_other" text="*Other(please specify)" />
+							<Input  class="hideClass" id="brand_other_input" width="100%"/>
+							<c:Label icon="sap-icon://message-information"  class="fontclass hideClass" id="flavour" required="true" text="*Flavours" tooltip="Please enter all flavours in scope of this project. If this is a New Product Development please select Otherand provide details on the new flavour."/>
+							<MultiComboBox id="flavour_dropdown" class="hideClass" selectionFinish="flavourSelectionFinish" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>
+							<c:Label  class="hideClass fontclass" required="true" id="flavour_other" text="*Other(please specify)" />
+							<Input  class="hideClass" id="flavour_other_input" width="100%"/>
+							<c:Label icon="sap-icon://message-information" id="product_cont" required="true" class="hideClass fontclass" text="*Product Container" tooltip="Please enter all containers in scope of this project"/>
+							<MultiComboBox id="product_cont_dropdown" selectionFinish="containerSelectionFinish" class="hideClass" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>
+							<c:Label   class="hideClass fontclass" required="true" id="container_other" text="*Other(please specify)" />
+							<Input  class="hideClass" id="container_other_input" width="100%"/>
+							<c:Label id="package_type"  class="hideClass fontclass" text="*Package Type" />
+							<Select id="package_dropdown"  class="hideClass" required="true" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></Select>
+							<c:Label id="product_size" icon="sap-icon://message-information" required="true" class="hideClass fontclass" text="*Product Pack Size" tooltip="Please enter all pack sizes in scope of this project."/>
+							<MultiComboBox id="product_size_dropdown" selectionFinish="sizeSelectionFinish" class="hideClass" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>
+							<c:Label class="hideClass fontclass" required="true" id="size_other" text="*Other(please specify)" />
+							<Input  class="hideClass" id="size_other_input" width="100%"/>
+							<c:Label icon="sap-icon://message-information"  class="fontclass hideClass" id="pallet_types"  text="*Pallet Types" tooltip="Please select all that apply"/>
+							<MultiComboBox id="pallet_dropdown" selectionFinish="palletSelectionFinish" class="hideClass" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>
+							<c:Label  class="fontclass" required="true" id="pallet_other" text="*Other (please specify)" />
+							<Input  id="pallet_other_input" width="100%"/>
+							<c:Label required="true" class="fontclass" id="new_brand_etc_table" text="Please add all new Product details for this DF" icon="sap-icon://message-information" tooltip="Please note you can manually type in values for each column if the value you are looking for is not available in the drop-down menu"/>
+							<sap.ui.layout.form:SimpleForm editable="true"  id="new_brand_etc_table1" >
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<c:Label required="true" class="fontclass" id="new_other_table" />
+							<sap.ui.layout.form:SimpleForm editable="true"  id="new_other_table1" >
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<c:Label icon="sap-icon://message-information"  text="*SKUs that will be impacted by this new pack?" required="true" class="hideClass fontclass" id="sku_impacted" tooltip="Please select all that apply"/>
+							<Button  class="hideClass" text="Select SKUs that will be impacted by this new pack?" id="sku_impacted_button" press="tableSelectDialogPress1">
+								<customData>
+									<core:CustomData
+							key="multi"
+							value="true" />
+								</customData>
+							</Button>
+							<c:Label required="true" class="hideClass fontclass" id="impacted_table" />
+							<sap.ui.layout.form:SimpleForm class="hideClass" editable="true"  id="impacted_table1" >
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label  class="hideClass" id="sku_impacted_display"  />
+							<Input  class="hideClass" id="sku_impacted_selected" width="100%"/>
+							<c:Label icon="sap-icon://message-information" text="*Please enter all Volumes in Unit Cases" required="true" class="fontclass" id="volumes" tooltip="Please enter Volumes with the following format: e.g. 1000"/>
+							<sap.ui.layout.form:SimpleForm editable="true"  id="vol_form" >
+								<sap.ui.layout.form:content>
+								</sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<c:Label icon="sap-icon://message-information" text="*Please enter all Volumes in Unit Cases" required="true" class="fontclass" id="volumes_no" tooltip="Please enter Volumes with the following format: e.g. 1000"/>
+							<sap.ui.layout.form:SimpleForm editable="true"  id="vol_form_no" >
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<c:Label text="Select Raw Material codes impacted by the DF" class="fontclass_red whitespace" id="select_bom" />
+							<Button class="button" text="Select Raw Material codes impacted by the DF" id="select_bom_button" press="tableSelectDialogPressBOM">
+								<customData>
+									<core:CustomData
+							key="multi"
+							value="true" />
+								</customData>
+							</Button>
+							<c:Label required="true" class="fontclass" id="bom_table" />
+							<sap.ui.layout.form:SimpleForm editable="true"  id="bom_table1" >
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label id="bom"  />
+							<Input id="bom_selected" width="100%" editable="false"/>
+							<c:Label  required="true" class="fontclass" id="incremental_volume" text="*Incremental Volumes?" />
+							<RadioButtonGroup columns="2"   id="incremental_volume_radio" width="100%">
+								<buttons >
+									<RadioButton id="incremental_volume_yes" text="YES"/>
+									<RadioButton id="incremental_volume_no" text="NO"/>
+								</buttons>
+							</RadioButtonGroup>
+							<c:Label  required="true" icon="sap-icon://message-information" id="incremental_yes" class="fontclass" text="*Incremental Volumes details" tooltip="Please specify Incremental Volume details"/>
+							<Input id="incremental_yes_input" width="100%"/>
+							<c:Label  required="true" class="fontclass" icon="sap-icon://message-information" id="cannibalisation" text="*Cannibalisation?" tooltip="Finished Goods SKU codes impacted by this product and likely cannibalisation rates as a %" />
+							<RadioButtonGroup columns="2"   id="cann_radio" width="100%">
+								<buttons >
+									<RadioButton id="cann_yes" text="YES"/>
+									<RadioButton id="cann_no" text="NO"/>
+								</buttons>
+							</RadioButtonGroup>
+							<c:Label icon="sap-icon://message-information"  text="*Select Finished Goods SKU codes impacted by the cannibalisation and enter the Cannibalisation rate as a percentage" required="true" class="fontclass" id="select_list_new" tooltip="Please enter SAP SKU / BAP codes which are impacted by the project unless new SKU required as part of scope."/>
+							<Button text="Select Finished Goods SKU codes impacted by the cannibalisation" id="select_list_button_new" press="tableSelectDialogPressNew">
+								<customData>
+									<core:CustomData
+							key="multi"
+							value="true" />
+								</customData>
+							</Button>
+							<c:Label required="true" class="fontclass" id="finished_table_new" />
+							<sap.ui.layout.form:SimpleForm editable="true"  id="finished_table1_new" >
+								<sap.ui.layout.form:content></sap.ui.layout.form:content>
+							</sap.ui.layout.form:SimpleForm>
+							<Label  id="material_new"  />
+							<Input   id="material_selected_new" width="100%" editable="false"/>
+							<!--	<c:Label text="*Volumes" required="true" class="hideClass fontclass" id="volumes" /><sap.ui.layout.form:SimpleForm class="hideClass" editable="true"  id="vol_form" ><sap.ui.layout.form:content></sap.ui.layout.form:content></sap.ui.layout.form:SimpleForm>-->
+							<!--	<Button  class="hideClass" text="Select to update Volumes" id="volumes_button" press="tableSelectDialogPress2"><customData><core:CustomData
+							value="true" /></customData></Button><Label  class="hideClass" id="volumes_display"  />-->
+							<!--	<Link  class="hideClass" id="volumes_update" width="100%" press="volumeTable"/>-->
+							<c:Label icon="sap-icon://message-information" class="fontclass" id="change_palletisation"  text="*Change Palletisation" tooltip="If palletisation is to be changed please provide details"/>
+							<!--	<TextArea id="change_palletisation_input" wrapping="None" class="hideClass"/>-->
+							<RadioButtonGroup columns="2"  id="change_palletisation_input" width="100%">
+								<buttons>
+									<RadioButton id="change_yes" text="YES"/>
+									<RadioButton id="change_no" text="NO"/>
+								</buttons>
+							</RadioButtonGroup>
+							<c:Label  class="fontclass hideClass" required="true" id="change_other" text="*Yes (please specify)" />
+							<Input  id="change_other_input" class="hideClass" width="100%"/>
+							<!--<Select id="change_other_input"  class="hideClass" required="true" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></Select>-->
+							<c:Label  class="fontclass" required="true" id="change_other1" text="*Other (please specify)" />
+							<Input  id="change_other_input1" width="100%"/>
+							<c:Label  id="channel" class="hideClass fontclass" text="Channel"/>
+							<MultiComboBox id="channel_dropdown" class="hideClass" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>
+							<c:Label class="fontclass" required="true" id="customerlabel" text="*Customer Specific" />
+							<RadioButtonGroup columns="2" id="customer_specific" width="100%">
+								<buttons>
+									<RadioButton id="customer_specific_yes" text="YES"/>
+									<RadioButton id="customer_specific_no" text="NO"/>
+								</buttons>
+							</RadioButtonGroup>
+							<c:Label icon="sap-icon://message-information" class="fontclass" id="customer_name" required="true" text="*Please provide the names of the customer(s)" tooltip="Where there are Residual cases left over from a customer bespoke (unique) promotion please state alternative commercial plans"/>
+							<TextArea id="customer_name_input" wrapping="None"/>
+							<c:Label id="customer_promotion" icon="sap-icon://message-information" class="fontclass" required="true" text="*List Customers not to be included in the Promotion" tooltip="List any customers excluded from Promotion that require standard pack (specifically for on pack promotions)"/>
+							<TextArea id="customer_promotion_input" wrapping="None"/>
+							<c:Label class="fontclass" id="material_modification" required="true" text="*Do any Packaging Materials require changing?" />
+							<!--<TextArea id="material_modification_input" wrapping="None"/>-->
+							<RadioButtonGroup columns="2" id="material_modification_input" width="100%">
+								<buttons>
+									<RadioButton id="material_modification_input_yes" text="YES"/>
+									<RadioButton id="material_modification_input_no" text="NO"/>
+								</buttons>
+							</RadioButtonGroup>
+						
+								<c:Label id="materials" class="fontclass hideClass" required="true" text="*Please select all Materials which are impacted"/>
+							<MultiComboBox id="materials_dropdown" class="hideClass" selectionFinish="MaterialSelectionFinish" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>
+								<c:Label class="hideClass fontclass" design="Bold" required="true" id="material_other" text="*Material Change – Other(please specify)" />
+							<Input  class="hideClass" id="material_other_input" width="100%"/>
+							<c:Label id="rmwo_costs" class="fontclass" required="true" text="*In the event of raw material write off (RMWO), which department will cover the costs"/>
+							<MultiComboBox id="rmwo_costs_dropdown" selectionFinish="RMWOSelectionFinish" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>
+							<c:Label  class="fontclass" required="true" id="rmwo_other" text="*RMWO Costs – Other (please specify)" />
+							<Input  id="rmwo_other_input" width="100%"/>
+							<c:Label class="fontclass" id="comments_rmwo" required="true" text="Please add comments about the RMWO costs" />
+							<TextArea id="comments_rmwo_input" wrapping="None"/>
+						
+							
+							<c:Label icon="sap-icon://message-information" class="fontclass" id="promotional_mechanic" required="true" text="*Promotional Mechanic" tooltip="Fixed Volume, Fixed Period, Hard Stop (materials and/or finished case goods), On-going. This is key for Residual and Raw Material Write Off Calculations" />
+							<!--	<TextArea id="promotional_mechanic_input" wrapping="None"/>-->
+							<MultiComboBox id="promotional_mechanic_input" selectionFinish="MechanicSelectionFinish" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox>
+							<c:Label  class="fontclass" required="true" id="pm_other" text="*Other (please specify)" />
+							<Input  id="pm_other_input" width="100%"/>
+							<c:Label id="mixing" icon="sap-icon://message-information" class="fontclass" required="true" text="*Mixing of Packaging Guidelines" tooltip="Can current packaging be mixed with new to minimise Raw Material Write Off?" />
+							<!--	<TextArea id="mixing_input" wrapping="None"/>-->
+							<RadioButtonGroup columns="2" id="mixing_input" width="100%">
+								<buttons>
+									<RadioButton id="mixing_input_yes" text="YES"/>
+									<RadioButton id="mixing_input_no" text="NO"/>
+								</buttons>
+							</RadioButtonGroup>
+							<c:Label id="mixing_drop" class="fontclass hideClass" required="true" text="*Please enter Mixing of Packaging Guideline details"/>
+							<Input  id="mixing_dropdown" class="hideClass" width="100%"/>
+							<!--<Select id="mixing_dropdown" class="hideClass" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"/>-->
+							<c:Label required="true" id="indication"   text="*Raw Material Indication of Run-out Rules?" class="fontclass"/>
+							<Select id="rules_dropdown"  required="true" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></Select>
+							<c:Label required="true" id="rules_other" class="fontclass" text="Please enter any additional information" />
+							<TextArea id="rules_input" wrapping="None"/>
+							<c:Label class="hideClass fontclass" design="Bold" required="true" id="mixing_other" text="*Other(please specify)" />
+							<Input  class="hideClass" id="mixing_other_input" width="100%"/>
+							<c:Label id="artwork_changes" icon="sap-icon://message-information" class="fontclass" required="true" text="*Who will pay for artwork changes?" tooltip="Please select all relevant teams" />
+							<!--	<Select id="artwork_dropdown" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"/>-->
+							<MultiComboBox  id="artwork_dropdown" selectionFinish="ArtworkSelectionFinish" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox >
+							<c:Label class="hideClass fontclass" design="Bold" required="true" id="artwork_other" text="*Other (please specify)" />
+							<Input  class="hideClass" id="artwork_other_input" width="100%"/>
+							<c:Label id="trials" icon="sap-icon://message-information" class="fontclass" required="true" text="*If trials are required, who will be the budget holder for the trials?" tooltip="Who is the recommended budget holder for the trials?"/>
+							<Select id="trials_dropdown" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"/>
+							<c:Label class="hideClass fontclass" design="Bold" required="true" id="trial_other" text="*Other (please specify)" />
+							<Input  class="hideClass" id="trial_other_input" width="100%"/>
+							<c:Label class="fontclass whitespace" design="Bold" required="true" id="cost_po" text="Cost Center and PO number" />
+							<Input id="cost_po_input" width="100%"/>
+							<c:Label required="true" id="mixing_matching"   text="Mixing and Matching Rules" class="fontclass"/>
+							<TextArea id="matching_input" wrapping="None" width="100%"/>
+							<c:Label  id="supplier_label" class="hideClass fontclass" text="Supplier Name for Supply Chain project"/>
+							<MultiComboBox  id="supplier_dropdown" class="hideClass" selectionFinish="supplierSelectionFinish" selectedItem="Element sap.ui.core.ListItem#__item1" selectedItemId="__item1" selectedKey="item1"></MultiComboBox >
+							<c:Label  class="hideClass fontclass" required="true" id="supplier_other" text="*Others(please specify)" />
+							<TextArea  class="hideClass" id="supplier_other_input" width="100%"/>
+							<c:Label icon="sap-icon://message-information" id="comments_supply" class="hideClass fontclass" required="true" text="*Comment on any supply specifics" tooltip="Including regional splits/ specific sites" />
+							<TextArea id="comments_supply_input"  class="hideClass" wrapping="None"/>
+							<c:Label id="material_specification" class="hideClass fontclass" required="true" text="*Materials Specification" />
+							<TextArea id="material_specification_input" class="hideClass" wrapping="None"/>
+							<c:Label  id="sites_affected" required="true" class="hideClass fontclass" text="*List all sites and lines affected" />
+							<TextArea id="sites_affected_input" class="hideClass" wrapping="None"/>
+							<c:Label icon="sap-icon://message-information" id="supplier_quesh" required="true" class="hideClass fontclass" text="*Supplier QESH guidance on trialling" tooltip="Number of trials and criteria for T1/T2 combinations" />
+							<TextArea id="supplier_quesh_input" class="hideClass" wrapping="None"/>
+							<c:Label  id="annualised_label" class="hideClass fontclass"  text="Annualised Savings" />
+							<!--		<Input  id="annualised_input" class="hideClass" width="100%"/> -->
+							<!--			<Input id="annualised_input" class="hideClass" width="50%" value="{  
+						 path: '/number',  
+						 type:'sap.ui.model.type.Currency', 
+						 formatOptions: {showMeasure: false }
+						}" TextView:  /><Text id="text1" text="EUR"></Text> -->
+							<Input id="annualised_input"  class="input-symbol-euro" width="50%" value="{ 
+						 type:'sap.ui.model.type.Currency',path: '/number',
+						 formatOptions: {showMeasure: false }
+						}"/>
+							<c:Label id="charter" class="fontclass" required="true" text="*Will Charterhouse be involved in this project (e.g. Shroud or Display Unit)"  />
+							<!--	<TextArea id="mixing_input" wrapping="None"/>-->
+							<RadioButtonGroup columns="2" id="charter_input" width="100%">
+								<buttons>
+									<RadioButton id="charter_input_y" text="YES"/>
+									<RadioButton id="charter_input_n" text="NO"/>
+								</buttons>
+							</RadioButtonGroup>
+							<c:Label id="attachfiles" class="fontclass" text="Please attach the files regarding the assembly manual for display, technical drawing and pictures"/>
+						<!--	<UploadCollection
+				id="UploadCollection"
+				maximumFilenameLength="55"
+				maximumFileSize="10"
+				multiple="true"
+				sameFilenameAllowed="true"
+				
+				instantUpload="false"
+				showSeparators="All"
+				change="onChange"
+				fileDeleted="onFileDeleted"
+				uploadComplete="onUploadComplete"
+				beforeUploadStarts="onBeforeUploadStarts"></UploadCollection>
+							<Label/>
+							<Button
+				id="Button"
+				text="Upload Now"
+				press="onStartUpload" width="20%"/> -->
+				
+								<Input id="docId"></Input>
+								<sap.ui.layout:VerticalLayout>
+								<u:FileUploader id="idFileUploader" name="UploadFile" width="400px" uploadComplete="handleUploadComplete"></u:FileUploader>
+									<Button text="Upload File" press="handleUploadPress"></Button>
+								</sap.ui.layout:VerticalLayout>
+				
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" id="request_buttons_form" class="hideClass"  editable="true" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<Button id="add_pipeline"   press="onPressPipeline" text="Add to Pipeline" width=""/>
+							<Button id="save_df_request"   press="onPressSave" text="Save DF request" width=""/>
+							<Button id="submit_df_request"  press="onPressSubmit" text="Submit DF request" width=""/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" id="edit_button_form" class="hideClass"  editable="true" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<Button id="edit_df_request" press="onPressEdit" text="Edit DF request" width=""/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+					<sap.ui.layout.form:SimpleForm columnsL="4" id="alldf_button_form" class="hideClass"  editable="true" layout="ResponsiveGridLayout">
+						<sap.ui.layout.form:content>
+							<Button id="all_df_delete" press="onPressDelete" text="Delete DF Request" width=""/>
+							<Button id="all_df_submit" press="onPressSubmit1" text="Update DF Request" width=""/>
+							<Button id="all_df_approval" press="onPressApproval" text="Submit for NIM Evaluation" width=""/>
+							<Button id="all_df_reject" press="onPressAllReject" text="Reject DF Request" width=""/>
+						</sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+				</content>
+			</Page>
+		</detailPages>
+		<masterPages>
+			<Page id="master" title="Demand Feasibility (DF) Request" icon="sap-icon://action" class="sapUiStdPage">
+				<content>
+					<List itemPress="onPressSplit">
+						<items>
+							<StandardListItem id="create" title="Create new DF Request" type="Active"  />
+							<StandardListItem id="my" title="My DF Requests" type="Active" />
+							<StandardListItem id="all" title="NIM DF Requests" type="Active"  />
+							<StandardListItem id="historical" title="Live/Completed DF's" type="Active"  />
+							<!--<StandardListItem id="admin" title="Admin Form" type="Active"  />-->
+							<!--	<StandardListItem id="sku" title="DF SKU Codes" type="Active"  /> -->
+						</items>
+					</List>
+				</content>
+			</Page>
+		</masterPages>
+	</SplitContainer>
+</core:View>

@@ -1,0 +1,91 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<TableSelectDialog
+	    contentWidth="1900px"
+		noDataText="No Products Found"
+		title="Select Record"
+		search="handleSearch"
+		confirm="handleClose"
+		close="handleClose"
+		items="{
+			path : '/sku'
+		}">
+		<ColumnListItem>
+			<cells>
+				<ObjectIdentifier text="{SAP_CODE}" />
+				<Text text="{COUNTRY}" />
+				<Text text="{PRODUCT_DESCRIPTION}" />
+				<Text text="{CONTAINER_SIZE}" />
+				<Text text="{CONTAINER_TYPE}" />
+				<Text text="{FLAVOUR}" />
+				<Text text="{GROUP_DESCRIPTION}" />
+				<Text text="{CPP}" />
+				
+			</cells>
+		</ColumnListItem>
+		<columns>
+			<Column width="4em" minScreenWidth="Desktop">
+				<header>
+					<Text text="SAP CODE" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true" >
+				<header>
+					<Text text="COUNTRY" />
+				</header>
+			</Column>
+			<Column width="10em"
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="PRODUCT DESCRIPTION" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="CONTAINER SIZE" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="CONTAINER TYPE" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="FLAVOUR" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="GROUP DESCRIPTION" />
+				</header>
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<header>
+					<Text text="CPP" />
+				</header>
+			</Column>
+			
+		</columns>
+	</TableSelectDialog>
+</core:FragmentDefinition>
